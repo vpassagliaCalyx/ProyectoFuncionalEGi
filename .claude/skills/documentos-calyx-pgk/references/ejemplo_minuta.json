@@ -1,0 +1,27 @@
+{
+  "titulo": "Minuta de Reunión",
+  "cliente": "[Cliente]",
+  "pie": "Minuta de Reunión - Ejemplo",
+  "ficha": [
+    ["Reunión / Proyecto", "Ejemplo de proyecto"],
+    ["Fecha", "DD/MM/AAAA"],
+    ["Objetivo", "Probar el formato corporativo"],
+    ["Participantes", "**Por Cliente:** [Nombre - Cargo]\n**Por Calyx / PGK:** [Nombre - Cargo]"]
+  ],
+  "secciones": [
+    {"titulo": "1. Resumen Ejecutivo", "bloques": [
+      {"type": "h3", "text": "Tópicos Principales Tratados"},
+      {"type": "numbered", "items": ["**Tema 1:** detalle con `payment_mode`", "**Tema 2:** detalle"]}
+    ]},
+    {"titulo": "2. Acuerdos Alcanzados", "bloques": [
+      {"type": "numbered", "items": ["Comenzar por el relevamiento.", "Probar con un usuario clave."]},
+      {"type": "note", "text": "Nota de ejemplo."}
+    ]},
+    {"titulo": "3. Pasos a Seguir (Action Items)", "bloques": [
+      {"type": "table", "cols": ["#", "Acción / Tarea", "Responsable", "Fecha Límite", "Estado"],
+       "widths": [0.5, 4, 1.8, 1.4, 1.3], "center": [0, 3, 4],
+       "rows": [["1", "Relevar flujos actuales.", "Cliente", "DD/MM/AAAA", "Pendiente"],
+                ["2", "Definir diseño funcional.", "Calyx", "DD/MM/AAAA", "En Progreso"]]}
+    ]}
+  ]
+}

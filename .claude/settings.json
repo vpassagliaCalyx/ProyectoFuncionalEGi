@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": ["Write(salidas/**)"],
+    "ask": ["Bash"],
+    "deny": ["Edit(contexto/**)"]
+  }
+}

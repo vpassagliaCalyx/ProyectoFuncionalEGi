@@ -1,0 +1,5675 @@
+1
+00:00:01,810 --> 00:00:03,810
+¿Veste para ir a Barcelona?
+
+2
+00:00:03,810 --> 00:00:05,810
+Sí, ya está grabado.
+
+3
+00:00:05,810 --> 00:00:06,810
+Sí, sí, sí, sí.
+
+4
+00:00:06,810 --> 00:00:08,810
+Si quieres sacar moca maras, así no tenemos la lema,
+
+5
+00:00:08,810 --> 00:00:12,810
+con el huevo y pague, y hay las chicas de preguntas en las veces,
+
+6
+00:00:12,810 --> 00:00:14,810
+necesaria así que arranque no es lo problema.
+
+7
+00:00:14,810 --> 00:00:18,340
+Bueno, chicas,
+
+8
+00:00:18,340 --> 00:00:26,680
+¿Qué especificamente ustedes quieren ver?
+
+9
+00:00:26,680 --> 00:00:29,680
+¿Qué cuáles son los modelos específicos?
+
+10
+00:00:29,680 --> 00:00:32,680
+Tenemos que relevar desde inventario.
+
+11
+00:00:32,680 --> 00:00:39,630
+¿Te escuchan muy bajitos en ese nuevo lumen o algo pero
+
+12
+00:00:39,630 --> 00:00:47,950
+este reame en el castario?
+
+13
+00:00:47,950 --> 00:00:52,950
+Sí, tenemos que relevar en primera medida,
+
+14
+00:00:52,950 --> 00:00:58,950
+¿cómo funciona el sistema no es?
+
+15
+00:00:58,950 --> 00:01:03,450
+Sí, señora.
+
+16
+00:01:03,450 --> 00:01:09,450
+No funcionaban general, desde todo pero bueno.
+
+17
+00:01:39,450 --> 00:01:52,970
+Bueno, aquí una venta puede ser empezada tanto en el proceso de CRM, por una necesidad
+
+18
+00:01:52,970 --> 00:01:57,450
+de crear una oportunidad de venta.
+
+19
+00:01:57,450 --> 00:02:06,650
+Entonces, aquí es como recordatoria de que el cliente X tiene tipo de productos,
+
+20
+00:02:06,650 --> 00:02:18,370
+como estúche, revistas, libros, campañas, específicas, don,
+
+21
+00:02:18,370 --> 00:02:23,290
+nosotros podemos vincular cotizaciones a estas oportunidades de venta.
+
+22
+00:02:23,290 --> 00:02:34,730
+Entonces, la parte de CRM más para ser un recordatorio de que es la venta, y ahí yo puedo tener
+
+23
+00:02:34,730 --> 00:02:40,290
+todo un workflow sobre esta oportunidad.
+
+24
+00:02:40,290 --> 00:02:42,290
+Entonces, yo puedo...
+
+25
+00:02:42,290 --> 00:02:44,290
+El cliente, ¿qué ha tenido?
+
+26
+00:02:44,290 --> 00:02:49,290
+El cliente, nosotros tenemos varios.
+
+27
+00:02:49,290 --> 00:03:02,390
+Entonces aquí, datos principales de recliente, NIT, RUK, el transportista que atiende,
+
+28
+00:03:02,390 --> 00:03:09,590
+CS, matriz, oscursal, cual es el vendedor, cual es la persona que va a atender para apoyo de
+
+29
+00:03:09,590 --> 00:03:18,790
+comercial, cual moneda se cotiza las direcciones que atenderon el cliente, que pueden ser
+
+30
+00:03:18,790 --> 00:03:23,430
+las administrativas, las de entrega,
+
+31
+00:03:23,430 --> 00:03:28,430
+varios contactos también por el cliente,
+
+32
+00:03:28,430 --> 00:03:33,790
+adatos para definir cuál es el tamaño de cliente
+
+33
+00:03:33,790 --> 00:03:38,430
+para parte de reportes de comercial.
+
+34
+00:03:38,430 --> 00:03:42,230
+Entonces, cuál es la corporación que pertene ese cliente,
+
+35
+00:03:42,230 --> 00:03:44,190
+el seguimiento industrial,
+
+36
+00:03:44,190 --> 00:03:46,150
+tamaño de la planta,
+
+37
+00:03:46,150 --> 00:03:50,650
+cuál es el potencial de compra, el bánchite de compra, que es el cliente TN,
+
+38
+00:03:50,650 --> 00:03:56,050
+cuántos empleados, la rejejía un de venta, y si es una unidad unidad uno, dos,
+
+39
+00:03:56,050 --> 00:04:01,150
+qué empresa es esta que estamos configurando.
+
+40
+00:04:01,150 --> 00:04:02,950
+¿Qué?
+
+41
+00:04:02,950 --> 00:04:08,550
+Tenemos los datos contables, los datos fiscales para emisión de factura,
+
+42
+00:04:08,550 --> 00:04:20,390
+remito, datos financieros, entonces, condición de pago, valiración de crédito, observaciones,
+
+43
+00:04:24,390 --> 00:04:34,630
+más observaciones. Y aquí en la alerta podemos crear como pop-ups.
+
+44
+00:04:34,630 --> 00:04:46,650
+Entonces, cuando yo el hijo es excluyante y una pantalla que me permite tener el proceso, por ejemplo,
+
+45
+00:04:46,650 --> 00:04:51,190
+aquí, vamos a crear una oportunidad, vamos a poner ese cliente.
+
+46
+00:04:51,190 --> 00:04:53,390
+¿Ves?
+
+47
+00:04:53,390 --> 00:04:57,550
+Sí, no me muestra un pop.
+
+48
+00:04:57,550 --> 00:04:59,550
+¿Cuándo nosotros hablamos de...
+
+49
+00:05:01,550 --> 00:05:03,550
+con...
+
+50
+00:05:03,550 --> 00:05:04,550
+a...
+
+51
+00:05:04,550 --> 00:05:06,550
+Magalí que es la tica de comercial, ¿no?
+
+52
+00:05:06,550 --> 00:05:07,550
+de...
+
+53
+00:05:07,550 --> 00:05:08,550
+costos, ¿no?
+
+54
+00:05:08,550 --> 00:05:09,550
+¿Marcelo.
+
+55
+00:05:09,550 --> 00:05:10,550
+No, Paula, silen.
+
+56
+00:05:10,550 --> 00:05:11,550
+Paú, no, Paula.
+
+57
+00:05:11,550 --> 00:05:12,550
+¿Qué costos?
+
+58
+00:05:13,550 --> 00:05:14,550
+Paula es comercial.
+
+59
+00:05:14,550 --> 00:05:15,550
+Es, Magalí.
+
+60
+00:05:15,550 --> 00:05:16,550
+Magalí.
+
+61
+00:05:16,550 --> 00:05:17,550
+No, te.
+
+62
+00:05:17,550 --> 00:05:18,550
+Claro, comerciele.
+
+63
+00:05:18,550 --> 00:05:19,550
+Paula y a mira.
+
+64
+00:05:19,550 --> 00:05:20,550
+Comerciele y vento.
+
+65
+00:05:20,550 --> 00:05:21,550
+¿Correcto?
+
+66
+00:05:21,550 --> 00:05:23,550
+Magalí es la tica de costos.
+
+67
+00:05:23,550 --> 00:05:29,870
+¿Como usted? ¿Se le le le le toso data para funcionar o poner? No, no, no, no, es obligatorio
+
+68
+00:05:29,870 --> 00:05:40,390
+tener estos datos para que utilicemos el sistema. Pero para crear reportes, previos
+
+69
+00:05:40,390 --> 00:05:46,430
+a la venta antes de vender, tenemos que tener varias información, es de defender de qué
+
+70
+00:05:46,430 --> 00:05:52,910
+tipo de datos necesita comercial ¿no? Y ahí era una discurción que tenía Magalí
+
+71
+00:05:52,910 --> 00:05:58,490
+y de controlar todo en odu y pasarlo a métricas.
+
+72
+00:05:58,490 --> 00:06:00,710
+Entonces para nosotros no es valido esto.
+
+73
+00:06:00,710 --> 00:06:01,670
+¿Por qué?
+
+74
+00:06:01,670 --> 00:06:05,150
+Porque yo trabajo con prospectos,
+
+75
+00:06:05,150 --> 00:06:08,110
+que todavía no son clientes efectivos.
+
+76
+00:06:08,110 --> 00:06:12,150
+Y ahí está nuestra surherencia de trabajar aquí.
+
+77
+00:06:12,150 --> 00:06:14,950
+Por qué por ejemplo, estoy haciendo una cotización.
+
+78
+00:06:14,950 --> 00:06:18,750
+Tengo aquí varios productos por elegir.
+
+79
+00:06:18,750 --> 00:06:21,710
+Y él hizo un producto, tengo el cliente.
+
+80
+00:06:21,710 --> 00:06:51,710
+Entonces vengo y voy a elegir un cliente que es uno, es un cliente en uno, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es, es
+
+81
+00:06:51,710 --> 00:06:55,350
+una situación de prospecto, ¿no?
+
+82
+00:06:55,350 --> 00:06:57,390
+Tengo que generar las informaciónes,
+
+83
+00:06:57,390 --> 00:07:02,590
+entonces aquí, yo define cuál es la regla, ¿no?
+
+84
+00:07:02,590 --> 00:07:11,070
+Para decir en cuál está tus cadadatoes obligatorios.
+
+85
+00:07:11,070 --> 00:07:13,910
+¿Crees que se dependen de el cliente?
+
+86
+00:07:13,910 --> 00:07:16,030
+Y yo puedo tener varios...
+
+87
+00:07:16,030 --> 00:07:17,950
+Es decir que tenía un atable.
+
+88
+00:07:17,950 --> 00:07:19,390
+Exactamente.
+
+89
+00:07:19,390 --> 00:07:26,110
+Ok, que tenía un vendedor y para el prospeter a vendedor, en cabezado, ahí no tiene.
+
+90
+00:07:26,110 --> 00:07:27,110
+¿A qué?
+
+91
+00:07:27,110 --> 00:07:28,110
+Esta.
+
+92
+00:07:28,110 --> 00:07:30,830
+Para suspeck es nombre,
+
+93
+00:07:30,830 --> 00:08:02,590
+para hacer un social, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no,
+
+94
+00:08:02,590 --> 00:08:07,590
+los obligatorios en la dirección del cliente.
+
+95
+00:08:07,590 --> 00:08:12,150
+¿Por qué con esto yo puedo generar datos del fleete?
+
+96
+00:08:12,150 --> 00:08:16,590
+No es el caso hoy de...
+
+97
+00:08:16,590 --> 00:08:20,590
+Estabilicimiento gráfico, pero podría ser.
+
+98
+00:08:20,590 --> 00:08:21,590
+Sí, sí.
+
+99
+00:08:21,590 --> 00:08:24,590
+Puede ser a futuro, pues.
+
+100
+00:08:24,590 --> 00:08:30,590
+Entonces, ¿qué definimos para qué datos son obligatorios en cada estado?
+
+101
+00:08:30,590 --> 00:08:31,590
+Sí.
+
+102
+00:08:31,590 --> 00:08:42,150
+y ahí hay a depender del cliente que tenemos el tema memóes en la oportunidad, que es del C&M,
+
+103
+00:08:42,150 --> 00:08:48,870
+que ahí me vincula la venta, esa cotización a esta venta, esa oportunidad de venta.
+
+104
+00:08:48,870 --> 00:08:51,150
+Y después yo puedes sacar reportes.
+
+105
+00:08:51,150 --> 00:08:52,590
+¿Puedes tener la oportunidad?
+
+106
+00:08:52,590 --> 00:08:54,590
+No, no.
+
+107
+00:08:54,590 --> 00:08:59,150
+Yo puedes tener una cotización sin tener la oportunidad.
+
+108
+00:08:59,150 --> 00:09:03,750
+y la oportunidad yo puedo tener la oportunidad sin tener una cotización también va
+
+109
+00:09:03,750 --> 00:09:08,990
+de depender de cómo quiero controlar. Mucha de las veces nosotros utilizamos la
+
+110
+00:09:08,990 --> 00:09:14,470
+oportunidad para él vinculó con la parte de preprensa, que es anterior a una cotización.
+
+111
+00:09:14,470 --> 00:09:25,790
+Entonces, el cliente quiere hacer una prueba. ¿Cómo aquí en la oportunidad? Yo puedo definir
+
+112
+00:09:25,790 --> 00:09:35,590
+un costo, ¿no? Podemos saber cuánto costó hacer una prueba, un desarrollo para un cliente,
+
+113
+00:09:35,590 --> 00:09:42,530
+si él no ha cerrado un trabajo, si él no ha comprado un servicio. Entonces tú ya sabes que
+
+114
+00:09:42,530 --> 00:09:48,910
+es un costo ahí. ¿Y ya? ¿Cuántas veces es ese cliente que te está solicitando de desarrollos
+
+115
+00:09:48,910 --> 00:09:55,510
+diseños y todo y no está comprando? ¿Qué bueno? Exacto. Entonces con esto nosotros no
+
+116
+00:09:55,510 --> 00:10:02,510
+logramos controlar por oportunidad, porque algo que pasa antes de cotizar.
+
+117
+00:10:02,510 --> 00:10:07,510
+Entonces logramos hacer por aquí.
+
+118
+00:10:07,510 --> 00:10:37,510
+Bueno, voy a ir para ir a ir para ir a ir para ir a ir para ir para ir para ir para ir a ir para ir para ir para ir a ir para ir para ir a ir para ir a ir para ir a ir para ir a ir para ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir
+
+119
+00:10:37,510 --> 00:10:51,990
+principales para ese cliente tengo los datos del producto y ahí hacemos una
+
+120
+00:10:51,990 --> 00:10:58,990
+cotidación y puedo hacer con varias cantidades para presupuestar.
+
+121
+00:10:58,990 --> 00:11:05,430
+Entonces tengo aquí la persona que hace el tenimiento, la persona que hace la
+
+122
+00:11:05,430 --> 00:11:13,950
+la decisión, puede tener el proyecto que estamos creando un proyecto para desarrollar un producto
+
+123
+00:11:13,950 --> 00:11:20,590
+para ese cliente. Y son varios productos. Yo puedo arreves de vincular una oportunidad, porque
+
+124
+00:11:20,590 --> 00:11:26,950
+ella no es más una oportunidad y es una venta efectiva. Yo puedo crear un proyecto para juntar
+
+125
+00:11:26,950 --> 00:11:31,950
+todos los productos y evaluar el costo después por el todo el proyecto.
+
+126
+00:11:31,950 --> 00:11:38,950
+Y ahí logró vincular los aquí. Un proyecto.
+
+127
+00:11:38,950 --> 00:11:41,950
+Entonces, ¿qué es?
+
+128
+00:11:41,950 --> 00:11:45,950
+Tenen por producto, por proyecto, por un intención.
+
+129
+00:11:45,950 --> 00:11:48,950
+Yo cotizo por producto.
+
+130
+00:11:48,950 --> 00:11:53,950
+Pero la evaluación final, yo puedo hacer por proyecto completo.
+
+131
+00:11:53,950 --> 00:12:00,950
+Yo de esa royer, una caja para un lím pero ¿qué es?
+
+132
+00:12:00,950 --> 00:12:01,950
+¿Qué es?
+
+133
+00:12:01,950 --> 00:12:02,950
+¿Qué es?
+
+134
+00:12:02,950 --> 00:12:03,950
+¿Qué es?
+
+135
+00:12:03,950 --> 00:12:04,950
+¿Qué es?
+
+136
+00:12:04,950 --> 00:12:05,950
+¿Qué es?
+
+137
+00:12:05,950 --> 00:12:06,950
+¿Qué es?
+
+138
+00:12:06,950 --> 00:12:07,950
+¿Qué es?
+
+139
+00:12:07,950 --> 00:12:08,950
+¿Qué es?
+
+140
+00:12:08,950 --> 00:12:09,950
+¿Qué es?
+
+141
+00:12:09,950 --> 00:12:10,950
+¿Qué es?
+
+142
+00:12:10,950 --> 00:12:11,950
+¿Qué es?
+
+143
+00:12:11,950 --> 00:12:12,950
+¿Qué es?
+
+144
+00:12:12,950 --> 00:12:13,950
+¿Qué es?
+
+145
+00:12:13,950 --> 00:12:14,950
+¿Qué es?
+
+146
+00:12:14,950 --> 00:12:15,950
+¿Qué es?
+
+147
+00:12:15,950 --> 00:12:16,950
+¿Qué es?
+
+148
+00:12:16,950 --> 00:12:17,950
+¿Qué es?
+
+149
+00:12:17,950 --> 00:12:18,950
+¿Qué es?
+
+150
+00:12:18,950 --> 00:12:19,950
+¿Qué es?
+
+151
+00:12:19,950 --> 00:12:20,950
+¿Qué es?
+
+152
+00:12:20,950 --> 00:12:21,950
+¿Qué es?
+
+153
+00:12:21,950 --> 00:12:22,950
+¿Qué es?
+
+154
+00:12:22,950 --> 00:12:31,350
+aquí es para cotizar un estute, se voy solucitar una bolsa, entonces una bolsa
+
+155
+00:12:31,350 --> 00:12:40,290
+sí, un por ciento ointe, ya, vengo aquí, tengo la estructura para la bolsa, ya,
+
+156
+00:12:40,290 --> 00:12:46,610
+entonces para cátipo de producto, nosotros tenemos la manera que ella lo hagemálas
+
+157
+00:12:46,610 --> 00:12:54,610
+generías dentro del sistema exactamente y ahí tengo para cada tipo de
+
+158
+00:12:54,610 --> 00:12:59,610
+producto una estructura por eso que tenemos varias líneas.
+
+159
+00:12:59,610 --> 00:13:11,610
+Si tipo el línea de producto, línea y subilinía porque ahí, porque ahí yo
+
+160
+00:13:11,610 --> 00:13:21,610
+¿Este es el que yo faturo exactamente? Porque desde aquí me vas a salir un SKAU.
+
+161
+00:13:21,610 --> 00:13:26,610
+Y este SKAU que es el código delitando en stock.
+
+162
+00:13:26,610 --> 00:13:33,610
+el mecenera automático cuando yo aprevo una continuación
+
+163
+00:13:33,610 --> 00:13:41,610
+el mecenera automático entonces yo tengo por tipos de
+
+164
+00:13:41,610 --> 00:13:46,610
+yo tengo por la línea de producto aquí,
+
+165
+00:13:46,610 --> 00:13:50,610
+que no que ya está calculado.
+
+166
+00:13:50,610 --> 00:13:54,610
+Entonces aquí por...
+
+167
+00:13:54,610 --> 00:13:57,610
+en la línea de producto
+
+168
+00:13:57,610 --> 00:14:01,610
+y a depender del tipo de venta que vamos a hacer,
+
+169
+00:14:01,610 --> 00:14:06,610
+yo puedo configurar un tipo de escaurista.
+
+170
+00:14:06,610 --> 00:14:10,610
+Entonces si es, por ejemplo, un producto exportación,
+
+171
+00:14:10,610 --> 00:14:12,610
+este producto tiene datos,
+
+172
+00:14:12,610 --> 00:14:18,610
+específicos, de facturar, de cobrar impuestos, y todo.
+
+173
+00:14:18,610 --> 00:14:25,090
+Entonces podemos crear un modelo específico, de producto, para cuando yo hago ventas
+
+174
+00:14:25,090 --> 00:14:27,090
+en exportación.
+
+175
+00:14:27,090 --> 00:14:37,730
+Y ahí que hace, cuando yo hago la aprovação de una utilización, yo vengo aquí, paso,
+
+176
+00:14:37,730 --> 00:14:39,730
+él está tus...
+
+177
+00:14:39,730 --> 00:14:44,600
+dejan de ver si tengo un impropuesta.
+
+178
+00:14:44,600 --> 00:14:49,160
+Entonces aquí yo tengo un estatos de propuesta, ¿no?
+
+179
+00:14:49,160 --> 00:14:55,160
+Desde la propuesta voy a mostrarles aquí, más fácil.
+
+180
+00:14:55,160 --> 00:15:04,660
+Desde la cotización, un show puede generar una propuesta comercial con los datos que tenemos en la ingeniería.
+
+181
+00:15:04,660 --> 00:15:08,780
+ya puedo gerar desde aquí, desde aquí en vía al cliente.
+
+182
+00:15:09,780 --> 00:15:23,500
+directamente, configuramos un proveedor de correos exactamente, y desde aquí ya puedes salir una carta con las información es automática.
+
+183
+00:15:24,900 --> 00:15:27,900
+¿Ya? con los productos que tenemos.
+
+184
+00:15:27,900 --> 00:15:31,140
+Este aqui sería la carta comercial el cliente.
+
+185
+00:15:31,140 --> 00:15:33,140
+Entonces cuando...
+
+186
+00:15:33,140 --> 00:15:35,140
+¿Cómo?
+
+187
+00:15:35,140 --> 00:15:36,140
+Perdón.
+
+188
+00:15:36,140 --> 00:15:37,140
+¿Dara?
+
+189
+00:15:37,140 --> 00:15:38,140
+¿Cómo?
+
+190
+00:15:38,140 --> 00:15:43,140
+Componente, colores, sustrato, formato y los acabados, no?
+
+191
+00:15:43,140 --> 00:15:45,140
+Las terminesiones.
+
+192
+00:15:45,140 --> 00:15:49,140
+Hay cuánto tesale por cantidad este producto.
+
+193
+00:15:49,140 --> 00:15:54,140
+Y ahí yo tengo otro producto que está con otros acabados, por ejemplo.
+
+194
+00:15:54,140 --> 00:15:57,140
+Entonces aquí, por ejemplo, tengo cartulina blanca.
+
+195
+00:15:57,140 --> 00:16:03,880
+este trabajo está en cartulina blanca y este trabajo está en cartulina glí y ahí la
+
+196
+00:16:03,880 --> 00:16:15,140
+diferencia que los costos a uno solo si fuera un producto repetido pero si es un
+
+197
+00:16:15,140 --> 00:16:20,720
+producto no es lo que estoy cotizando el solo va a generar el escalú te muestro aquí
+
+198
+00:16:20,720 --> 00:16:25,920
+no se ha que improduto, ves, y tendestock, no hay nada.
+
+199
+00:16:25,920 --> 00:16:31,220
+Cuando yo vengo aquí y hago la provación de esta venta,
+
+200
+00:16:31,220 --> 00:16:42,290
+ahí, si el sistema va a combarse en el modelo que tenemos, configurado en la línea de
+
+201
+00:16:42,290 --> 00:16:47,890
+producto, él me va a generar una copia, de este mismo, pero con las informações
+
+202
+00:16:47,890 --> 00:16:52,490
+actualizadas. Y ahí vamos a tener aquí, él coigo del escalón.
+
+203
+00:16:52,490 --> 00:16:56,490
+Este va a ser el código que va a acompañar todo el producto.
+
+204
+00:16:56,490 --> 00:17:00,490
+Y entonces es... es... por ejemplo, ¿por ejemplo?
+
+205
+00:17:00,490 --> 00:17:01,490
+¿Por qué?
+
+206
+00:17:01,490 --> 00:17:04,490
+Eso después. Cuando hay la aprobación del cliente.
+
+207
+00:17:04,490 --> 00:17:05,490
+¿Por qué?
+
+208
+00:17:05,490 --> 00:17:07,490
+¿Por qué?
+
+209
+00:17:07,490 --> 00:17:12,120
+Sí, él solo es identificado,
+
+210
+00:17:12,120 --> 00:17:18,120
+después que él cambiaba un estatus de producto aprobado.
+
+211
+00:17:18,120 --> 00:17:21,120
+Ahí sí, él era un producto.
+
+212
+00:17:21,120 --> 00:17:24,120
+no, él es por eso, ¿cuánto te da?
+
+213
+00:17:24,120 --> 00:17:29,680
+Es aprobada a producción.
+
+214
+00:17:29,680 --> 00:17:34,680
+Y cuando yo hago esto, automáticamente,
+
+215
+00:17:34,680 --> 00:17:38,680
+el sistema mejenera también el período de venta.
+
+216
+00:17:38,680 --> 00:17:46,190
+Ya, el período de venta es donde el sistema va a empezar
+
+217
+00:17:46,190 --> 00:17:49,190
+a ser las integraciones.
+
+218
+00:17:49,190 --> 00:17:59,090
+porque el período de venta es de jamé 23 aquí, entonces,
+
+219
+00:17:59,090 --> 00:18:03,730
+él genera áudio matrada desde su sistema,
+
+220
+00:18:03,730 --> 00:18:05,070
+entonces.
+
+221
+00:18:05,070 --> 00:18:12,210
+Yo, yo, aprovo una cotización y ahí,
+
+222
+00:18:12,210 --> 00:18:14,310
+el sistema de genera dos datos.
+
+223
+00:18:14,310 --> 00:18:21,110
+El primer es la orden de producción, que es el que va a seguir para la parte productiva,
+
+224
+00:18:21,110 --> 00:18:26,790
+para neacion, oito. ¿Cómo? ¿Cómo? ¿Cómo? ¿Cómo trabe el perdonamiento?
+
+225
+00:18:26,790 --> 00:18:32,150
+Cuando yo paso la cotización a un estatus, de liberado para producción,
+
+226
+00:18:32,150 --> 00:18:37,910
+que es cuando yo renero, cuando yo aprovo la producción, el sistema de genera dos datos.
+
+227
+00:18:37,910 --> 00:18:40,550
+Automáticamente, el primer es la orden.
+
+228
+00:18:40,550 --> 00:18:47,230
+que ahí exactamente la ingeniería de cómo va a producir este producto.
+
+229
+00:18:47,230 --> 00:18:52,310
+Entonces yo sé exactamente cómo va a producir cuál es las máquinas
+
+230
+00:18:52,310 --> 00:18:56,550
+quanto tiempo y aquí es lo que va a seguir para el proceso
+
+231
+00:18:56,550 --> 00:19:01,430
+productivo y para la venta, yo no reniero el período de venta,
+
+232
+00:19:01,430 --> 00:19:07,110
+que es donde va a estar las entregas, el valor, el escau y aquí es la parte
+
+233
+00:19:07,110 --> 00:19:15,810
+administrativo. Que probablemente por lo que ha diseñado al eshandre es a partir de aquí,
+
+234
+00:19:15,810 --> 00:19:23,670
+que es entre el programa. Es el producto, la cantidad, la fecha de entrega que definimos
+
+235
+00:19:23,670 --> 00:19:33,290
+ahí en la coche de asción, los datos de valor. ¿Qué? Los detalles aquí, si hay algún tipo de
+
+236
+00:19:33,290 --> 00:19:35,290
+específico.
+
+237
+00:19:35,290 --> 00:19:38,730
+En cuanto entonces o sea, los manejamos nosotros con este
+
+238
+00:19:38,730 --> 00:19:40,730
+este. Exactamente.
+
+239
+00:19:40,730 --> 00:19:47,450
+Ahí tenemos dos casos. Uno es. Tenemos el valor de los impuestos
+
+240
+00:19:47,450 --> 00:19:51,930
+ya dentro del precio. Y ya, y tenemos el valor de los
+
+241
+00:19:51,930 --> 00:19:55,290
+impuestos que están previstos, pero no están
+
+242
+00:19:55,290 --> 00:19:59,290
+adentro del precio. ¿Qué es el caso, por ejemplo,
+
+243
+00:19:59,290 --> 00:20:03,290
+aquí la base de de ellos,
+
+244
+00:20:03,930 --> 00:20:09,290
+de impresores es, por ejemplo,
+
+245
+00:20:09,930 --> 00:20:13,690
+los ingresos brutos, está dentro del valor,
+
+246
+00:20:13,690 --> 00:20:16,530
+entonces está ya incluido en el precio,
+
+247
+00:20:16,530 --> 00:20:18,690
+pero el liva no,
+
+248
+00:20:18,690 --> 00:20:21,890
+el liva es solamente una descripción,
+
+249
+00:20:21,890 --> 00:20:26,830
+la previsión de pagar el liva es el valor, ¿qué?
+
+250
+00:20:26,830 --> 00:20:27,030
+¿Qué?
+
+251
+00:20:27,030 --> 00:20:32,030
+¿Aquí estoy en la cotización?
+
+252
+00:20:32,030 --> 00:20:39,030
+¿Y aquí es el detallado de los costos de esta cotización?
+
+253
+00:20:39,030 --> 00:20:43,030
+Ya, pero eso son ingresos brutos que son cortos para nosotros.
+
+254
+00:20:43,030 --> 00:20:46,030
+Exactamente, como si fuera un impuesto.
+
+255
+00:20:46,030 --> 00:20:48,030
+¿Y entonces?
+
+256
+00:20:48,030 --> 00:20:52,030
+Pero nosotros tenemos invuestos sobre la verdad también.
+
+257
+00:20:52,030 --> 00:21:01,030
+Exacto. Entonces, esos impuestos, pero esos impuestos, tiene que estar adentro del precio del producto.
+
+258
+00:21:01,030 --> 00:21:03,030
+Ya, no, no.
+
+259
+00:21:03,030 --> 00:21:07,030
+Ah, bueno, que es el caso de Iliva. Iliva no está adentro del producto.
+
+260
+00:21:07,030 --> 00:21:11,030
+Tenemos una previsión del valor, pero no está aquí adentro.
+
+261
+00:21:11,030 --> 00:21:16,310
+bien viaremos en el precio pero con la previsión de un tipo de venta para que ustedes se
+
+262
+00:21:16,310 --> 00:21:20,030
+van, ¿cuál es somos impuestos que hay que cobrar para ese producto?
+
+263
+00:21:20,030 --> 00:21:21,030
+Sí.
+
+264
+00:21:21,030 --> 00:21:28,970
+Y ahí este dato va para el PIU de venta, aquí ya estamos en el PIU de venta, ¿quién es a dónde
+
+265
+00:21:28,970 --> 00:21:30,970
+empieza la integración?
+
+266
+00:21:30,970 --> 00:21:38,070
+Aquí yo tengo los datos del cliente, fendedor y todo.
+
+267
+00:21:38,070 --> 00:21:48,470
+en factura y de cobranza, tenemos datos adicionales de forma de pago,
+
+268
+00:21:48,470 --> 00:21:51,390
+tássa de la moneda, cuando es una manera diferente.
+
+269
+00:21:51,390 --> 00:21:59,390
+El item que es el escaud del producto, la cantidad y el valor de 20.
+
+270
+00:21:59,390 --> 00:22:04,430
+Y aquí yo tengo los detalles de esta venta.
+
+271
+00:22:04,430 --> 00:22:11,710
+Entonces la cantidad que fue cotizado en el período y la que va a facturar remitir.
+
+272
+00:22:11,710 --> 00:22:13,110
+¿Ya?
+
+273
+00:22:13,110 --> 00:22:20,830
+Aquí yo puedo tener las entregas y las facturas separadas aquí, por ejemplo,
+
+274
+00:22:20,830 --> 00:22:28,030
+voy a copiar una es la factura, la otra es el remito.
+
+275
+00:22:28,030 --> 00:22:32,830
+Entonces voy a facturar uno y remitir el otro, en separado.
+
+276
+00:22:32,830 --> 00:22:44,480
+¿No? Aquí yo tengo una provación para el pedido y yo creo que el momento de la integración es la solicitud de
+
+277
+00:22:44,480 --> 00:22:51,520
+factura. Porque aquí es cuando voy a decir que voy a entregar o remitir el cliente o facturarlo.
+
+278
+00:22:51,520 --> 00:23:00,080
+¿Ves? Entonces aquí que hago la solicitud para ustedes, cual la fecha que está prevista para la entrega,
+
+279
+00:23:00,080 --> 00:23:04,880
+a cuál orden de producción pertenece,
+
+280
+00:23:04,880 --> 00:23:10,320
+o ales del S-C-U, el producto, la cantidad,
+
+281
+00:23:10,320 --> 00:23:13,720
+y ahí sí es remito si es factura.
+
+282
+00:23:13,720 --> 00:23:15,840
+¿Cómo se ha remito si es factura?
+
+283
+00:23:15,840 --> 00:23:20,440
+Eso aparte me pierdo, perdón porque es media y tinta en nosotros.
+
+284
+00:23:20,440 --> 00:23:25,800
+Porque el remito es la cantidad entrega física.
+
+285
+00:23:25,800 --> 00:23:30,800
+y la factura es la cantidad facturable.
+
+286
+00:23:30,800 --> 00:23:38,360
+Es el costo, el valor facturable, porque este aquí yo ejecuto los procesos de
+
+287
+00:23:38,360 --> 00:23:43,800
+stock, como quitar del stock y la factura solamente da tus financieras.
+
+288
+00:23:43,800 --> 00:23:50,850
+Y pero vos hay en la tu clienta mandando lo que vos facturamos de mí.
+
+289
+00:23:50,850 --> 00:23:52,850
+Exactamente.
+
+290
+00:23:52,850 --> 00:23:54,850
+Exactamente.
+
+291
+00:23:54,850 --> 00:24:02,410
+yo puedo, por ejemplo, factura los 10 mil que no factura ahora pero solo voy a entregar
+
+292
+00:24:02,410 --> 00:24:05,690
+sin comir ahora y los otros 5 mil o entregar después.
+
+293
+00:24:05,690 --> 00:24:11,510
+Por eso que pueden ser únicos o pueden ser separados.
+
+294
+00:24:11,510 --> 00:24:14,370
+Ustedes que definen cómo va a ser.
+
+295
+00:24:14,370 --> 00:24:19,530
+Ahí bueno, entonces aquí es la parte que va a empezar al...
+
+296
+00:24:19,530 --> 00:24:25,050
+hay integrarse. Sí, ahí de aquí para nosotros, final, sería el final del proceso.
+
+297
+00:24:25,050 --> 00:24:31,330
+¿Ya? Ok, ¿qué? Los remitos, porgo, considerar, R. R.
+
+298
+00:24:31,330 --> 00:25:01,330
+el red. Entonces, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el ojr, el oj
+
+299
+00:25:01,330 --> 00:25:06,330
+aquí. Yo tengo el sistema de planificación,
+
+300
+00:25:06,330 --> 00:25:11,020
+pero que voy a mostrarles.
+
+301
+00:25:11,020 --> 00:25:18,130
+Tengo el sistema de planificación y...
+
+302
+00:25:18,130 --> 00:25:22,130
+Este producto que volcha la regaste a producción.
+
+303
+00:25:22,130 --> 00:25:24,130
+¿Cómo te que se terminó?
+
+304
+00:25:24,130 --> 00:25:27,130
+Está alcalen el sistema de que es...
+
+305
+00:25:27,130 --> 00:25:31,130
+Este es ese que es algirminunidad que vamos a hacer.
+
+306
+00:25:31,130 --> 00:25:34,130
+¿Temos que mostrarles?
+
+307
+00:25:34,130 --> 00:25:36,130
+voy a mostrar.
+
+308
+00:25:37,130 --> 00:25:46,130
+Sí, entonces aquí, donde yo veo, cuando voy a entregar los productos, de acuerdo a la disponibilidad de las máquinas.
+
+309
+00:25:47,130 --> 00:25:55,130
+Entonces, aquí tengo las órdenes de producción, cada una máquina y tenemos aquí la fecha de entrega de cada uno de los procesos.
+
+310
+00:25:55,130 --> 00:26:04,130
+Cuando llega el momento de producir, el operador va a apuntar ese trabajo en el job track.
+
+311
+00:26:04,130 --> 00:26:13,130
+Entonces, el va a decir cuánto apado ha sido y a partir de cada producción te va a salir una etiqueta de la cantidad de producida.
+
+312
+00:26:13,130 --> 00:26:24,530
+Esta etiqueta que sale en la producción, el operador viene aquí en controlar materiales
+
+313
+00:26:24,530 --> 00:26:29,330
+y stock y hace la entrega de producción, es stock.
+
+314
+00:26:29,330 --> 00:26:37,540
+Entonces, voy a tomar la orden de producción, que yo tengo.
+
+315
+00:26:37,540 --> 00:26:44,260
+Entonces voy a buscar la orden de producción, voy a crear este material en el
+
+316
+00:26:44,260 --> 00:26:49,260
+esto, con base y la lectura de las etiquetas de esta orden.
+
+317
+00:26:49,260 --> 00:26:50,700
+Prado, terminado.
+
+318
+00:26:50,700 --> 00:26:52,560
+A, a, a, a.
+
+319
+00:26:52,560 --> 00:26:53,560
+O terminado.
+
+320
+00:26:53,560 --> 00:27:05,780
+Entonces finalice la punte aquí, general, las etiquetas de whip, yo hago la lectura de esta etiqueta
+
+321
+00:27:05,780 --> 00:27:09,900
+aquí, el que está web, que pertenece a esta orden de producción y a
+
+322
+00:27:09,900 --> 00:27:14,280
+el sistema me va a dar entrada en stock de ese producto terminal.
+
+323
+00:27:14,280 --> 00:27:20,780
+Y es aquí, en que yo reviso los saldos.
+
+324
+00:27:20,780 --> 00:27:26,780
+Danto para producto terminado, cuanto para materia prima.
+
+325
+00:27:26,780 --> 00:27:32,630
+Está toda aquí, producto terminado y materia prima.
+
+326
+00:27:32,630 --> 00:27:40,070
+¿Cuánto tengo no esto? ¿Cuánto me están solicitando que necesita utilizar producción?
+
+327
+00:27:40,070 --> 00:27:47,070
+¿Aquí es cuánto va a estar cuando va a estar negativo o mis saldo?
+
+328
+00:27:47,070 --> 00:27:49,630
+Entonces, yo necesito hacer la compra.
+
+329
+00:27:49,630 --> 00:27:54,630
+Pero en flujo de anos, quiero preguntar yo.
+
+330
+00:27:54,630 --> 00:27:59,510
+cuando se pasa en este cuando pasas de producto,
+
+331
+00:27:59,510 --> 00:28:01,430
+o no lo haces,
+
+332
+00:28:01,430 --> 00:28:01,910
+anden,
+
+333
+00:28:01,910 --> 00:28:03,550
+y con orden de producción,
+
+334
+00:28:03,550 --> 00:28:04,430
+a bajarlo,
+
+335
+00:28:04,430 --> 00:28:07,110
+no sé los menos porque me activo ahí.
+
+336
+00:28:08,110 --> 00:28:11,590
+Aquí yo no puedo tener saldos negativos.
+
+337
+00:28:11,590 --> 00:28:13,750
+Yo puedo tener el futuro negativo.
+
+338
+00:28:13,750 --> 00:28:14,630
+Eso,
+
+339
+00:28:14,630 --> 00:28:15,430
+usando...
+
+340
+00:28:15,430 --> 00:28:17,310
+Saldo futuro negativo porque,
+
+341
+00:28:17,310 --> 00:28:19,630
+porque lo que tengo es en esto,
+
+342
+00:28:19,630 --> 00:28:20,830
+es físico.
+
+343
+00:28:20,830 --> 00:28:22,830
+Y lo que me están solicitando
+
+344
+00:28:22,830 --> 00:28:28,710
+para utilizar en las órdenes de producción, no me alcanza, no, para lo que no.
+
+345
+00:28:28,710 --> 00:28:31,950
+Producir, pero es futuro y ahí el sistema ya me señal,
+
+346
+00:28:31,950 --> 00:28:37,480
+ya me da un señal de que yo no necesito comprar esto.
+
+347
+00:28:37,480 --> 00:28:41,720
+¿Qué? Eso para material prima, ¿ok? Para producto.
+
+348
+00:28:41,720 --> 00:28:45,320
+Sí, por la orden de producción, tenéis no me empenio, ¿sabén?
+
+349
+00:28:45,320 --> 00:28:48,560
+Exactamente. Aquí cada orden de producción,
+
+350
+00:28:48,560 --> 00:28:52,160
+tenéis solicitudes de materiales,
+
+351
+00:28:52,160 --> 00:28:54,800
+con base en la ingeniería que se calculó.
+
+352
+00:28:56,960 --> 00:29:01,340
+Y aquí, en mi carga, los materiales que tengo que empenar,
+
+353
+00:29:01,340 --> 00:29:03,860
+por eso que tengo esto, de empenya.
+
+354
+00:29:04,260 --> 00:29:09,060
+Voy a necesitar de esta cantidad para esta orna de producción.
+
+355
+00:29:10,460 --> 00:29:12,060
+Y aquí, en esa...
+
+356
+00:29:12,060 --> 00:29:16,700
+Y aquí, es que va a mostrando en sal de stock,
+
+357
+00:29:16,700 --> 00:29:19,100
+que voy a necesitar de materia prima.
+
+358
+00:29:19,100 --> 00:29:25,100
+si vengo aquí, por ejemplo, esos 10 mil y veo los empéños aquí son las órdenes de
+
+359
+00:29:25,100 --> 00:29:35,420
+producción que me están solicitando ese material, y la fecha de ingresa, y tengo valorizando.
+
+360
+00:29:35,420 --> 00:29:46,850
+Y el valoriza por, ¿qué es? Voy a un ajuste, pero se valoriza por la compra del material.
+
+361
+00:29:46,850 --> 00:29:51,130
+¿Qué es una base de pruebas?
+
+362
+00:29:51,130 --> 00:29:55,130
+¿Qué me dos, son...
+
+363
+00:29:55,130 --> 00:29:58,130
+Ehh... costo promedio.
+
+364
+00:30:00,130 --> 00:30:01,130
+Aquí, mira.
+
+365
+00:30:01,130 --> 00:30:03,130
+¿Qué hay, ¿o sea, ¿qué hay?
+
+366
+00:30:03,130 --> 00:30:05,130
+O sea, ¿qué hay?
+
+367
+00:30:05,130 --> 00:30:06,130
+¿Qué hay, ¿qué hay?
+
+368
+00:30:06,130 --> 00:30:07,130
+¿qué hay?
+
+369
+00:30:07,130 --> 00:30:08,130
+¿Qué hay?
+
+370
+00:30:08,130 --> 00:30:09,130
+¿Qué hay?
+
+371
+00:30:09,130 --> 00:30:10,130
+¿Qué hay?
+
+372
+00:30:10,130 --> 00:30:11,130
+¿Qué hay?
+
+373
+00:30:11,130 --> 00:30:12,130
+¿Qué hay?
+
+374
+00:30:12,130 --> 00:30:13,130
+¿Qué hay?
+
+375
+00:30:13,130 --> 00:30:14,130
+¿Qué hay?
+
+376
+00:30:14,130 --> 00:30:15,130
+¿Qué hay?
+
+377
+00:30:15,130 --> 00:30:16,130
+¿Qué hay?
+
+378
+00:30:16,130 --> 00:30:21,550
+Cuando yo bajo de esto, que yo asocio el valor de esto aquí,
+
+379
+00:30:21,550 --> 00:30:26,110
+a esta hora de producción, para saber el previsto con el real.
+
+380
+00:30:26,110 --> 00:30:28,310
+Ahí tiene el costo medio milagra, ¿sabra?
+
+381
+00:30:28,310 --> 00:30:29,750
+Ah, este tiene.
+
+382
+00:30:30,950 --> 00:30:33,550
+A lo que te tardes, a lo que le ha tomado un painio.
+
+383
+00:30:33,550 --> 00:30:34,410
+Ok.
+
+384
+00:30:34,410 --> 00:30:35,830
+Parece que me mariaste.
+
+385
+00:30:35,830 --> 00:30:36,970
+Ah, sí, sí, sí.
+
+386
+00:30:36,970 --> 00:30:39,910
+Te veo, no te veo con fases.
+
+387
+00:30:40,550 --> 00:30:42,990
+Y aquí son los lotes.
+
+388
+00:30:42,990 --> 00:30:46,670
+de los lotes de compra de ese material.
+
+389
+00:30:46,670 --> 00:30:50,570
+Eso es solo. Y ahí está el copto medio y yo ya vivo.
+
+390
+00:30:50,570 --> 00:30:51,970
+Exactamente.
+
+391
+00:30:51,970 --> 00:30:55,470
+Y ahí fue cálculo a docon base.
+
+392
+00:30:55,470 --> 00:30:56,670
+Déjame ver con todo.
+
+393
+00:30:56,670 --> 00:30:58,310
+¿Visteos? ¿Vírenos?
+
+394
+00:30:58,950 --> 00:31:00,950
+Perdón.
+
+395
+00:31:01,450 --> 00:31:03,950
+Aquí movimientos.
+
+396
+00:31:04,850 --> 00:31:07,590
+Vamos a ver, se le metra, y desde 2021.
+
+397
+00:31:07,590 --> 00:31:10,600
+Ah, son pocos.
+
+398
+00:31:15,000 --> 00:31:16,400
+Aquí.
+
+399
+00:31:16,400 --> 00:31:21,400
+Yo creo que él es de antes, dos mil veinte.
+
+400
+00:31:21,400 --> 00:31:28,400
+Aquí son todos los movimientos que se hizo en este item.
+
+401
+00:31:28,400 --> 00:31:32,400
+¿Y qué es una base de presentación?
+
+402
+00:31:32,400 --> 00:31:33,400
+Sí, de presentación.
+
+403
+00:31:33,400 --> 00:31:34,400
+Sí, de presentación.
+
+404
+00:31:34,400 --> 00:31:35,400
+Es todo que está.
+
+405
+00:31:35,400 --> 00:31:37,400
+Sí, sí.
+
+406
+00:31:37,400 --> 00:31:41,400
+Bueno, ahí tenéis el cortometro, entonces, de una.
+
+407
+00:31:41,400 --> 00:31:44,400
+Y un sol humanazo, el Instituto de Maderial,
+
+408
+00:31:44,400 --> 00:31:48,680
+todo lo voy a traer a la cosa son como no digo. Decombre exactamente.
+
+409
+00:31:49,680 --> 00:31:54,400
+Entonces, toda vez que yo compro, claro que yo tengo los cías de stock, ¿no?
+
+410
+00:31:54,640 --> 00:31:58,000
+Que ahí me vuelven a recalcular el costo promedio.
+
+411
+00:31:58,920 --> 00:32:01,160
+Pero por ejemplo,
+
+412
+00:32:02,960 --> 00:32:06,960
+este material llegó con esta cantidad aquí,
+
+413
+00:32:07,360 --> 00:32:09,240
+y adentro de este mismo mes,
+
+414
+00:32:09,240 --> 00:32:17,040
+llegó otro material por factura, por la compra y ahí esta cantidad con este costo
+
+415
+00:32:17,040 --> 00:32:21,720
+alhiás el cálculo promedia de stock y actualiza este costo.
+
+416
+00:32:21,720 --> 00:32:23,720
+¿Unitario?
+
+417
+00:32:23,720 --> 00:32:25,440
+¿Ustedes?
+
+418
+00:32:25,440 --> 00:32:28,080
+El endolos, ¿tí me?
+
+419
+00:32:28,080 --> 00:32:31,840
+¿Tí me encacer este corte, en consejeles, perdí, si o de esta costo?
+
+420
+00:32:31,840 --> 00:32:36,840
+exactamente para que yo pueda cerrar los costos, ¿no?
+
+421
+00:32:36,840 --> 00:32:38,840
+porque...
+
+422
+00:32:38,840 --> 00:32:41,840
+...cade de los cierres de stock.
+
+423
+00:32:41,840 --> 00:32:45,840
+Porque si no hacemos de eso de los cierres de stock,
+
+424
+00:32:45,840 --> 00:32:51,840
+se pueden seguir haciendo movimientos y hay el costo mensal,
+
+425
+00:32:51,840 --> 00:32:52,840
+podemos verse.
+
+426
+00:32:52,840 --> 00:32:58,840
+para que yo no me amario porque ya me estoy mariendo un poquito entonces
+
+427
+00:32:58,840 --> 00:33:03,840
+teníamos las bordas en la enecroca opción con el instituto de material en
+
+428
+00:33:03,840 --> 00:33:06,840
+y el costo promedio.
+
+429
+00:33:06,840 --> 00:33:11,830
+Correct.
+
+430
+00:33:11,830 --> 00:33:14,830
+Hay otra cosa solo para que se pasea.
+
+431
+00:33:14,830 --> 00:33:19,830
+El costo que yo tengo, la ta incluso la taula de costo que yo hago la
+
+432
+00:33:19,830 --> 00:33:29,750
+la cotización, diferente del costo promedio de stock. Yo no utilizo para cotizar,
+
+433
+00:33:29,750 --> 00:33:36,510
+yo no utilizo el costo promedio. Yo utilizo una tabla paralela porque porque aquí es venta
+
+434
+00:33:36,510 --> 00:33:40,790
+futura. Entonces yo no puedo cobrar lo que hay en stock.
+
+435
+00:33:40,790 --> 00:33:41,790
+No.
+
+436
+00:33:41,790 --> 00:33:42,790
+¿Aí?
+
+437
+00:33:42,790 --> 00:33:43,790
+Sí.
+
+438
+00:33:43,790 --> 00:33:44,790
+¿Cundí un...
+
+439
+00:33:44,790 --> 00:33:46,790
+¿El valor es diferente?
+
+440
+00:33:46,790 --> 00:33:49,790
+No, pero sí, en la orden de producción.
+
+441
+00:33:49,790 --> 00:33:50,790
+Sí.
+
+442
+00:33:50,790 --> 00:33:53,790
+No digo otros documentitos que obtenidos.
+
+443
+00:33:53,790 --> 00:33:59,790
+¿Es que el detalleado de costos?
+
+444
+00:33:59,790 --> 00:34:07,100
+¿Ya?
+
+445
+00:34:07,100 --> 00:34:10,100
+El momento, parable.
+
+446
+00:34:10,100 --> 00:34:14,940
+en la cotización y en poco cuando me mostraré que tenía un libro sobre un de
+
+447
+00:34:14,940 --> 00:34:19,180
+todo eso ya era que estaba hasta errado. No, es una cotización también,
+
+448
+00:34:19,180 --> 00:34:22,420
+son lo que es en la base de impresores.
+
+449
+00:34:22,420 --> 00:34:30,680
+Ah, ahí. Esa es una cotización que cuando esa cotización está
+
+450
+00:34:30,680 --> 00:34:37,480
+probada, todos esos materiales van a todo. Se solicita el stock.
+
+451
+00:34:37,480 --> 00:34:41,110
+Estos materiales aquí, mira.
+
+452
+00:34:41,110 --> 00:34:47,220
+Entonces tengo todos estos materiales,
+
+453
+00:34:47,220 --> 00:34:53,220
+entonces palet, cajas, plantas, tintas, marnis y papel.
+
+454
+00:34:53,220 --> 00:34:57,220
+Y ahí todos estos se hacen la solicitud de materiales.
+
+455
+00:34:57,220 --> 00:35:03,220
+Y ahí es donde se hacen señal para compras o para más sesimiento,
+
+456
+00:35:03,220 --> 00:35:07,220
+porque voy a necesitar vincular esa cantidad para bajar
+
+457
+00:35:07,220 --> 00:35:09,220
+cuando tenga que producir ese producto.
+
+458
+00:35:09,220 --> 00:35:19,520
+Bueno, entonces vos, podéis estar, ¿cómo anda a te ha producido?
+
+459
+00:35:19,520 --> 00:35:22,520
+¿Y el producto terminado?
+
+460
+00:35:22,520 --> 00:35:27,520
+Y al remito lo hago, lo tenemos que hacer nosotros.
+
+461
+00:35:27,520 --> 00:35:33,640
+Lo remito, sí, ahí lo hacía usted, porque ahí yo hago la indicación que tengo que
+
+462
+00:35:33,640 --> 00:35:41,520
+entregar el cliente y desde ahí ustedes controló la factura y el remito.
+
+463
+00:35:41,520 --> 00:35:43,520
+documento de remisión para el cliente.
+
+464
+00:35:43,520 --> 00:35:50,410
+Ok.
+
+465
+00:35:50,410 --> 00:35:55,410
+Y su bonde que voy a tener que comprar material ahora.
+
+466
+00:35:55,410 --> 00:36:02,410
+Aquí para comprar dosotros tenemos una pantalla, ya.
+
+467
+00:36:02,410 --> 00:36:07,410
+Aquí nos... que nos ayuda.
+
+468
+00:36:07,410 --> 00:36:14,410
+Toma, vamos a decir a recién, viste que tenían el estó, que yo has a tener el negativo o cosas.
+
+469
+00:36:14,410 --> 00:36:20,170
+exactamente. Entonces, me muestra aquí lo que tengo que comprar,
+
+470
+00:36:20,890 --> 00:36:23,810
+con base en el, en el,
+
+471
+00:36:24,410 --> 00:36:30,090
+en el, esto aquí mínimo, más los empenios de las órdenes.
+
+472
+00:36:31,370 --> 00:36:33,770
+Y ahí, el me hace la sugerencia de compra.
+
+473
+00:36:34,330 --> 00:36:37,370
+Si yo vengo aquí, por ejemplo, agua, es tomar este item aquí.
+
+474
+00:36:37,610 --> 00:36:39,010
+Y voy a mostrar el deta.
+
+475
+00:36:39,010 --> 00:36:46,010
+que integrar, ¿no? Yo creo que no, yo creo que el azul y cuando yo hago el azul y si tú,
+
+476
+00:36:46,010 --> 00:36:49,010
+es donde debería entregarse.
+
+477
+00:36:49,010 --> 00:36:50,010
+¿Pero qué?
+
+478
+00:36:50,010 --> 00:36:55,010
+Para decir, mira, esto sí voy a comprar, porque aquí estamos haciendo suele las análisis, ¿no?
+
+479
+00:36:55,010 --> 00:37:00,830
+Después que yo voy a efectivar ahí sí.
+
+480
+00:37:00,830 --> 00:37:04,830
+Porque aquí mira, cuando yo...
+
+481
+00:37:04,830 --> 00:37:06,830
+Eee...
+
+482
+00:37:07,830 --> 00:37:10,830
+A ver, si tengo un item aquí...
+
+483
+00:37:11,830 --> 00:37:13,830
+¿Usted se está oculto?
+
+484
+00:37:13,830 --> 00:37:19,830
+Pero él me muestra la fecha que yo necesito tener el material instóque, combat...
+
+485
+00:37:19,830 --> 00:37:24,830
+Sí, sí, sí, él me muestra la sugerencia, perdón.
+
+486
+00:37:25,830 --> 00:37:32,830
+Ya me perdí. Bueno, entonces él me muestra que el punto de compra es que cuando tengo una orden de producción...
+
+487
+00:37:32,830 --> 00:37:40,350
+aquí, mira. Entonces yo tengo aquí, sobre el sistema de materiales, este número de
+
+488
+00:37:40,350 --> 00:37:46,350
+la solicitud se está aprobada, la fecha de aprobación y esta fecha aquí de projeción,
+
+489
+00:37:46,350 --> 00:37:52,630
+es la fecha que la actividad que va a consumir el trabajo está planificada.
+
+490
+00:37:52,630 --> 00:38:01,910
+Entonces para que compra cepas cuando tiene que atraer el material para que atienda la
+
+491
+00:38:01,910 --> 00:38:03,910
+de producción.
+
+492
+00:38:03,910 --> 00:38:05,910
+Sí, de un.
+
+493
+00:38:05,910 --> 00:38:08,910
+Y ahí desde aquí,
+
+494
+00:38:08,910 --> 00:38:12,910
+yo hago aquí la selección y hago la solicitud de material.
+
+495
+00:38:12,910 --> 00:38:18,660
+Pals centro de costo, no?
+
+496
+00:38:18,660 --> 00:38:19,660
+Porque era uno.
+
+497
+00:38:19,660 --> 00:38:22,660
+La fecha que necesita de la entrega,
+
+498
+00:38:22,660 --> 00:38:25,660
+le confirma y ahí la solicitud ya se ingresó.
+
+499
+00:38:25,660 --> 00:38:27,660
+Ok.
+
+500
+00:38:27,660 --> 00:38:29,660
+Ahí yo creo que es el que hay.
+
+501
+00:38:29,660 --> 00:38:32,660
+Ok, que hay integraciones desde acá.
+
+502
+00:38:32,660 --> 00:38:45,200
+exacta. Ahí yo tengo las compras de otros materiales que no están asociados a orden de producción.
+
+503
+00:38:45,200 --> 00:38:54,160
+Y aquí vemos ese también, de otros materiales, yo también tengo una solicitud igual que la otra pantalla.
+
+504
+00:38:54,160 --> 00:38:56,440
+Y hago el mismo.
+
+505
+00:38:56,440 --> 00:39:06,700
+¿Qué es un nombre de excelente? ¿Qué tú es de compra? ¿Cuánselo puede ser por producto que tal
+
+506
+00:39:06,700 --> 00:39:13,580
+en es lo que producir y lo que no también voto?
+
+507
+00:39:13,580 --> 00:39:21,800
+La solicitud de compra solamente materiales. Los que produzcono. Si voy a producir, por ejemplo,
+
+508
+00:39:21,800 --> 00:39:29,480
+si fuera hacer una instrucción la mataria primada, la menada, y para consumir por la probrunción
+
+509
+00:39:29,480 --> 00:39:37,120
+ahí yo hago la solicitud de las recinas o de la mataria prima, pero después que él se convierte
+
+510
+00:39:37,120 --> 00:39:42,440
+a material de producto en proceso, un producto intermedio, aile entra y stock y va a ser
+
+511
+00:39:42,440 --> 00:39:45,440
+consumido directamente por la verdad de producción que los hay quiere.
+
+512
+00:39:45,440 --> 00:39:48,440
+¿Y no hay productos intermedia también?
+
+513
+00:39:48,440 --> 00:39:55,500
+Ok.
+
+514
+00:39:55,500 --> 00:39:56,500
+¿Qué?
+
+515
+00:39:56,500 --> 00:39:59,480
+¿Qué?
+
+516
+00:39:59,480 --> 00:40:01,480
+Eh...
+
+517
+00:40:01,480 --> 00:40:03,480
+¿A aquí?
+
+518
+00:40:03,480 --> 00:40:07,480
+Bueno, entonces ahí sería el asoricito.
+
+519
+00:40:07,480 --> 00:40:10,480
+Hay aquí tenemos todos los movimientos de stock,
+
+520
+00:40:10,480 --> 00:40:14,480
+como ustedes van a tener, como impresores va a tener volúvenes.
+
+521
+00:40:14,480 --> 00:40:24,280
+tenemos un sistema más que el sistema que controla las bovinas de manera individual
+
+522
+00:40:25,480 --> 00:40:32,160
+dejame abrir aquí.
+
+523
+00:40:32,160 --> 00:40:35,160
+Y ahí qué pasa con este sistema?
+
+524
+00:40:35,160 --> 00:40:38,160
+A esto voy a abrir.
+
+525
+00:40:38,160 --> 00:40:39,160
+¿Qué?
+
+526
+00:40:39,160 --> 00:40:43,160
+Abreo en la pantalla paralela aquí.
+
+527
+00:40:43,160 --> 00:40:48,850
+Ahí tenemos este sistema que es el sistema de volúmeres.
+
+528
+00:40:48,850 --> 00:40:58,310
+Entonces, este sistema que es él control las bobinas de manera individual.
+
+529
+00:40:58,310 --> 00:41:04,490
+Entonces, cuando llegue a una compra de un material que es controlado por volúmenes,
+
+530
+00:41:04,490 --> 00:41:10,890
+yo recibo el documento aquí en el sistema de compra,
+
+531
+00:41:10,890 --> 00:41:14,650
+esto se voy a abrir el métrico y que se aquí, voy a recibir,
+
+532
+00:41:14,650 --> 00:41:20,210
+por integración, no sé cómo va a ser esta parte ahí con un elechandre, pero por ejemplo,
+
+533
+00:41:20,210 --> 00:41:28,410
+si fuera hacer una compra, yo incluo aquí el documento del proveedor, el documento fisco del
+
+534
+00:41:28,410 --> 00:41:35,930
+proveedor de cuanto me ha vendido. Este documento obligatoriamente yo tengo que convertir la cantidad
+
+535
+00:41:35,930 --> 00:41:43,610
+en bombinas individuales para que cada una tenga un código específico con sus cantidades del
+
+536
+00:41:43,610 --> 00:41:51,850
+peso exactamente. Elote es la compra general, entonces aquí es de los 50 mil, de los 50
+
+537
+00:41:51,850 --> 00:42:00,530
+mil, yo tengo una bobita de 25 y otra bobina de 25 exactamente. Y ahí este movimiento aquí,
+
+538
+00:42:00,530 --> 00:42:10,130
+yo solo puedo procesar la entrada de este material cuando yo finalizo la separación entre las
+
+539
+00:42:10,130 --> 00:42:19,690
+las bobinas. Ok, tengo una pregunta respecto a esto. Entonces, obtenemos que me insiste a
+
+540
+00:42:19,690 --> 00:42:27,370
+milas solicituye de compra. Por ejemplo, con integración. Exactamente, es solicitud de
+
+541
+00:42:27,370 --> 00:42:34,910
+comer. ¿Qué me dediste? No sé, 50 bobinas. Y yo de vuelo, sí, me llegaron, que si yo te tengo
+
+542
+00:42:34,910 --> 00:42:38,390
+que devuelvere el costo y cuanto eso.
+
+543
+00:42:38,390 --> 00:42:44,370
+¿Tú tiene que devolver la cantidad total que la suma total de las bobinas y el costo?
+
+544
+00:42:44,370 --> 00:42:46,610
+Total.
+
+545
+00:42:46,610 --> 00:42:50,610
+Porque ahí la división hacemos aquí nosotros.
+
+546
+00:42:50,610 --> 00:42:56,850
+¿El modo de que ese tipo de producto es de volumen y todo eso?
+
+547
+00:42:56,850 --> 00:42:58,250
+Voy a lo sabés.
+
+548
+00:42:58,250 --> 00:42:59,750
+Exactamente.
+
+549
+00:42:59,750 --> 00:43:05,750
+porque yo indico al momento de jejistrar este material que les
+
+550
+00:43:05,750 --> 00:43:07,750
+controlado por volvines.
+
+551
+00:43:07,750 --> 00:43:11,960
+Perdón que...
+
+552
+00:43:11,960 --> 00:43:13,960
+Mira para la otra pantalla.
+
+553
+00:43:13,960 --> 00:43:20,280
+¿Qué tiene en las fichas de una fichas de producto para materiales?
+
+554
+00:43:20,280 --> 00:43:23,520
+¿Vos tras fichas de producto o es todos los mismos?
+
+555
+00:43:23,520 --> 00:43:28,640
+Todo lo mismo, solo cambia la naturaleza de registra.
+
+556
+00:43:28,640 --> 00:43:30,320
+¿Oye?
+
+557
+00:43:30,320 --> 00:43:37,280
+Entonces, el producto intermediario, terminado, servicio, material de consumo de materia prima.
+
+558
+00:43:37,280 --> 00:43:39,800
+Entonces, es el mismo.
+
+559
+00:43:39,800 --> 00:43:45,080
+para cada tipo de configuración, ahí voy a tener como calcular los impuestos,
+
+560
+00:43:45,080 --> 00:43:56,520
+la presupuesto, la parte de control de stock, si hago ventas via web, como compro
+
+561
+00:43:56,520 --> 00:44:01,000
+este material, si es obligatorio tener una solicitud de compra,
+
+562
+00:44:01,000 --> 00:44:10,000
+de compra, se requiere orde producción, entonces aquí son los datos para comprar, de ese material,
+
+563
+00:44:10,000 --> 00:44:16,600
+si es controlado por volúveres, y ahí que tiene no, el controlado por volúveres, no puede
+
+564
+00:44:16,600 --> 00:44:24,600
+sufrir ni un movimiento adentro del sistema metrics, tiene que ser solamente por el sistema de volúveres,
+
+565
+00:44:24,600 --> 00:44:31,600
+o por el colector de colector de barros por el ACH, de hace que el actor.
+
+566
+00:44:31,600 --> 00:44:37,600
+Y todo eso de colector, o sea que los productos van a hacer en Mending.
+
+567
+00:44:37,600 --> 00:44:41,600
+Los productos terminados sí, o sea todos.
+
+568
+00:44:41,600 --> 00:44:47,870
+Porque aquí es la generación de automática.
+
+569
+00:44:47,870 --> 00:44:49,870
+Dejato.
+
+570
+00:44:49,870 --> 00:44:51,870
+¿Qué ha cambiado?
+
+571
+00:44:51,870 --> 00:44:58,870
+De bien mucho más dado que nosotros.
+
+572
+00:44:58,870 --> 00:45:00,870
+Porque no sé si vienen, tienen algo que hagan,
+
+573
+00:45:00,870 --> 00:45:02,870
+pero un pelo producto, un grupo, tienen ahí.
+
+574
+00:45:02,870 --> 00:45:05,870
+Tenemos grupos y tipos.
+
+575
+00:45:05,870 --> 00:45:08,870
+Tenemos grupos y tenemos tipo.
+
+576
+00:45:08,870 --> 00:45:11,870
+Y adentro del grupo y adentro del grupo,
+
+577
+00:45:11,870 --> 00:45:15,870
+tenemos el grupo master, que es el agrupador master.
+
+578
+00:45:15,870 --> 00:45:20,870
+Entonces aquí, por ejemplo, en el grupo.
+
+579
+00:45:20,870 --> 00:45:29,110
+exactamente, aquí yo tengo 01, que es sustrato, por ejemplo, y él pertenece a grupo más
+
+580
+00:45:29,110 --> 00:45:38,870
+el papel. Entonces grupo más, 01 es papel, a 01 es papel, y 01 es papel, loja, y 01 es el
+
+581
+00:45:38,870 --> 00:45:40,870
+los papé el bovina.
+
+582
+00:45:45,870 --> 00:45:51,870
+Y ahí en el item de stock podemos tener datos adicionales.
+
+583
+00:45:51,870 --> 00:45:53,870
+Configurables por cliente.
+
+584
+00:45:53,870 --> 00:46:00,870
+Por ejemplo, a mí yo quiero saber cuál es el código sapiva manejar de manera diferente.
+
+585
+00:46:00,870 --> 00:46:02,870
+Por ejemplo, en el código distintos.
+
+586
+00:46:02,870 --> 00:46:09,630
+yo pueda manejar un campo que es un código externo por ejemplo
+
+587
+00:46:09,630 --> 00:46:19,850
+y ahí esto se configura sobre todo nosotros configuramos manualmente
+
+588
+00:46:19,850 --> 00:46:23,650
+podemos crear los aquí
+
+589
+00:46:23,650 --> 00:46:25,650
+¿Cómo se dice?
+
+590
+00:46:25,650 --> 00:46:27,650
+Exacto.
+
+591
+00:46:27,650 --> 00:46:31,690
+Exacto.
+
+592
+00:46:31,690 --> 00:46:34,690
+¿Cuándo es un tal o no parece un amigo?
+
+593
+00:46:34,690 --> 00:46:39,690
+Aquí ya tenemos la configuración del autoestando a ese material.
+
+594
+00:46:39,690 --> 00:46:45,690
+Tanto para producto terminado, cuanto para producto material prima comprada, ¿no?
+
+595
+00:46:45,690 --> 00:46:52,690
+Hay este es el auto, va a la lista de que es unidades de medida es.
+
+596
+00:46:52,690 --> 00:46:58,370
+y siempre y me la etiqueta cuando llega el material, se pueden primer aquí.
+
+597
+00:46:58,370 --> 00:47:04,810
+Eso sí es unidad en cuantas comunidades de medida usan.
+
+598
+00:47:04,810 --> 00:47:11,690
+¿Pá, son varias? Tenemos un registro de unidad de medidas.
+
+599
+00:47:11,690 --> 00:47:16,130
+No, pero por producto, de sí, tienes una sola.
+
+600
+00:47:16,130 --> 00:47:26,030
+No, yo puedo configurar, depende de que par cliente quiere. Es configurable. Yo indico tanto
+
+601
+00:47:26,030 --> 00:47:33,790
+en el alinear el producto. Entonces por ejemplo, los estuches nosotros vendemos en unidades.
+
+602
+00:47:33,790 --> 00:47:42,270
+Ya, entonces va a ser inunidades. Las bobinas, las vendemos en metros. Y entonces aquí va a estar
+
+603
+00:47:42,270 --> 00:47:49,270
+y metros. También, pero para producción y para negociación, siempre, vamos a ver cómo.
+
+604
+00:47:49,270 --> 00:47:54,270
+Ogen el producto en el guardaje en unidades.
+
+605
+00:47:54,270 --> 00:48:01,770
+Yo puedo guardar en una unidad. Yo puedo guardar la seguridad de el producto aquí.
+
+606
+00:48:01,770 --> 00:48:06,270
+¿Va a depender de cómo es el código del item origin?
+
+607
+00:48:06,270 --> 00:48:07,270
+El es el cabo.
+
+608
+00:48:07,270 --> 00:48:08,270
+Exactamente.
+
+609
+00:48:08,270 --> 00:48:13,590
+Yo lo que estoy pensando es que por ejemplo haber como te explico, no sé si acá pasa.
+
+610
+00:48:13,590 --> 00:48:15,830
+¿Te gusten más una caja?
+
+611
+00:48:15,830 --> 00:48:19,110
+Cada dentro tengo unidad en más chiquidad.
+
+612
+00:48:19,110 --> 00:48:23,270
+¿Puedemos tener poepasar?
+
+613
+00:48:23,270 --> 00:48:25,670
+Eso generalmente pasa.
+
+614
+00:48:25,670 --> 00:48:27,510
+Y...
+
+615
+00:48:27,510 --> 00:48:29,830
+Mataria prima.
+
+616
+00:48:29,830 --> 00:48:34,110
+Porque ahí yo tengo la unidad de costos que puedes ser cajas.
+
+617
+00:48:34,110 --> 00:48:35,910
+¿Ya?
+
+618
+00:48:35,910 --> 00:48:42,230
+y aquí la unidad, la unidad que se va a manejar y stock.
+
+619
+00:48:42,230 --> 00:48:45,910
+¿Y aquí yo hago...
+
+620
+00:48:45,910 --> 00:48:48,390
+¿Qué te tengo con versiones?
+
+621
+00:48:48,390 --> 00:48:49,990
+Aquí, falta de conversión.
+
+622
+00:48:49,990 --> 00:48:54,960
+A ellos genero.
+
+623
+00:48:54,960 --> 00:48:57,400
+¿Cuál es la economía de China?
+
+624
+00:48:57,400 --> 00:48:58,800
+Exactamente.
+
+625
+00:48:58,800 --> 00:49:02,020
+¿Puedes ser cualquier unidad?
+
+626
+00:49:02,020 --> 00:49:04,740
+Desde que yo tenga el factor de conversión.
+
+627
+00:49:04,740 --> 00:49:15,250
+Ok, tenían eso que ni se hace, entonces yo tengo un minón.
+
+628
+00:49:15,250 --> 00:49:16,890
+¿Dita?
+
+629
+00:49:16,890 --> 00:49:25,010
+A eso lo que es importante es que la unidad de medida de stock, si es una materia prima,
+
+630
+00:49:25,010 --> 00:49:30,930
+que la unidad de stock y consumo, si es la misma que se calcula y la ingeniería.
+
+631
+00:49:30,930 --> 00:49:37,250
+Entonces, por ejemplo, para bobinarzo y estamos controlando en kilos.
+
+632
+00:49:37,250 --> 00:49:39,770
+Aquí lo compren kilos.
+
+633
+00:49:39,770 --> 00:49:43,570
+Y tenemos el costo y la cantidad producida en kilos.
+
+634
+00:49:43,570 --> 00:49:46,770
+Entonces, el ideal, aquí la unidad de medida,
+
+635
+00:49:46,770 --> 00:49:49,930
+100 kilos, mismo que tu compren 100 metros cuadrado.
+
+636
+00:49:49,930 --> 00:49:51,130
+Vamos, vamos, perdón.
+
+637
+00:49:51,130 --> 00:49:52,730
+No tendrían.
+
+638
+00:49:52,730 --> 00:49:57,170
+Porque aquí, cuando yo voy a atender las solicitudes materiales,
+
+639
+00:49:57,170 --> 00:50:02,170
+solicitar el material, estos materiales son inquilos porque como tengo que controlar
+
+640
+00:50:02,170 --> 00:50:09,650
+el producto. Solo que cuando voy a comprar el material, el proveedor me vende en
+
+641
+00:50:09,650 --> 00:50:18,370
+metro cuadrado. Entonces yo puedo tener la unidad de costo y metro cuadrado, pero la unidad
+
+642
+00:50:18,370 --> 00:50:22,610
+de esto, el consumo tiene que ser la misma que yo consumo en la hora de producción.
+
+643
+00:50:22,610 --> 00:50:58,080
+Ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que es, ya lo que
+
+644
+00:50:58,080 --> 00:51:08,120
+que ahí puede incluso tener la tabla de precio del proveedor y ahí está la unidad que voy a utilizar y aquí
+
+645
+00:51:08,120 --> 00:51:24,380
+él me muestra la, perdón, es en saldos, aquí en saldos generales que no de veo la cantidad de stock, el sistema
+
+646
+00:51:24,380 --> 00:51:29,380
+me muestra la unidad de compra y...
+
+647
+00:51:29,380 --> 00:51:31,380
+la andada de stock.
+
+648
+00:51:31,380 --> 00:51:34,380
+La venta de compra y...
+
+649
+00:51:34,380 --> 00:51:36,380
+para ir para...
+
+650
+00:51:36,380 --> 00:51:39,380
+...y para...
+
+651
+00:51:39,380 --> 00:51:40,380
+...y para...
+
+652
+00:51:40,380 --> 00:51:44,380
+...y para stock y para consumo.
+
+653
+00:51:44,380 --> 00:51:45,380
+Hay la misma.
+
+654
+00:51:45,380 --> 00:51:47,380
+No, la corda de la producción.
+
+655
+00:51:47,380 --> 00:51:48,380
+Exact.
+
+656
+00:51:48,380 --> 00:51:52,360
+Sí.
+
+657
+00:51:52,360 --> 00:51:54,360
+Sí, es un niño.
+
+658
+00:51:54,360 --> 00:52:06,630
+Entonces aquí, por ejemplo, yo tengo 27 kilos, que equivale aquí en estas hojas.
+
+659
+00:52:06,630 --> 00:52:13,070
+59 kilos, que equivale en aquí en estas hojas.
+
+660
+00:52:13,070 --> 00:52:18,510
+y ahí me traí sobre esta unidad que está en stock
+
+661
+00:52:18,510 --> 00:52:33,170
+buenísimo, selen y en dos en nosotros en las compras
+
+662
+00:52:33,170 --> 00:52:36,570
+le fue en que pasó la cantidad
+
+663
+00:52:36,570 --> 00:52:40,570
+en preciotó
+
+664
+00:52:40,570 --> 00:52:44,570
+voy a abrirla aquí una de la fatura de entrada
+
+665
+00:52:44,570 --> 00:52:50,570
+Entonces aquí son los datos obligatorios para un ingreso.
+
+666
+00:52:50,570 --> 00:52:54,930
+Si ustedes van a enviar un dato directo,
+
+667
+00:52:54,930 --> 00:52:59,930
+porque puede ser que ustedes envien directamente la transacción de esto aquí financiera.
+
+668
+00:52:59,930 --> 00:53:03,570
+Y ahí no es necesario tener el documento.
+
+669
+00:53:03,570 --> 00:53:04,770
+No, no.
+
+670
+00:53:04,770 --> 00:53:05,170
+No, no, no.
+
+671
+00:53:05,170 --> 00:53:08,890
+Nosotros vamos a mandar seguramente la transacción.
+
+672
+00:53:08,890 --> 00:53:14,170
+Porque ahí, por ejemplo, yo tengo el encabezado del documento del proveedor.
+
+673
+00:53:14,170 --> 00:53:20,490
+los datos de factoración de ese documento, y ahí sí voy a tener el detallado de stock.
+
+674
+00:53:20,490 --> 00:53:23,090
+Pero ahí yo tengo varios datos.
+
+675
+00:53:23,090 --> 00:53:29,090
+Tengo los impuestos, tengo el tipo de operación que se está haciendo.
+
+676
+00:53:29,090 --> 00:53:32,610
+Si aquí sí es Bobina Máster, por ejemplo,
+
+677
+00:53:32,610 --> 00:53:36,330
+comprar una bobina grande, distribuí en bobinas menores.
+
+678
+00:53:36,330 --> 00:53:39,770
+diferentes de estos de volúmines.
+
+679
+00:53:39,770 --> 00:53:44,770
+Esto es también pero esto es con que se hace.
+
+680
+00:53:44,770 --> 00:53:49,770
+Esto con compras en el modo de cónora.
+
+681
+00:53:49,770 --> 00:53:57,330
+Entonces, es una bobina grande en el giste.
+
+682
+00:53:57,330 --> 00:54:05,590
+¿Evan a ingresar con bobina menores?
+
+683
+00:54:05,590 --> 00:54:07,590
+Es el lito que estoy comprando.
+
+684
+00:54:07,590 --> 00:54:14,070
+es el trece que es una bobina de 840 pero real,
+
+685
+00:54:14,070 --> 00:54:17,490
+es el que compré el costo, la cantidad y todo
+
+686
+00:54:17,490 --> 00:54:21,450
+de esta bobina pero lo que llegó físicamente es
+
+687
+00:54:21,450 --> 00:54:25,910
+este y tiene de stock que es una bobina de 420
+
+688
+00:54:25,910 --> 00:54:32,520
+como que estes ya desde el nico
+
+689
+00:54:32,520 --> 00:54:35,840
+porque yo compré una bobina grande
+
+690
+00:54:35,840 --> 00:54:40,840
+Yo compré una bobina grande y ella me envía cortada, lo que va a entrar y máquina.
+
+691
+00:54:41,840 --> 00:54:44,840
+Yo compro el material más el servicio de corte,
+
+692
+00:54:48,940 --> 00:54:53,940
+a donde pasa esa, por ejemplo, bobinas de estampado.
+
+693
+00:54:54,940 --> 00:55:00,940
+Yo compré una bobina grande del proveedor, pero el proveedor se me envía a los cortes, que yo no soy isinta.
+
+694
+00:55:00,940 --> 00:55:06,940
+Pero es otro código de item.
+
+695
+00:55:06,940 --> 00:55:08,940
+Es otro código de item.
+
+696
+00:55:08,940 --> 00:55:14,250
+Porque el lo que él me va a cobrar,
+
+697
+00:55:14,250 --> 00:55:16,250
+es la bobina mayor.
+
+698
+00:55:16,250 --> 00:55:21,250
+Este item aquí es el resultado del servicio que él va a prestar.
+
+699
+00:55:21,250 --> 00:55:24,250
+¿Qué es el corte?
+
+700
+00:55:24,250 --> 00:55:28,250
+Pero yo no sé que el me va a hacer ese servicio,
+
+701
+00:55:28,250 --> 00:55:31,250
+no tengo forma de saberlo.
+
+702
+00:55:31,250 --> 00:55:34,250
+porque si me mandaste a pedirla, se lo de trece.
+
+703
+00:55:34,250 --> 00:55:40,250
+Sí, yo te pedí la célotrece, pero hay un dato en el item de stock.
+
+704
+00:55:40,250 --> 00:55:44,250
+¿Qué indica que es un material de bobina más te?
+
+705
+00:55:44,250 --> 00:55:47,250
+Que la bobina madre, ¿no?
+
+706
+00:55:47,250 --> 00:55:51,250
+¿Aquí va?
+
+707
+00:55:51,250 --> 00:55:53,250
+¿Mácula?
+
+708
+00:55:53,250 --> 00:55:55,250
+¿Aquí en compras?
+
+709
+00:55:55,250 --> 00:55:59,250
+Yo indico que es una bobina más te.
+
+710
+00:55:59,250 --> 00:56:05,250
+Pero el proveedor me suminista ese material ya con corte exactos.
+
+711
+00:56:06,250 --> 00:56:10,250
+Entonces yo voy siempre comprar este material,
+
+712
+00:56:11,250 --> 00:56:17,300
+pero lo que va a llegar es aquí.
+
+713
+00:56:18,300 --> 00:56:21,300
+Entonces aquí no es que yo que te voy a mandar eso.
+
+714
+00:56:22,300 --> 00:56:24,300
+Aquí es la bobina hija.
+
+715
+00:56:24,300 --> 00:56:29,720
+Entonces yo tengo ya que yo por ejemplo temando la catorce,
+
+716
+00:56:29,720 --> 00:56:31,880
+vos siempre va a recibir la hígana.
+
+717
+00:56:31,880 --> 00:56:33,200
+Exactamente.
+
+718
+00:56:33,200 --> 00:56:36,480
+Ah, pero eso yo no creo que mandara en todos.
+
+719
+00:56:36,480 --> 00:56:38,740
+No, tú me envías siempre la madre.
+
+720
+00:56:38,740 --> 00:56:40,360
+Yo temigo la madre.
+
+721
+00:56:40,360 --> 00:56:41,360
+Sí, sí.
+
+722
+00:56:41,360 --> 00:56:42,620
+Tengo que probar un suelo.
+
+723
+00:56:42,620 --> 00:56:43,620
+No.
+
+724
+00:56:43,620 --> 00:56:46,860
+Es como va a saber mi sistema que es.
+
+725
+00:56:46,860 --> 00:56:55,020
+porque yo indique aquí en la compra aquí voy a tratar como una ovidamadre y que tengo
+
+726
+00:56:55,020 --> 00:56:59,620
+valor sumidistado pero con la música de una opción.
+
+727
+00:56:59,620 --> 00:57:02,180
+No es lo también.
+
+728
+00:57:02,180 --> 00:57:03,180
+Está bien.
+
+729
+00:57:03,180 --> 00:57:04,180
+Está bien.
+
+730
+00:57:04,180 --> 00:57:09,180
+Lo tenés acá como en esta tu lógica de la 3 se pasa.
+
+731
+00:57:09,180 --> 00:57:10,820
+Dos dos que pueden.
+
+732
+00:57:10,820 --> 00:57:12,820
+¿Es exactamente?
+
+733
+00:57:12,820 --> 00:57:21,020
+El tema.
+
+734
+00:57:22,020 --> 00:57:24,020
+¿Qué pensando, ¿verdad?
+
+735
+00:57:24,020 --> 00:57:26,020
+Me he pensado que me voy a entrar.
+
+736
+00:57:26,020 --> 00:57:29,020
+No te quiero mucho, ¿por qué?
+
+737
+00:57:29,020 --> 00:57:32,020
+Hay tema de una palabra argentina en Selina.
+
+738
+00:57:32,020 --> 00:57:35,020
+Sí, te. Yo conozco.
+
+739
+00:57:36,020 --> 00:57:38,020
+Los clientes hablo mucho de esto.
+
+740
+00:57:38,020 --> 00:57:41,020
+No, nosotros me enseñamos con eso, pero, ¿qué?
+
+741
+00:57:41,020 --> 00:57:45,020
+La tuvimos una semana que hay que ser con todas las palabras, todas las veces.
+
+742
+00:57:45,020 --> 00:57:47,020
+No, sí, más yo.
+
+743
+00:57:47,020 --> 00:57:49,020
+Ableo.
+
+744
+00:57:49,020 --> 00:57:53,020
+Estuve luego decirles a palabras, me diás de lo un fardo.
+
+745
+00:57:53,020 --> 00:57:55,020
+Sí, sí.
+
+746
+00:57:55,020 --> 00:57:57,020
+¿Y qué iba a decir?
+
+747
+00:57:57,020 --> 00:58:02,260
+Bueno, esto me lo voy a llevar para analizar porque voy cuando me pases la orden de producción
+
+748
+00:58:02,260 --> 00:58:03,260
+en selene.
+
+749
+00:58:03,260 --> 00:58:06,260
+Me vamos a pasar la 12 de en de 4.
+
+750
+00:58:06,260 --> 00:58:10,770
+¿Ese te voy a pasar a 12 de en de 4?
+
+751
+00:58:10,770 --> 00:58:15,240
+¿Qué es el formato ya corta?
+
+752
+00:58:15,240 --> 00:58:31,720
+Pero pues, si este material lo 74, ya está vinculado a la bobina madre, cuando yo tenga
+
+753
+00:58:31,720 --> 00:58:36,240
+este material solicitado, yo voy a comprar ya este.
+
+754
+00:58:36,240 --> 00:58:39,240
+¿Te va a llegar a la solicitud de este?
+
+755
+00:58:39,240 --> 00:58:42,000
+No, la solicitud de 274.
+
+756
+00:58:42,000 --> 00:58:46,000
+No, no, también, a mí la solicitud me llega a la del 13.
+
+757
+00:58:46,000 --> 00:58:48,000
+y yo te mando los datos el trecento.
+
+758
+00:58:48,000 --> 00:58:52,120
+No, no, no, no, pero te digo que en cuando vos a man de producción,
+
+759
+00:58:52,120 --> 00:58:54,080
+los entonces es una por otra cosa igual.
+
+760
+00:58:54,080 --> 00:58:55,560
+Ah, bueno, ¿tabes?
+
+761
+00:58:55,560 --> 00:58:58,160
+Sí, cuando vos man de sabor, de en de producción,
+
+762
+00:58:58,160 --> 00:59:00,960
+cuando vos empiezan a producir.
+
+763
+00:59:01,680 --> 00:59:02,320
+¿Usted?
+
+764
+00:59:02,320 --> 00:59:05,040
+¿Poglen en el toque? No, tenen la trecento.
+
+765
+00:59:05,040 --> 00:59:07,560
+No, no, tengo la trece.
+
+766
+00:59:07,560 --> 00:59:10,200
+Bueno, esto obtener la 12, en el 4.
+
+767
+00:59:10,200 --> 00:59:11,000
+¿Usted?
+
+768
+00:59:11,000 --> 00:59:14,960
+Entonces, vas a tener que bajar del toque, los 12, en el 4, en el 3.
+
+769
+00:59:14,960 --> 00:59:23,140
+es correcto. Aquí en materiales para esta orde producción yo tengo asociado el adózio
+
+770
+00:59:23,140 --> 00:59:23,340
+74.
+
+771
+00:59:23,340 --> 00:59:30,980
+La que me va a mostrar con impenios ahí el adózio que va a tener un
+
+772
+00:59:30,980 --> 00:59:34,340
+translado el adózio en el adecuante. Es correcto.
+
+773
+00:59:34,340 --> 00:59:50,930
+Este paso de la bobina más, se incluso van esa... no sé si va a ser un necesaria.
+
+774
+00:59:50,930 --> 00:59:57,530
+¿Qué? ¿Qué? ¿Qué no? ¿Qué pasqué no sea? ¿Qué generalmente no, cómo ellos hacen
+
+775
+00:59:57,530 --> 01:00:03,610
+estampado? ¿Puedes ser que esto pase, pero no es en todos los clientes que tenemos
+
+776
+01:00:03,610 --> 01:00:11,130
+eso. No, creo que sí, sí, yo estoy pensando así como, voy como pensando mucho
+
+777
+01:00:11,130 --> 01:00:18,930
+y lo que sí, que yo voy, nunca voy a saber por ejemplo, esa compra cuando bajan.
+
+778
+01:00:18,930 --> 01:00:25,930
+es como no lo tengo yo el de material
+
+779
+01:00:25,930 --> 01:00:31,930
+porque usted en conversión en ese toque es acto
+
+780
+01:00:31,930 --> 01:00:35,930
+y usted como ha sin conocido en recelén
+
+781
+01:00:35,930 --> 01:00:41,930
+y que yo hoy había un beso hablar y yo dije que para que no me arme
+
+782
+01:00:41,930 --> 01:00:47,930
+yo hago la baja el consumo, por ejemplo, de lo que es bobina
+
+783
+01:00:47,930 --> 01:00:55,730
+bobina de stock, yo las bajo directamente de aquí.
+
+784
+01:00:55,730 --> 01:00:59,370
+Gracias, bueno, lo producir.
+
+785
+01:00:59,370 --> 01:01:03,810
+Exactamente, cuando estoy produciendo, voy consumiendo la materia prima.
+
+786
+01:01:03,810 --> 01:01:09,370
+Bueno, ahora en la producción, lo interesante con un estimado.
+
+787
+01:01:09,370 --> 01:01:13,610
+Exactamente. Y ahí, yo tengo un local de stock específico,
+
+788
+01:01:13,610 --> 01:01:15,810
+que probablemente va a ser la máquina.
+
+789
+01:01:15,810 --> 01:01:21,130
+y lo que está dentro de este local de esto está disponible para que el operador puede utilizar.
+
+790
+01:01:21,130 --> 01:01:26,730
+Y ahí puede utilizar un poco más, desde que tenga el perfil de utilizar más,
+
+791
+01:01:26,730 --> 01:01:30,010
+que él liberado.
+
+792
+01:01:30,010 --> 01:01:40,220
+Y cuando termina de velocidad es dilla de todo.
+
+793
+01:01:40,220 --> 01:01:46,460
+Exacto.
+
+794
+01:01:46,460 --> 01:01:52,460
+Hay algunos materiales que mismo que estén asociados a la orde producción.
+
+795
+01:01:52,460 --> 01:01:57,460
+Puede ser que el operador tenga que bajar directamente desde aquí.
+
+796
+01:01:57,460 --> 01:01:59,460
+El vasoricitó.
+
+797
+01:01:59,460 --> 01:02:04,460
+Él viene aquí y atende la solicitud de aquí.
+
+798
+01:02:04,460 --> 01:02:05,460
+Dejón aprobar.
+
+799
+01:02:05,460 --> 01:02:11,640
+Entonces, él va a venir acá y va a atender las solicitudes materiales.
+
+800
+01:02:11,640 --> 01:02:15,640
+Puede ser que liaga esto, manualmente, para algunos materiales
+
+801
+01:02:15,640 --> 01:02:17,640
+que no voy a consumir directamente poder el doctor.
+
+802
+01:02:17,640 --> 01:02:27,640
+por ejemplo las cajas, los pales, y hay bien en planeado una integración para pasarnos a nosotros.
+
+803
+01:02:27,640 --> 01:02:29,640
+¿Tengo que? ¿Pero?
+
+804
+01:02:29,640 --> 01:02:35,910
+Tienen plan. ¿Y ahí? No, no, no.
+
+805
+01:02:35,910 --> 01:02:37,910
+Hay no, no se van a deserter.
+
+806
+01:02:37,910 --> 01:02:42,910
+Tal vez no, porque aquí es la solicitud, se van a controlar el...
+
+807
+01:02:42,910 --> 01:02:44,910
+No, no, se van a controlar el...
+
+808
+01:02:44,910 --> 01:02:46,910
+Pero parece que no,
+
+809
+01:02:48,910 --> 01:02:52,910
+que vamos directamente cuando estás en el palo y todo para cuando la generación del
+
+810
+01:02:53,910 --> 01:02:57,910
+remito de entregar, que lo pasan o no te he comprado,
+
+811
+01:02:57,910 --> 01:03:00,910
+se genera en no de luz, había el remito para las forpunaciones.
+
+812
+01:03:00,910 --> 01:03:03,910
+Jorge me van esa, pero me parece que era por esa.
+
+813
+01:03:03,910 --> 01:03:10,500
+¿A mí me está preocupando un poco?
+
+814
+01:03:10,500 --> 01:03:15,030
+No, van esa, no te preocupes por favor.
+
+815
+01:03:15,030 --> 01:03:17,030
+¿No te tienes que estar super?
+
+816
+01:03:17,030 --> 01:03:20,030
+Poxipido a la base a posibilidad.
+
+817
+01:03:20,030 --> 01:03:22,030
+Me está preocupando.
+
+818
+01:03:22,030 --> 01:03:23,030
+No, está preocupando.
+
+819
+01:03:23,030 --> 01:03:30,030
+Estoy pensando que las chicas habían planteado que esas querían llevar en uno de los
+
+820
+01:03:30,030 --> 01:03:33,030
+Me y el que estoy muy en prey de la avenida.
+
+821
+01:03:33,030 --> 01:03:38,030
+Las chicas habían planteado que esas querían llevar
+
+822
+01:03:38,030 --> 01:03:45,030
+que se va a ir con sumos, pero el consumo real, si el o en el o en el o en el,
+
+823
+01:03:45,030 --> 01:03:50,210
+que no podía ser estimado.
+
+824
+01:03:50,210 --> 01:04:03,220
+Sí, es por eso, por eso que ahí te va a llegar solamente lo que ha asconsumido, lo que ha
+
+825
+01:04:03,220 --> 01:04:06,660
+atendido para la orden y no he estimado.
+
+826
+01:04:06,660 --> 01:04:08,660
+en donde?
+
+827
+01:04:08,660 --> 01:04:14,660
+porque cuando yo hago el atender aquí es el real consumido
+
+828
+01:04:14,660 --> 01:04:18,660
+y cuando yo consumo por el job track que es aquí
+
+829
+01:04:18,660 --> 01:04:21,660
+yo también esto con consumido por el real consumido
+
+830
+01:04:21,660 --> 01:04:27,040
+yo creo que estas transacciones que siguen en estar ahí
+
+831
+01:04:27,040 --> 01:04:29,040
+a ver, ¿vuestra por el real por acá?
+
+832
+01:04:29,040 --> 01:04:32,040
+y pero cuando voy me mandaste el remito a mí
+
+833
+01:04:32,040 --> 01:04:34,040
+para que yo lo haga
+
+834
+01:04:34,040 --> 01:04:36,040
+para que yo no lo ha dormido
+
+835
+01:04:38,040 --> 01:04:40,040
+ahí, yo no sé.
+
+836
+01:04:40,040 --> 01:04:42,040
+¿A que no va a ir?
+
+837
+01:04:42,040 --> 01:04:44,040
+No va a ir.
+
+838
+01:04:44,040 --> 01:04:46,040
+No va a ir.
+
+839
+01:04:46,040 --> 01:04:48,040
+No va a ir.
+
+840
+01:04:48,040 --> 01:04:50,040
+No va a ir.
+
+841
+01:04:50,040 --> 01:04:53,450
+No va a ir.
+
+842
+01:04:53,450 --> 01:04:55,450
+No va a ir.
+
+843
+01:04:55,450 --> 01:04:57,450
+No va a ir.
+
+844
+01:04:57,450 --> 01:04:59,450
+No va a ir.
+
+845
+01:04:59,450 --> 01:05:01,450
+No va a ir.
+
+846
+01:05:01,450 --> 01:05:03,450
+No va a ir.
+
+847
+01:05:03,450 --> 01:05:05,450
+No va a ir.
+
+848
+01:05:05,450 --> 01:05:07,450
+No va a ir.
+
+849
+01:05:07,450 --> 01:05:45,350
+en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en el momento que se está en
+
+850
+01:05:45,350 --> 01:05:50,310
+hay varias clientes durante el día y ahí no finalizo los temas y voy dejando ahí a ver
+
+851
+01:05:50,310 --> 01:05:54,350
+a ver si a ver si a ver si a ver si a ver si hay una vida
+
+852
+01:05:54,350 --> 01:06:24,350
+¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿Qué? ¿
+
+853
+01:06:24,350 --> 01:06:32,600
+Entonces, gente encontré. Solo va a ser un ovaso, una pesta y tra más abierta. Aquí.
+
+854
+01:06:32,600 --> 01:06:37,600
+A ver, ahí. Ah, voy a ir a comprar.
+
+855
+01:06:37,600 --> 01:06:40,600
+Ahí lo logró abrir más.
+
+856
+01:06:40,600 --> 01:06:48,600
+Ahí le muestra, ver, yo de venta metrics. Hay que estar en aquí es lo que va a integrar.
+
+857
+01:06:48,600 --> 01:06:51,600
+inventarios, entonces sí, te va a mandar...
+
+858
+01:06:51,600 --> 01:06:54,100
+Pero es que son una entrega de producción.
+
+859
+01:06:54,100 --> 01:06:56,100
+Ah, eso, donde?
+
+860
+01:06:56,100 --> 01:07:29,360
+¿A esta quide inventarios? No, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no
+
+861
+01:07:29,360 --> 01:07:35,500
+no se lo crea el incistencia.
+
+862
+01:07:35,500 --> 01:07:40,660
+Entonces yo creo que va a reflejar la existencia y stock los dos, stock es una
+
+863
+01:07:40,660 --> 01:07:42,940
+lista iguales.
+
+864
+01:07:42,940 --> 01:07:50,260
+Sí, entonces, bueno, es sí que va a hacer lo que es algo de la estructura, lo que es algo de todo
+
+865
+01:07:50,260 --> 01:07:52,140
+ese incistencia.
+
+866
+01:07:52,140 --> 01:07:53,740
+Exactamente.
+
+867
+01:07:53,740 --> 01:07:58,940
+Si es una materia prima, y si es un productor minado, va a entrar en stock.
+
+868
+01:07:58,940 --> 01:08:05,260
+Si es producto en proceso, ahí no está previsto.
+
+869
+01:08:05,260 --> 01:08:06,740
+No está previsto.
+
+870
+01:08:06,740 --> 01:08:07,740
+No.
+
+871
+01:08:07,740 --> 01:08:10,700
+Sí, pero ¿Una empresa es su merda de esa chuna recién?
+
+872
+01:08:10,700 --> 01:08:11,700
+No, pronto.
+
+873
+01:08:11,700 --> 01:08:12,700
+No.
+
+874
+01:08:12,700 --> 01:08:13,700
+Esa.
+
+875
+01:08:13,700 --> 01:08:15,500
+Esa pregunta intermedia.
+
+876
+01:08:15,500 --> 01:08:16,700
+¿Qué es lo mismo?
+
+877
+01:08:16,700 --> 01:08:19,840
+Es lo mismo.
+
+878
+01:08:19,840 --> 01:08:20,840
+Ah, ok.
+
+879
+01:08:20,840 --> 01:08:26,160
+Solo si él va a volver a estoque para almacenar,
+
+880
+01:08:26,160 --> 01:08:31,040
+ahí sí te va a llegar a una transacción de entrada de estoque.
+
+881
+01:08:31,040 --> 01:08:35,720
+porque él va a ser una, él va a convertirse y una mataria prima, ¿no?
+
+882
+01:08:35,720 --> 01:08:36,920
+Claro.
+
+883
+01:08:36,920 --> 01:08:39,080
+Ahí, en este caso sí.
+
+884
+01:08:39,080 --> 01:08:42,360
+Pero no, como que no lo tengo acá.
+
+885
+01:08:42,360 --> 01:08:45,960
+Ah, en el otro flucotán.
+
+886
+01:08:45,960 --> 01:08:47,600
+A ver.
+
+887
+01:08:47,600 --> 01:08:50,600
+Estoy intentando abrirla.
+
+888
+01:08:50,600 --> 01:08:53,080
+Eses de otro.
+
+889
+01:08:53,080 --> 01:08:57,600
+No, no, no, porque es el repedido.
+
+890
+01:08:57,600 --> 01:09:04,620
+¿Por qué hay dos?
+
+891
+01:09:04,620 --> 01:09:12,620
+Porque un nuevo producto nuevo y otro producto repetido.
+
+892
+01:09:12,620 --> 01:09:15,620
+Ah, entendéis, ¿sabéis?
+
+893
+01:09:15,620 --> 01:09:17,620
+Es salto.
+
+894
+01:09:17,620 --> 01:09:22,620
+Pero un producto nuevo en que vos lo...
+
+895
+01:09:22,620 --> 01:09:24,620
+Aquel otro.
+
+896
+01:09:24,620 --> 01:09:35,200
+nuevo. Es un buen. Pero tiene más que ver con los lids. Me parece que sea
+
+897
+01:09:35,200 --> 01:09:43,900
+producto en enpafabricación y eso es lo mismo. Tiene más que ver con la primera parte
+
+898
+01:09:43,900 --> 01:09:48,500
+de donde empieza a este. Esto es otro. ¿Qué es otro? ¿Qué es? ¿Qué es otro? ¿Qué es?
+
+899
+01:09:48,500 --> 01:09:53,940
+y te con esto, Lila, de Lila, a los celestes.
+
+900
+01:09:53,940 --> 01:09:57,760
+¿Aí, ese tema?
+
+901
+01:09:57,760 --> 01:10:00,760
+De crear aquí todos los clientes.
+
+902
+01:10:00,760 --> 01:10:01,760
+Sí.
+
+903
+01:10:01,760 --> 01:10:04,760
+O crear aquí, que hay una sugerencia de crearlo aquí.
+
+904
+01:10:04,760 --> 01:10:05,760
+Sí.
+
+905
+01:10:05,760 --> 01:10:08,760
+Y sólo enviar cuando sea cliente, mismo.
+
+906
+01:10:08,760 --> 01:10:10,760
+Los prevedores, ¿ok?
+
+907
+01:10:10,760 --> 01:10:12,760
+No se ve doy, ¿ok?
+
+908
+01:10:12,760 --> 01:10:14,760
+Los vamos a tener que cargar nosotros.
+
+909
+01:10:14,760 --> 01:10:18,760
+Ajá, pero los clientes, cuando se convierta el cliente,
+
+910
+01:10:18,760 --> 01:10:20,760
+ahí sí, pasáelo aquí.
+
+911
+01:10:21,760 --> 01:10:26,760
+es lo... vamos a hablar.
+
+912
+01:10:26,760 --> 01:10:27,760
+Sí.
+
+913
+01:10:27,760 --> 01:10:35,760
+Porque en muchos casos nosotros incluso cuando estamos haciendo pruebas con Francisco,
+
+914
+01:10:35,760 --> 01:10:40,760
+yo me mostraba él mirata y en esta situación como tú está describiendo ahora,
+
+915
+01:10:40,760 --> 01:10:44,760
+si generan los clientes te va a generar ese problema.
+
+916
+01:10:44,760 --> 01:10:47,760
+Entonces, algo que estamos ya intentando...
+
+917
+01:10:47,760 --> 01:10:50,760
+Sí, hay que decir para mí.
+
+918
+01:10:50,760 --> 01:10:55,760
+que hay que ir a todos por ahí decir, mira, cuando tener un dimóra hasta el vez.
+
+919
+01:10:55,760 --> 01:10:56,760
+Exactamente.
+
+920
+01:10:56,760 --> 01:11:01,760
+Perdón, es un tema delicado de ese, pero lo que hemos proponiendo de que empezamos el proyecto,
+
+921
+01:11:01,760 --> 01:11:06,760
+pero bueno, están totalmente cerradas de las chicas de administración y no quieren,
+
+922
+01:11:06,760 --> 01:11:11,760
+por alguna manera, que los clientes, los cargos, las gente comando los comerciales.
+
+923
+01:11:11,760 --> 01:11:14,760
+En ningún instancia, eso es lo que os propusive.
+
+924
+01:11:14,760 --> 01:11:18,440
+si es una reunión interna
+
+925
+01:11:18,440 --> 01:11:20,200
+o en el sexo
+
+926
+01:11:20,200 --> 01:11:22,440
+si lo lo podemos convencer
+
+927
+01:11:22,440 --> 01:11:25,640
+para que eso si va a tener esta habilidad
+
+928
+01:11:25,640 --> 01:11:26,200
+el
+
+929
+01:11:26,200 --> 01:11:28,080
+de la renuncia de la no
+
+930
+01:11:28,080 --> 01:11:29,960
+porque yo estoy en todo lo
+
+931
+01:11:29,960 --> 01:11:31,080
+me
+
+932
+01:11:31,080 --> 01:11:32,280
+lo me da la pena de ese
+
+933
+01:11:32,280 --> 01:11:34,520
+no porque le podemos decir que lo podemos
+
+934
+01:11:34,520 --> 01:11:35,720
+dejar con alguna insta
+
+935
+01:11:35,720 --> 01:11:36,720
+primero
+
+936
+01:11:36,720 --> 01:11:38,360
+tiene no
+
+937
+01:11:38,360 --> 01:11:38,960
+o sea
+
+938
+01:11:38,960 --> 01:11:40,720
+te haremos mostrarle que funciona
+
+939
+01:11:40,720 --> 01:11:41,440
+a lo que
+
+940
+01:11:41,440 --> 01:11:43,160
+es la próxima reunión
+
+941
+01:11:43,160 --> 01:11:44,200
+yo les muestra
+
+942
+01:11:44,200 --> 01:11:50,200
+¿Cómo si no clientes? No tienen responsabilidad fiscal, no se puede fanturar en un...
+
+943
+01:11:51,200 --> 01:11:56,200
+Mas que todo va a necesitar porque yo le explica de la dazicte, maelagación,
+
+944
+01:11:56,200 --> 01:12:00,200
+que van a empezar a suciel a base de todo, que hubo concluentes que nunca le van a contar,
+
+945
+01:12:00,200 --> 01:12:06,200
+que es un cliente frío, le explica a del funcionamiento de un pasero remibásico,
+
+946
+01:12:06,200 --> 01:12:09,200
+el cliente frío, todavía no por lo que sea.
+
+947
+01:12:09,200 --> 01:12:39,200
+pero no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no,
+
+948
+01:12:39,200 --> 01:12:43,480
+no se puede. ¿Alo se oeno, puedo configurar una regla?
+
+949
+01:12:43,480 --> 01:12:45,640
+Bueno, eso.
+
+950
+01:12:45,640 --> 01:12:47,080
+¿A ti, puedo hacer eso?
+
+951
+01:12:47,080 --> 01:12:48,120
+Dale.
+
+952
+01:12:48,120 --> 01:12:54,120
+Ah, me he configurado una regla que si el cliente te hay un completo me salió un cartel.
+
+953
+01:12:54,120 --> 01:12:55,520
+Sí.
+
+954
+01:12:55,520 --> 01:12:58,200
+Aquí nosotros también tenemos esta.
+
+955
+01:12:58,200 --> 01:13:02,520
+Porque obliga a tu alimento para vender.
+
+956
+01:13:02,520 --> 01:13:05,480
+Yo necesito que estén el estatus del cliente.
+
+957
+01:13:05,480 --> 01:13:12,880
+publica todo algo así, es que una regla porque tiene reglas automatizadas, como
+
+958
+01:13:12,880 --> 01:13:18,560
+vos tenéis en segalerta, visten. Pero yo capaz que puedo generar, pero voy a notar,
+
+959
+01:13:18,560 --> 01:13:23,760
+pero es bien visto. Bueno, voy a hacer eso.
+
+960
+01:13:23,760 --> 01:13:29,360
+Anotar lo van, que si no logras, de tener el polo, a lo menos la docente
+
+961
+01:13:29,360 --> 01:13:31,520
+de factura de la mano, ¿eh? ¿Qué problema?
+
+962
+01:13:31,520 --> 01:13:34,240
+Mira que es a Windows.
+
+963
+01:13:34,240 --> 01:13:35,360
+A Windows es una puerta.
+
+964
+01:13:35,360 --> 01:13:37,160
+Tengo contactos en Windows, ¿te te lo gustan?
+
+965
+01:13:37,160 --> 01:13:38,240
+No te lo gustan.
+
+966
+01:13:38,240 --> 01:13:39,440
+¿Te lo gustan?
+
+967
+01:13:39,440 --> 01:13:41,320
+Mi seguía en Windows 10,
+
+968
+01:13:41,320 --> 01:13:42,720
+así que no te ha dado problema en un momento.
+
+969
+01:13:42,720 --> 01:13:44,480
+En un comprado, pues a Windows,
+
+970
+01:13:44,480 --> 01:13:45,680
+ahí enseguado muy bien.
+
+971
+01:13:45,680 --> 01:13:47,200
+Se le ni un momento a eso.
+
+972
+01:13:47,200 --> 01:13:49,600
+Ehh.
+
+973
+01:13:49,600 --> 01:13:51,080
+Me gustan un poco más con si le,
+
+974
+01:13:51,080 --> 01:13:52,200
+en vez de si le,
+
+975
+01:13:52,200 --> 01:13:54,160
+en vez de si, un poco más difícil, pero...
+
+976
+01:13:54,160 --> 01:13:56,600
+Claro, con si le le.
+
+977
+01:13:56,600 --> 01:13:58,800
+Bueno, yo le hemos una prima.
+
+978
+01:13:58,800 --> 01:14:00,800
+¿Sampables?
+
+979
+01:14:00,800 --> 01:14:03,800
+Sí, entonces, ¿no es tan difícil para ti entonces?
+
+980
+01:14:03,800 --> 01:14:05,800
+No.
+
+981
+01:14:05,800 --> 01:14:09,800
+Bueno, escucha mejor, demanda a Anesa y van ese tema de Hosile.
+
+982
+01:14:09,800 --> 01:14:11,800
+A ver, ¿verdad?
+
+983
+01:14:13,800 --> 01:14:17,800
+Se le va a mostrar cómo si he rató esto.
+
+984
+01:14:17,800 --> 01:14:20,800
+Por ejemplo, terminamos el mes.
+
+985
+01:14:20,800 --> 01:14:25,800
+Bueno, para ustedes qué de haríamos, ¿no?
+
+986
+01:14:25,800 --> 01:14:39,800
+Yo finalizo la producción, le doy entrada, listock, que es con la entrega de producción.
+
+987
+01:14:39,800 --> 01:14:41,800
+Estas que ya me la mostrachten, ¿pabien?
+
+988
+01:14:41,800 --> 01:14:44,800
+Exacto, entonces entró la entrega de producción.
+
+989
+01:14:44,800 --> 01:14:48,800
+Ahí, esa entrega de producción. Tiene los materiales, ¿se le?
+
+990
+01:14:48,800 --> 01:14:50,800
+Tiene los productos.
+
+991
+01:14:50,800 --> 01:14:51,800
+Fíjame.
+
+992
+01:14:51,800 --> 01:14:54,800
+Exacto. Solo el producto terminado.
+
+993
+01:14:54,800 --> 01:14:56,800
+vamos a
+
+994
+01:14:59,470 --> 01:15:01,470
+contrarar materiales
+
+995
+01:15:02,970 --> 01:15:04,970
+entrega de producción
+
+996
+01:15:05,470 --> 01:15:08,470
+no ver una que ya está entregelada
+
+997
+01:15:09,470 --> 01:15:12,780
+tenemos un montón aquí
+
+998
+01:15:20,920 --> 01:15:21,920
+aquí
+
+999
+01:15:22,920 --> 01:15:25,920
+esta por ejemplo, una orden de producción
+
+1000
+01:15:25,920 --> 01:15:27,920
+con dos entregas
+
+1001
+01:15:28,920 --> 01:15:31,920
+con descarjas y cinco carjas
+
+1002
+01:15:31,920 --> 01:15:39,480
+los 22 mil que es solicitete el cliente. Entonces esto aquí fue lo que ingresó al stock.
+
+1003
+01:15:39,480 --> 01:15:46,940
+Este el producto terminado, 05, 01, 06, 3, 3.
+
+1004
+01:15:46,940 --> 01:15:58,820
+¿Cuándo este material en traistoc aquí en el perio de venta en el comercial? Cuando hago la
+
+1005
+01:15:58,820 --> 01:16:06,220
+su listo de fatura, aquí es esta de esta libera. Cuando hago la solicitud de fatura,
+
+1006
+01:16:06,220 --> 01:16:14,220
+él me muestra si hay saldo en stock. ¿Y cuando puedo mandar?
+
+1007
+01:16:14,220 --> 01:16:17,220
+de un lado exactamente.
+
+1008
+01:16:17,220 --> 01:16:25,850
+En Marce de una pregunta, tú y se movimientos que usted tenían medio de tráneo con logística
+
+1009
+01:16:25,850 --> 01:16:35,080
+y que habían comentado este se maneja el de metrics, porque ellos son los que controla
+
+1010
+01:16:35,080 --> 01:16:42,790
+en sí, tenen, bueno, tenen y toc.
+
+1011
+01:16:42,790 --> 01:16:49,800
+Marcelo, me espera a ti el acpreunta.
+
+1012
+01:16:49,800 --> 01:16:50,800
+¿Cesco?
+
+1013
+01:16:50,800 --> 01:16:51,800
+Es escuchando, se ve.
+
+1014
+01:16:51,800 --> 01:16:55,800
+¿Por qué ellos tenían median dicho, se le en el noceso de comentaron?
+
+1015
+01:16:55,800 --> 01:16:56,800
+¿Escreda?
+
+1016
+01:16:56,800 --> 01:16:58,800
+Esa arma no el camión, ¿viste?
+
+1017
+01:16:58,800 --> 01:17:01,800
+¿Tienen como el conso de logística?
+
+1018
+01:17:01,800 --> 01:17:07,800
+Ah, yo creo que es la...
+
+1019
+01:17:07,800 --> 01:17:10,800
+Yo sé que está hablando.
+
+1020
+01:17:10,800 --> 01:17:11,800
+Es.
+
+1021
+01:17:11,800 --> 01:17:13,800
+Aquí.
+
+1022
+01:17:13,800 --> 01:17:15,800
+¿Inendén positivo?
+
+1023
+01:17:15,800 --> 01:17:31,490
+Yo creo que es que es el movimiento de los porpale, que es general los
+
+1024
+01:17:31,490 --> 01:17:37,150
+los pales, cada palete, cuántos productos tienen por palete, ¿y?
+
+1025
+01:17:37,150 --> 01:17:38,490
+¿y?
+
+1026
+01:17:38,490 --> 01:17:40,490
+Y a la gente, ¿y exacto?
+
+1027
+01:17:40,490 --> 01:17:46,770
+Porque ahí yo sé exactamente cuántos paletes van a tener en stock.
+
+1028
+01:17:46,770 --> 01:17:53,130
+Y desde ahí, yo hago la separación de material para el período de venta.
+
+1029
+01:17:53,130 --> 01:17:56,530
+¿No?
+
+1030
+01:17:56,530 --> 01:17:58,530
+Para facturas fiscales.
+
+1031
+01:17:58,530 --> 01:18:00,930
+Para facturas fiscales.
+
+1032
+01:18:00,930 --> 01:18:03,930
+exactamente para la factura siempre.
+
+1033
+01:18:03,930 --> 01:18:08,370
+Y ahí, el sistema me muestra,
+
+1034
+01:18:08,370 --> 01:18:13,530
+¿cuáles o los las faturas que están
+
+1035
+01:18:13,530 --> 01:18:17,930
+necesitando ser atendida?
+
+1036
+01:18:17,930 --> 01:18:20,930
+Exacto. Lito. Entonces, de manera de allá,
+
+1037
+01:18:20,930 --> 01:18:22,930
+¿y vos sólo a mí me mandan el remito?
+
+1038
+01:18:22,930 --> 01:18:26,820
+Exactamente.
+
+1039
+01:18:26,820 --> 01:18:31,820
+Y ahí, yo manejo la separación para este remito desde aquí.
+
+1040
+01:18:41,300 --> 01:18:52,140
+y veradapora y misión, no tengo ninguna pena y entonces pero aquí yo tengo que estar
+
+1041
+01:18:52,140 --> 01:19:08,180
+liberado que no y aquí está el transporte, pues la persona que está separando es que va a
+
+1042
+01:19:08,180 --> 01:19:13,180
+a los que están.
+
+1043
+01:19:13,180 --> 01:19:43,180
+no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no sé, no
+
+1044
+01:19:43,180 --> 01:19:47,220
+hacer que está separado los materiales.
+
+1045
+01:19:47,220 --> 01:19:51,180
+Sí, eso vamos a tener que he coincido con vos.
+
+1046
+01:19:51,180 --> 01:19:53,940
+Vamos a tener que plantearse lo a Francisco.
+
+1047
+01:19:53,940 --> 01:19:56,500
+Pablo después de la reunión que tuviste goce,
+
+1048
+01:19:56,500 --> 01:19:59,740
+con él sí con a mira.
+
+1049
+01:19:59,740 --> 01:20:01,180
+Puedes directamente en el siguiente,
+
+1050
+01:20:01,180 --> 01:20:02,980
+a mi habizo, fue a hablar con Francisco,
+
+1051
+01:20:02,980 --> 01:20:04,980
+a plantearle que ya tenía un problema
+
+1052
+01:20:04,980 --> 01:20:06,980
+que el sistema no lo se hervida.
+
+1053
+01:20:06,980 --> 01:20:11,780
+Y claro, no es así, o sea, en cualquier implementación,
+
+1054
+01:20:11,780 --> 01:20:17,320
+a tener que mejorar tus procesos, a acomodar ciertas cosas o sea, ¿no?
+
+1055
+01:20:17,320 --> 01:20:18,100
+¿Qué?
+
+1056
+01:20:18,100 --> 01:20:19,100
+¿Qué no te había?
+
+1057
+01:20:19,100 --> 01:20:25,660
+y no se dijo el excel de tenés y hace todo como tenés, pero es un tema que en este caso
+
+1058
+01:20:25,660 --> 01:20:31,940
+yo se lo plantearía, yo no, si le embogos con todo tu pasiden, se lo entro,
+
+1059
+01:20:31,940 --> 01:20:38,580
+reuniones habituales con Francisco, la anti-aceló, y aparte, vamos por el lado de Vanessa
+
+1060
+01:20:38,580 --> 01:20:43,380
+también, también para plantear celó a las chicas de administración y de alguna forma,
+
+1061
+01:20:43,380 --> 01:20:46,220
+por eso porque,
+
+1062
+01:20:46,220 --> 01:20:50,140
+así, a ver si la gente, si el comercial,
+
+1063
+01:20:50,140 --> 01:20:51,780
+a ver si no ponemos en contextos van,
+
+1064
+01:20:51,780 --> 01:20:53,340
+es así el comercial,
+
+1065
+01:20:53,340 --> 01:20:54,980
+es el que termina siendo el despacho
+
+1066
+01:20:54,980 --> 01:20:57,580
+para que tenéis logística.
+
+1067
+01:20:57,580 --> 01:20:58,620
+¿Se ha?
+
+1068
+01:20:58,620 --> 01:21:00,500
+Exacto.
+
+1069
+01:21:00,500 --> 01:21:01,740
+Mientras, entonces,
+
+1070
+01:21:01,740 --> 01:21:03,660
+el comercial dice,
+
+1071
+01:21:03,660 --> 01:21:04,780
+pero el comercial,
+
+1072
+01:21:04,780 --> 01:21:06,980
+según Paula, es el que conoce,
+
+1073
+01:21:06,980 --> 01:21:10,380
+al cliente y sabe,
+
+1074
+01:21:10,380 --> 01:21:12,860
+si de tiene que mandar dos paulets
+
+1075
+01:21:12,860 --> 01:21:18,660
+en un camión y cuatro pales en otro, bueno, se capacitará a logística
+
+1076
+01:21:18,660 --> 01:21:25,140
+perste para que haga ese trabajo, se tampoco, si son logísticas, bueno,
+
+1077
+01:21:25,140 --> 01:21:27,980
+hacerlo que quieran, temando un camión con otros pales,
+
+1078
+01:21:27,980 --> 01:21:31,860
+el otro camión del humano bondosa, pero tiene ese potesta de logística,
+
+1079
+01:21:31,860 --> 01:21:35,860
+porque si no, después se informara en comercial, pero digamos,
+
+1080
+01:21:35,860 --> 01:21:41,460
+hay como estaría sola, paga, hay siempre se tiene un montón de terraso la paga.
+
+1081
+01:21:41,460 --> 01:21:47,340
+es que no es tan claro, es porque no es tan definido porque no tiene el sistema porque
+
+1082
+01:21:47,340 --> 01:21:53,940
+los manijan por teléfono porque o sea en algún momento, si está simplemente una solución
+
+1083
+01:21:53,940 --> 01:21:58,700
+integrar como este que va con metribas con adultas, vamos pensando en un sistema para calidad
+
+1084
+01:21:58,700 --> 01:22:03,980
+también que es el hotel de modefilidad, con integraciones con adultos o sea más contudas,
+
+1085
+01:22:03,980 --> 01:22:09,260
+no puedes mantener los mismos procesos porque se me encatriche y me gusta de la misma situación
+
+1086
+01:22:09,260 --> 01:22:11,780
+de lo que vayan de cosa.
+
+1087
+01:22:11,780 --> 01:22:15,780
+A ver la más en yo te voy a hacer...
+
+1088
+01:22:15,780 --> 01:22:19,620
+Esta parte de borra, la filen, la he de grabada borra por favor, porque si no,
+
+1089
+01:22:19,620 --> 01:22:23,860
+te voy a terminar trabajando con lo que tengo en Calix o en Metri, pero...
+
+1090
+01:22:23,860 --> 01:22:26,260
+¿Te tengo un impresor?
+
+1091
+01:22:26,260 --> 01:22:28,100
+No, no, también.
+
+1092
+01:22:28,100 --> 01:22:32,700
+No, yo lo que le quería decir más es que sí,
+
+1093
+01:22:32,700 --> 01:22:36,380
+yo te presenté el presente de Mati, la misma que tuvo,
+
+1094
+01:22:36,380 --> 01:22:41,680
+por eso el punto de esta pregunta en los elementos, porque en el momento
+
+1095
+01:22:41,680 --> 01:22:47,380
+yo me imaginaba, no sé si es así, yo trabajaba en empresas con empresas grandes
+
+1096
+01:22:47,380 --> 01:22:55,380
+donde administraciones están una punta y logística hasta no otra, no sé si en este caso será lo mismo,
+
+1097
+01:22:55,380 --> 01:23:01,380
+entonces yo le decía de quién iba a sacánduimos a sacar el remito, quién y cómo el remito esbo,
+
+1098
+01:23:01,380 --> 01:23:06,380
+lo tenemos que sacar nosotros o un...
+
+1099
+01:23:06,380 --> 01:23:09,380
+Yo, acá lo mismo, pero me han sacado, pero...
+
+1100
+01:23:09,380 --> 01:23:10,380
+¿Qué lo que era?
+
+1101
+01:23:10,380 --> 01:23:11,380
+¿Qué lo que era?
+
+1102
+01:23:11,380 --> 01:23:13,380
+Lo que hiciste que está en plan,
+
+1103
+01:23:13,380 --> 01:23:16,380
+está todo el depósito de lo jística
+
+1104
+01:23:16,380 --> 01:23:19,380
+y incluso en material preparado para ayudar
+
+1105
+01:23:19,380 --> 01:23:23,380
+a despacharlo en el momento que se necesita
+
+1106
+01:23:23,380 --> 01:23:25,380
+y la parte me decía que no te lo nada,
+
+1107
+01:23:25,380 --> 01:23:26,380
+se nada que ver, o sea,
+
+1108
+01:23:26,380 --> 01:23:28,380
+que va a comer si al claro.
+
+1109
+01:23:28,380 --> 01:23:33,340
+y es parte de esto que ha dado, están lo, los triloguer que lo tienen identificantes,
+
+1110
+01:23:33,340 --> 01:23:38,740
+saben, van a subir en los 18 metros, sacan el padre de este río, lo meten, o sea,
+
+1111
+01:23:38,740 --> 01:23:42,940
+y lo he dado, pero eso es como que quieren tener el control.
+
+1112
+01:23:42,940 --> 01:23:49,580
+Y eso va a ver que hablarlo plantearlo, y desde el punto de 16, no se puede,
+
+1113
+01:23:49,580 --> 01:23:53,940
+porque no le daje, le daje, le daje. Yo se lo plantea, sí mira,
+
+1114
+01:23:53,940 --> 01:23:58,540
+o le da el porque me he gerado no, no se puede, no si no el sistema, no es así.
+
+1115
+01:23:58,540 --> 01:24:02,020
+O le da el perfil a lo justica para hacer esto,
+
+1116
+01:24:02,020 --> 01:24:07,260
+o le da el perfil a la gente de, como se llama de comercial,
+
+1117
+01:24:07,260 --> 01:24:10,740
+veis que lo hagan eso y lo que justica,
+
+1118
+01:24:10,740 --> 01:24:13,500
+deja lo que haga otra cosa, ¿sí?
+
+1119
+01:24:13,500 --> 01:24:16,220
+Porque eso es una unión de solo a pasta días.
+
+1120
+01:24:16,220 --> 01:24:19,740
+Claro, mi uno es, ¿quién hace el reto?
+
+1121
+01:24:19,740 --> 01:24:23,740
+que, por ejemplo, si van a hacer el reminto desde todo un...
+
+1122
+01:24:23,740 --> 01:24:24,740
+Sí, sí.
+
+1123
+01:24:24,740 --> 01:24:26,740
+Sí, sí, no hay en primer de todo un que yo lo fisiquico,
+
+1124
+01:24:26,740 --> 01:24:28,740
+va a tener que tener un usuario, para un poco.
+
+1125
+01:24:28,740 --> 01:24:30,740
+Sí, lo tenemos pensado así.
+
+1126
+01:24:30,740 --> 01:24:33,740
+Es más, pedimos licencia de todo un par el objetivo.
+
+1127
+01:24:33,740 --> 01:24:35,740
+No, no, no, no.
+
+1128
+01:24:35,740 --> 01:24:39,740
+Mira, he dicho cuando se planteó cuántas licencias de todo un...
+
+1129
+01:24:39,740 --> 01:24:41,740
+se planteó también para la gente logística,
+
+1130
+01:24:41,740 --> 01:24:44,740
+porque el sentenio van a ese que tenía que ser así,
+
+1131
+01:24:44,740 --> 01:24:47,740
+o sea, terminajé, no en el reminto pasa a mi,
+
+1132
+01:24:47,740 --> 01:24:53,080
+pasos a mi, la ticada, mi pasos a lo profusiera. Pero bueno, hay que charla a lo porque
+
+1133
+01:24:53,080 --> 01:24:56,980
+estos tienen, y no, que nosotros de la ecobarcia, no, vamos, vamos, vamos a tener que
+
+1134
+01:24:56,980 --> 01:25:00,940
+trabajarlo eso, sí, le embotá bien. ¿Por qué?
+
+1135
+01:25:00,940 --> 01:25:03,940
+Está bien, sí, se endenió el marse.
+
+1136
+01:25:03,940 --> 01:25:08,780
+¿Y si, ¿y si, ¿en estas separación que vos has visto esto? Pero vina en un remito.
+
+1137
+01:25:08,780 --> 01:25:13,180
+¿Cómo termino yo que en un remito en el remito en el remito?
+
+1138
+01:25:13,180 --> 01:25:19,060
+es la solicitud de esa separación. Yo pido a, yo pido a,
+
+1139
+01:25:20,060 --> 01:25:26,260
+expedición al más eín que necesito despachar 10 milunidades del cliente y
+
+1140
+01:25:26,260 --> 01:25:27,700
+ella hace la información.
+
+1141
+01:25:27,700 --> 01:25:30,060
+La actual de alguna manera, es de IR.
+
+1142
+01:25:31,060 --> 01:25:35,580
+Entonces, esta es la solicitud de remita comercial,
+
+1143
+01:25:35,580 --> 01:25:36,380
+el periodo de venta.
+
+1144
+01:25:38,890 --> 01:25:43,290
+Esto es el que señala a la necesidad de la separación.
+
+1145
+01:25:43,290 --> 01:25:47,370
+Es hablar, yo necesito entregar 12.000 clientes.
+
+1146
+01:25:47,370 --> 01:25:51,330
+Espedición, mira y yo tengo que entregar esto.
+
+1147
+01:25:51,330 --> 01:25:54,810
+Se para lo para atender esta solicitud del cliente.
+
+1148
+01:25:54,810 --> 01:25:56,970
+¿Ya?
+
+1149
+01:25:56,970 --> 01:26:00,690
+Bien, pero y el remito, porque nuestro remito,
+
+1150
+01:26:00,690 --> 01:26:02,690
+hoy me mandas la herra.
+
+1151
+01:26:02,690 --> 01:26:05,850
+Voy a mandar, voy a creer que va a mandar los dos.
+
+1152
+01:26:05,850 --> 01:26:08,290
+Era, hay vengo aquí, confirma,
+
+1153
+01:26:08,290 --> 01:26:12,610
+él te dice la cantidad a todo y solicita la remisión.
+
+1154
+01:26:12,610 --> 01:26:20,410
+él estaba bien el tema que yo ahí no tengo ni el transportista ni nada sólo tengo
+
+1155
+01:26:20,410 --> 01:26:23,630
+la sonitud de remisión.
+
+1156
+01:26:23,630 --> 01:26:34,320
+Aquí está mira, yo creo que aquí tiene o no, no aquí no lo ha tenido.
+
+1157
+01:26:34,320 --> 01:26:36,620
+No se paración eso.
+
+1158
+01:26:36,620 --> 01:26:42,700
+Yo creo que así la separación sí es donde va a tener mira aquí lo transporte.
+
+1159
+01:26:44,020 --> 01:26:54,860
+el transportista, cuantos palets, el tamaño, el peso, la placa del caminero, la espécie,
+
+1160
+01:26:54,860 --> 01:27:03,780
+número, entonces aquí es el proceso de entrega mismo, montar el caminero aunque se
+
+1161
+01:27:03,780 --> 01:27:12,460
+van a entrar. Para nosotros eso un revito, no lo han de que mandan. El antes es solamente
+
+1162
+01:27:12,460 --> 01:27:21,660
+una solicitud de remito. Exacto. Y ahí un por qué para nosotros para nosotros, y remito
+
+1163
+01:27:21,660 --> 01:27:31,500
+también es otra cosa es. Un acturio también. Exacto. Es que solamente la solicitud del
+
+1164
+01:27:31,500 --> 01:27:35,300
+remito. En dicar que eso necesita entregar solicitud.
+
+1165
+01:27:35,300 --> 01:27:37,320
+Pero yo sí me conecto.
+
+1166
+01:27:37,320 --> 01:27:39,420
+¿Cómo? Me faltan datos.
+
+1167
+01:27:40,420 --> 01:27:42,060
+Bueno, sí.
+
+1168
+01:27:44,840 --> 01:27:49,740
+Porque ahí, por ejemplo, aquí voy a tener la solicitud que tiene los datos
+
+1169
+01:27:49,740 --> 01:27:50,880
+a dentro del pedido.
+
+1170
+01:27:51,760 --> 01:27:54,640
+Y esto está vinculado a la separación.
+
+1171
+01:27:55,120 --> 01:28:00,160
+Que ahí en la separación es donde tenemos todo el detallado del documento que
+
+1172
+01:28:00,160 --> 01:28:05,160
+que me tenés. Yo tengo.
+
+1173
+01:28:05,160 --> 01:28:08,160
+Es sí, me lo preguntaré. Sí, sí, no,
+
+1174
+01:28:08,160 --> 01:28:11,160
+podéis unir varios productos.
+
+1175
+01:28:11,160 --> 01:28:22,580
+La separación es por producto, porque voy a mandar que arrementir algo a
+
+1176
+01:28:22,580 --> 01:28:32,790
+ser bien. Déjame ver si este producto.
+
+1177
+01:28:32,790 --> 01:28:33,790
+Por ejemplo.
+
+1178
+01:28:33,790 --> 01:28:36,890
+ese producto por ejemplo no era
+
+1179
+01:28:38,090 --> 01:28:44,050
+controlado porque hay productos que yo controló y otros que no, esto queda aquí en el producto terminado
+
+1180
+01:28:45,030 --> 01:28:50,970
+Yo indico cuáles son los que se controlan por separación, ves?
+
+1181
+01:28:51,630 --> 01:28:56,120
+Entonces aquí que viene?
+
+1182
+01:28:56,760 --> 01:28:58,760
+llega el dato
+
+1183
+01:29:00,200 --> 01:29:04,080
+Yo creo que si vamos a hacer un que tiene separación, a ver
+
+1184
+01:29:06,280 --> 01:29:08,840
+¿No tiene que irle a separación?
+
+1185
+01:29:08,840 --> 01:29:15,240
+Separación es solicitar a expedición que tú necesitas entregar a cliente
+
+1186
+01:29:15,240 --> 01:29:19,440
+y él va a buscar ahí físicamente los palets.
+
+1187
+01:29:19,440 --> 01:29:22,680
+Y decir, mira, voy a sacar este palet,
+
+1188
+01:29:22,680 --> 01:29:23,560
+este palet, este palet, este palet, este palet,
+
+1189
+01:29:23,560 --> 01:29:24,520
+este palet, este palet, este palet,
+
+1190
+01:29:24,520 --> 01:29:26,120
+este estos lugares,
+
+1191
+01:29:26,120 --> 01:29:35,370
+estas ubicaciones y voy a enviar para el lugar de despacho.
+
+1192
+01:29:35,370 --> 01:29:38,850
+¿Ya? Esa es ese proceso físico, a dentro del fin.
+
+1193
+01:29:38,850 --> 01:29:45,850
+Está bien. Y de alguna pregunta, vos se baras y mandas lo mismo que estás
+
+1194
+01:29:45,850 --> 01:29:52,410
+solicitando remedilo, te pueden quedar en el toque, ayer pendiente de ese paración y toda esa
+
+1195
+01:29:52,410 --> 01:30:00,130
+cosa. El sistema solo va a permitir que tu remita si lo que solicitaste está
+
+1196
+01:30:00,130 --> 01:30:06,690
+tendido. Si voy a emitir menos, el cliente quiere recibir menos, yo tengo casualizar menos.
+
+1197
+01:30:06,690 --> 01:30:14,490
+El pedido puede ser 10 mil, pero yo tengo que solicitar 5 mil. Y ahí me separas 5 mil de esto,
+
+1198
+01:30:14,490 --> 01:30:21,690
+que va a quedar un pendiente y para entregar después. Sí, y eso 5 mil que vos mandaste. Bueno,
+
+1199
+01:30:21,690 --> 01:30:23,690
+¿Como es la operación de materiales?
+
+1200
+01:30:23,690 --> 01:30:29,690
+Sí, vamos a ver este aquí, viste ahí, te jame.
+
+1201
+01:30:29,690 --> 01:30:41,590
+Vamos configurar los para... para la necesidad de...
+
+1202
+01:30:41,590 --> 01:31:32,930
+Código 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+1203
+01:31:32,930 --> 01:31:44,380
+ahí voy a solicitar todo.
+
+1204
+01:31:44,380 --> 01:32:01,000
+Sí.
+
+1205
+01:32:01,000 --> 01:32:05,280
+Entonces esto va a llegar.
+
+1206
+01:32:05,280 --> 01:32:11,730
+¿Qué ves a lirur ventrato?
+
+1207
+01:32:11,730 --> 01:32:13,090
+A la seguridad.
+
+1208
+01:32:13,090 --> 01:32:17,120
+Exactamente.
+
+1209
+01:32:17,120 --> 01:32:22,640
+Vés pendiente.
+
+1210
+01:32:22,640 --> 01:32:25,240
+Aquí están todos los productos, ¿vés?
+
+1211
+01:32:25,240 --> 01:32:26,600
+Sí.
+
+1212
+01:32:26,600 --> 01:32:30,720
+Ahí yo tengo que separar a ella de la muestra,
+
+1213
+01:32:30,720 --> 01:32:32,120
+que no hay sal de un instóque.
+
+1214
+01:32:32,120 --> 01:32:36,120
+se ha uno entregar una de la producción.
+
+1215
+01:32:36,120 --> 01:32:42,560
+Entonces, yo necesito integrarme en este punto con usted.
+
+1216
+01:32:42,560 --> 01:32:45,560
+Cuando yo ya tenga separado, ¿no?
+
+1217
+01:32:45,560 --> 01:32:47,560
+Sí, sí, sí, sí, sí.
+
+1218
+01:32:47,560 --> 01:32:48,560
+¿Por qué?
+
+1219
+01:32:48,560 --> 01:32:51,560
+En realidad el reni del lo que realmente voy a mandar.
+
+1220
+01:32:51,560 --> 01:32:53,560
+Exactamente.
+
+1221
+01:32:53,560 --> 01:32:56,560
+Porque por ejemplo, ¿por qué se puede ser que te acaba?
+
+1222
+01:32:56,560 --> 01:32:57,560
+Sí, tú, una más.
+
+1223
+01:32:57,560 --> 01:32:59,560
+Me voy a llegar a quedar mal.
+
+1224
+01:32:59,560 --> 01:33:01,560
+Exacto.
+
+1225
+01:33:01,560 --> 01:33:05,900
+y bueno si si te lo has dado de transportista también en los primitos
+
+1226
+01:33:05,900 --> 01:33:09,360
+entonces ¿es dónde vas a ir esto?
+
+1227
+01:33:09,360 --> 01:33:13,230
+si los es así
+
+1228
+01:33:13,230 --> 01:33:16,190
+cuando necesitamos los datos en transportistas
+
+1229
+01:33:16,190 --> 01:33:18,490
+si no es que después los cargan en Odo
+
+1230
+01:33:18,490 --> 01:33:22,010
+si lo quieren cargar solo en un solo lugar
+
+1231
+01:33:22,010 --> 01:33:27,370
+y no tranquillamente podemos cargarlo en Odo o en Matrix
+
+1232
+01:33:27,370 --> 01:33:34,370
+ahí queda el exciente de ellos, porque hay los dos soportos, ¿no?
+
+1233
+01:33:34,370 --> 01:33:42,450
+Sí, el tema de mi me da una duda en el proceso, si vos por ejemplo, voy a tener que
+
+1234
+01:33:42,450 --> 01:33:52,450
+con él, hoy ayer veinti dos separaste sin comer, no tenía en esto, esperaste, esperaste
+
+1235
+01:33:52,450 --> 01:34:05,600
+te ir recién lo mandaste hoy. Tienes así que la separación no se manda el toque. Vamos a tener que conectarlo con la separación y no con el
+
+1236
+01:34:05,600 --> 01:34:25,190
+para mí, con la solicitud de herramienta. Sí. Yo creo que el ideal sería por la separación. Me parece más.
+
+1237
+01:34:25,190 --> 01:34:26,270
+¿Qué a veces?
+
+1238
+01:34:26,270 --> 01:34:27,670
+Yo no, no, no, no.
+
+1239
+01:34:27,670 --> 01:34:30,150
+¿Cómo que me encualta un poquito se flucó?
+
+1240
+01:34:30,150 --> 01:34:39,830
+¿Y también tiene un abroo de los tele?
+
+1241
+01:34:39,830 --> 01:34:40,830
+Sí.
+
+1242
+01:34:40,830 --> 01:34:44,870
+Está entre aear de los productos aquí.
+
+1243
+01:34:44,870 --> 01:34:47,830
+0, 0, 5, 2, 3.
+
+1244
+01:34:47,830 --> 01:34:55,570
+¿Encuchí si los seis?
+
+1245
+01:34:56,570 --> 01:34:58,210
+23.
+
+1246
+01:34:58,210 --> 01:35:01,330
+22.
+
+1247
+01:35:01,330 --> 01:35:02,730
+¿Vávian de seis?
+
+1248
+01:35:02,730 --> 01:35:04,330
+Sí.
+
+1249
+01:35:04,330 --> 01:35:06,050
+26.
+
+1250
+01:35:06,050 --> 01:35:13,730
+Los soldos.
+
+1251
+01:35:13,730 --> 01:35:24,410
+Pero sí, no, vamos a ir nuevo.
+
+1252
+01:35:24,410 --> 01:35:36,780
+En contrasto.
+
+1253
+01:35:36,780 --> 01:35:38,780
+Estos son las.
+
+1254
+01:35:38,780 --> 01:35:46,190
+Ahí ves, ahí me cierran la orden de producción, porque ya entregáis 100% de los productos.
+
+1255
+01:35:46,190 --> 01:35:51,190
+Ahí yo en Dico aquí el número de la orden que me mostró ahí.
+
+1256
+01:35:51,190 --> 01:35:54,190
+Ya cierran los productos en proceso.
+
+1257
+01:35:54,190 --> 01:36:00,000
+Ok, se ruedra.
+
+1258
+01:36:00,000 --> 01:36:05,000
+Ahora sí, vamos a separación.
+
+1259
+01:36:09,720 --> 01:36:13,900
+y está.
+
+1260
+01:36:13,900 --> 01:36:16,940
+Ahí yo puedo decir cantidad de imbalajes.
+
+1261
+01:36:16,940 --> 01:36:24,960
+La cantidad de informadas aquí, tus kilos de mayor que usó,
+
+1262
+01:36:24,960 --> 01:36:26,960
+de un montón de malas.
+
+1263
+01:36:26,960 --> 01:36:28,960
+Sí.
+
+1264
+01:36:28,960 --> 01:36:32,960
+Porque nosotros siempre hacemos...
+
+1265
+01:36:32,960 --> 01:36:36,960
+ahí pasó vez, y se diente.
+
+1266
+01:36:36,960 --> 01:36:45,550
+Ahí no va a dejar.
+
+1267
+01:36:45,550 --> 01:36:48,350
+Porque él me pide solo 250.
+
+1268
+01:36:48,350 --> 01:36:50,350
+¿Qué tendría que hacer?
+
+1269
+01:36:50,350 --> 01:36:55,350
+separar el palete o cambiar nuestro escitu
+
+1270
+01:36:58,350 --> 01:37:00,350
+no he cruzido por el 50
+
+1271
+01:37:07,880 --> 01:37:10,880
+ahí no, por el 50
+
+1272
+01:37:11,880 --> 01:37:14,880
+es que ahí el ot es menor
+
+1273
+01:37:14,880 --> 01:37:16,880
+que como es un palete
+
+1274
+01:37:51,720 --> 01:37:58,480
+pero claro, lo que no hay bien es,
+
+1275
+01:37:58,480 --> 01:38:01,280
+se ha estado bien, boten en todo esta candidato,
+
+1276
+01:38:01,280 --> 01:38:04,480
+cuando realmente se entrega al cliente.
+
+1277
+01:38:04,480 --> 01:38:10,110
+Cuando estoy, después de hacer esto,
+
+1278
+01:38:10,110 --> 01:38:13,520
+porque ahí,
+
+1279
+01:38:13,520 --> 01:38:16,520
+a ver, tal vez, este es el logre.
+
+1280
+01:38:16,520 --> 01:38:19,520
+Y ahí no tenemos que conectar, no entendí.
+
+1281
+01:38:19,520 --> 01:38:21,520
+En segundo.
+
+1282
+01:38:21,520 --> 01:38:23,520
+Hay aquí vez, ese me deja.
+
+1283
+01:38:23,520 --> 01:38:25,520
+dos
+
+1284
+01:38:25,520 --> 01:38:32,320
+ayer del mil
+
+1285
+01:38:32,320 --> 01:38:34,320
+ah
+
+1286
+01:38:34,320 --> 01:38:35,320
+ah
+
+1287
+01:38:35,320 --> 01:38:39,860
+hay el lado de calidad de pros determinado
+
+1288
+01:38:39,860 --> 01:38:41,860
+ah
+
+1289
+01:38:41,860 --> 01:38:43,860
+tengo que hacer el lado
+
+1290
+01:38:43,860 --> 01:38:46,860
+si eres mira, hay para cada uno de los productos
+
+1291
+01:38:46,860 --> 01:38:48,860
+hay un lado de calidad
+
+1292
+01:38:48,860 --> 01:38:52,170
+no puedo venir
+
+1293
+01:38:52,170 --> 01:38:55,170
+yo capaz que
+
+1294
+01:38:55,170 --> 01:38:59,170
+tiene un montón de verificaciones antes de entregar
+
+1295
+01:38:59,170 --> 01:39:05,520
+para nosotros el remito que ya se fue la mercaderina.
+
+1296
+01:39:05,520 --> 01:39:10,520
+Sí, porque ya es el documento físico comprobando que se fue, ¿no?
+
+1297
+01:39:10,520 --> 01:39:16,520
+Sí, el que él es como el compara nosotros el remito de él y el comprobante que lleva el camionero.
+
+1298
+01:39:16,520 --> 01:39:22,520
+Ah, y que sí, lo para un control policial le dice...
+
+1299
+01:39:22,520 --> 01:39:24,520
+¿No? Sí.
+
+1300
+01:39:24,520 --> 01:39:28,520
+¿A ver que llevas a carriva y todo esa?
+
+1301
+01:39:28,520 --> 01:39:44,800
+No te llevan a cosa que no dicen el remito, entonces me parece que la solicitud nos quedamos un poco cortos.
+
+1302
+01:39:44,800 --> 01:39:50,040
+Ah, pero no sé.
+
+1303
+01:39:50,040 --> 01:39:52,040
+¡Ay!
+
+1304
+01:39:52,040 --> 01:39:55,040
+¿Qué es, Sision?
+
+1305
+01:39:55,040 --> 01:40:00,340
+pero sí en los tres
+
+1306
+01:40:06,500 --> 01:40:09,500
+20... ah, yo puse la fecha de mañana claro
+
+1307
+01:40:10,500 --> 01:40:12,500
+tiene que ser la de hoy
+
+1308
+01:40:14,500 --> 01:40:17,500
+ahí vengo aquí procesar el lado
+
+1309
+01:40:18,500 --> 01:40:20,500
+ahí lado aprobado
+
+1310
+01:40:20,500 --> 01:40:25,540
+ahí vamos procesar el lado
+
+1311
+01:40:25,540 --> 01:40:34,590
+no, no, no, no tiene una cantidad
+
+1312
+01:40:34,590 --> 01:40:36,590
+bueno, no te preocupes, el en
+
+1313
+01:40:36,590 --> 01:40:38,590
+tendrían.
+
+1314
+01:40:38,590 --> 01:41:15,120
+entonces ahora cuando yo procesé el lado, no voy a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir a ir
+
+1315
+01:41:15,120 --> 01:41:22,120
+y ahí como te van quedando, como que hago texela, como he pedido, pendiente.
+
+1316
+01:41:22,120 --> 01:41:30,120
+Cuando el sistema va cambiando el estatus, por ejemplo, ahora está pendiente.
+
+1317
+01:41:30,120 --> 01:41:35,120
+Aí a después queda cuando yo hago la situación.
+
+1318
+01:41:35,120 --> 01:41:41,120
+Él dice que ella está liberado para facturar, liberado para que sea un.
+
+1319
+01:41:41,120 --> 01:41:46,120
+Entonces, vamos a hacer una candidación excitada.
+
+1320
+01:41:46,120 --> 01:41:51,120
+Cuando se atendió, quedó atendida, este fue el item separado,
+
+1321
+01:41:51,120 --> 01:41:53,120
+con el orden número de la hora de producción.
+
+1322
+01:41:53,120 --> 01:41:56,120
+Si hay más de uno, va a estar aquí.
+
+1323
+01:41:56,120 --> 01:41:59,120
+Yo proceso y ahí queda liberado para mi cción.
+
+1324
+01:41:59,120 --> 01:42:02,120
+Y ahí es donde tiene que emitir el remito.
+
+1325
+01:42:02,120 --> 01:42:06,120
+Es el documento físico que va a entregar el cliente.
+
+1326
+01:42:06,120 --> 01:42:07,120
+Sí.
+
+1327
+01:42:07,120 --> 01:42:19,120
+Aquí yo pueden primero un documento de que va, aquí no tengo ningún configurado.
+
+1328
+01:42:19,120 --> 01:42:29,520
+Pero pueden primero un documento de Packing List, pues una etiqueta algo, es configurable, lo que
+
+1329
+01:42:29,520 --> 01:42:36,770
+puedes salir de aquí. Porque ahí nos vamos a conectar con el remita.
+
+1330
+01:42:36,770 --> 01:42:44,280
+Cuando yo proceso, yo pueden viaar la integración. ¿Qué está liberado?
+
+1331
+01:42:44,280 --> 01:42:46,280
+Sí.
+
+1332
+01:42:46,280 --> 01:42:50,280
+Sí. Me parece que ahí, donde no tenemos que integrar a la serie.
+
+1333
+01:42:50,280 --> 01:42:52,280
+Sí.
+
+1334
+01:42:52,280 --> 01:42:57,280
+Porque voy a estar liberado y verado para la emisión.
+
+1335
+01:42:57,280 --> 01:42:58,280
+Exactamente.
+
+1336
+01:42:58,280 --> 01:43:01,280
+¿Qué ha tu? Es el que nosotros nos nos dará a pautar.
+
+1337
+01:43:01,280 --> 01:43:04,560
+Exactamente.
+
+1338
+01:43:04,560 --> 01:43:05,560
+Porísimo.
+
+1339
+01:43:05,560 --> 01:43:15,560
+y bueno chán que vamos sin tiempo pero me faltaba el fin de vez
+
+1340
+01:43:15,560 --> 01:43:20,560
+el fin de vez. ¿Tenés un ratito más Vanessa? Yo sí. ¿Sulem?
+
+1341
+01:43:20,560 --> 01:43:23,560
+Uh, un cinco minutos más, yo creo que.
+
+1342
+01:43:23,560 --> 01:43:25,560
+Sí, un total entonces y un total. Sí.
+
+1343
+01:43:25,560 --> 01:43:27,560
+¿Tienes? ¿Cuándo vamos a volver a juntar?
+
+1344
+01:43:27,560 --> 01:43:28,560
+Sí.
+
+1345
+01:43:28,560 --> 01:43:29,560
+Y ahí.
+
+1346
+01:43:29,560 --> 01:43:31,560
+¿Tengo que lo sí a raver?
+
+1347
+01:43:31,560 --> 01:43:41,360
+Entonces ahí para nosotros el cierre, pasaría en el cierre de stock para detener los movimientos,
+
+1348
+01:43:41,360 --> 01:43:48,720
+si los financieros, si el por lo stesso financiero fuera nuestro, ahí yo tendría que hacer
+
+1349
+01:43:48,720 --> 01:43:56,400
+los cierres de costos aquí. Pero para nosotros esto no hace falta una vez que no estemos utilizando
+
+1350
+01:43:56,400 --> 01:44:03,120
+la parte adiviristativa. No es el proceso finalizaría en la separación mismo.
+
+1351
+01:44:03,120 --> 01:44:06,080
+Y el cierre de esto.
+
+1352
+01:44:06,080 --> 01:44:12,800
+Está bien. Pero vos, por ejemplo, que tengo varias finanzas. ¿Qué? ¿Qué
+
+1353
+01:44:12,800 --> 01:44:16,200
+información sacaría? ¿Vávimos no sé si?
+
+1354
+01:44:16,200 --> 01:44:21,040
+Ahí no sé, solo la devolución de la entrega. No sé.
+
+1355
+01:44:21,040 --> 01:44:31,090
+ahí yo tendría que ver con Alicia de qué de qué de qué de volver no sé cerrar el
+
+1356
+01:44:31,090 --> 01:44:36,770
+pedido de venta no eso lo hacemos nosotros y solo va a hacer claro con la separación no
+
+1357
+01:44:36,770 --> 01:44:43,810
+lo hiciste ya no se lo rom si cuando yo hago la separación el cierre el pedido que da cerrado
+
+1358
+01:44:43,810 --> 01:44:49,090
+liberado. No, es liberado es la
+
+1359
+01:44:49,090 --> 01:44:53,330
+aprobación de que puede seguir con el
+
+1360
+01:44:53,330 --> 01:45:02,210
+sí arramismo, que de ser raro. Claro,
+
+1361
+01:45:02,210 --> 01:45:06,690
+porque en realidad, mi me quedan datos sin
+
+1362
+01:45:06,690 --> 01:45:10,930
+resolver porque si bien y te voces si la
+
+1363
+01:45:10,930 --> 01:45:14,050
+parte financiera no se lleva, yo tengo
+
+1364
+01:45:14,050 --> 01:45:16,330
+como datos y en concluentes, tal vez no
+
+1365
+01:45:16,330 --> 01:45:18,330
+tendría lo que juntar con el exander.
+
+1366
+01:45:18,330 --> 01:45:23,570
+El beso. Yo tengo combras que no tengo consumidas porque son combras
+
+1367
+01:45:23,570 --> 01:45:28,690
+que lo que vimos que acaba que yo tengo combras que es un carrete y
+
+1368
+01:45:28,690 --> 01:45:33,330
+para que a vos se te transformo en otro producto.
+
+1369
+01:45:33,330 --> 01:45:38,510
+Es puestengo
+
+1370
+01:45:40,510 --> 01:45:44,510
+producto y en dar medios que no tengo,
+
+1371
+01:45:44,510 --> 01:45:48,510
+como seres productos y en dar medios.
+
+1372
+01:45:48,510 --> 01:45:53,510
+Pero el proceso no tengo nada de información para que la gente va a utilizar.
+
+1373
+01:45:53,510 --> 01:45:58,400
+Pero, ¿dudo en proceso?
+
+1374
+01:45:58,400 --> 01:46:01,400
+Solo se puede ver, porque el producto en proceso,
+
+1375
+01:46:01,400 --> 01:46:07,030
+solo os parece que se va generando.
+
+1376
+01:46:07,030 --> 01:46:08,030
+¿Ya?
+
+1377
+01:46:08,030 --> 01:46:10,030
+Entonces, aquí son los paletes.
+
+1378
+01:46:10,030 --> 01:46:15,160
+A ver qué pusieron a la gente.
+
+1379
+01:46:15,160 --> 01:46:17,160
+Bueno, ¿tienes?
+
+1380
+01:46:17,160 --> 01:46:20,160
+Como que lo vemos en otras reuniones,
+
+1381
+01:46:20,160 --> 01:46:21,160
+sino porque bueno,
+
+1382
+01:46:21,160 --> 01:46:24,160
+yo ahora ya tengo un idea más del grupo.
+
+1383
+01:46:24,160 --> 01:46:26,680
+y en base de eso me da una surgir más gudas.
+
+1384
+01:46:27,680 --> 01:46:29,240
+Probablemente,
+
+1385
+01:46:29,240 --> 01:46:35,520
+a la leyándote puede apoyar, porque como este proceso es working process.
+
+1386
+01:46:35,920 --> 01:46:39,960
+No es, nosotros también no hacemos ningún ajuste más,
+
+1387
+01:46:39,960 --> 01:46:42,880
+sino entre esto que no hace un proceso.
+
+1388
+01:46:42,880 --> 01:46:45,880
+El queda entre las máquinas, por ejemplo.
+
+1389
+01:46:46,200 --> 01:46:47,360
+Entonces, ¿a lo ves?
+
+1390
+01:46:47,360 --> 01:46:48,520
+Por ejemplo, ¿el cosa?
+
+1391
+01:46:48,520 --> 01:46:51,720
+Porque bueno, lo consume todos esos showlandes de divisten.
+
+1392
+01:46:51,720 --> 01:46:57,720
+¿A? Pero yo, por ejemplo, hay cosas que como que consume negativa.
+
+1393
+01:46:57,720 --> 01:46:59,720
+¿Entenden? Porque...
+
+1394
+01:46:59,720 --> 01:47:02,720
+Esto nosotros no tenemos con su monigativo.
+
+1395
+01:47:02,720 --> 01:47:04,720
+El saldo negativo nunca.
+
+1396
+01:47:04,720 --> 01:47:06,720
+No, pero yo soy...
+
+1397
+01:47:06,720 --> 01:47:09,720
+Porque no me recibiensan porque...
+
+1398
+01:47:10,720 --> 01:47:12,720
+Está bien.
+
+1399
+01:47:12,720 --> 01:47:14,720
+de cómo explicarlo.
+
+1400
+01:47:14,720 --> 01:47:22,180
+En esa bolet, el 2 y 3 de julio tenemos sesiones con el examen.
+
+1401
+01:47:22,180 --> 01:47:27,640
+Sí, que están aclediendo a todos, son reuniones largas de 3, 4 horas.
+
+1402
+01:47:27,640 --> 01:47:30,720
+No sé si se le le está botando bien, pero el examen de seguro.
+
+1403
+01:47:30,720 --> 01:47:32,720
+Ah, sí, entonces.
+
+1404
+01:47:32,720 --> 01:47:35,720
+Entonces, no sé no vemos con él, se le le le.
+
+1405
+01:47:35,720 --> 01:47:36,720
+Perfecto.
+
+1406
+01:47:36,720 --> 01:47:40,280
+Porque ahí yo creo que más un dato de integración,
+
+1407
+01:47:40,280 --> 01:47:47,720
+¿Qué es un dato que te podamos traer aquí en pantalla? Sí, sí, sí, por eso sí. Y igual
+
+1408
+01:47:47,720 --> 01:47:49,980
+revient, ¿por qué ya?
+
+1409
+01:47:49,980 --> 01:47:57,000
+Pero es una idea de cómo se avían de cómo funciona, de varios puntos críticos del
+
+1410
+01:47:57,000 --> 01:48:02,600
+proceso, así que yo ya me llevo a notar algunos cosas, buenísimo, súper útil.
+
+1411
+01:48:02,600 --> 01:48:08,640
+¿Y qué da? ¿Qué da, van a ser la grabación que sí la dice, la disponibilidad y no te
+
+1412
+01:48:08,640 --> 01:48:15,920
+nada le porfa sí porque así podemos hacer un resumencito si no hace
+
+1413
+01:48:15,920 --> 01:48:20,180
+tenemos un resumencito con mi amor con la transcripción
+
+1414
+01:48:20,180 --> 01:48:22,560
+sí podemos hacer una
+
+1415
+01:48:22,560 --> 01:48:31,160
+para la trefe de trabajo resumencito y que iba a decir pero bueno no ya está y yo me
+
+1416
+01:48:31,160 --> 01:48:35,440
+y ella tengo tu mía, no, no, no, tú no es otra.
+
+1417
+01:48:35,440 --> 01:48:36,800
+¿Viste?
+
+1418
+01:48:36,800 --> 01:48:38,000
+¿Bueno?
+
+1419
+01:48:38,000 --> 01:48:49,540
+Si le no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no

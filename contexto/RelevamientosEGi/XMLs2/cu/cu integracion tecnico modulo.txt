@@ -1,0 +1,46 @@
+Esto dice Rofina log, pq esta basado en un modulo integracion Calyx con Rofina, cambiar nombres para EGI logica igual a rofina.  
+
+1. Definición del Modelo de Base de Datos (rofina.log) 
+El desarrollador debe crear un modelo nativo de Odoo persistente en la base de datos con las siguientes características:  
+Identificador de Transacción (transaction_id): Tipo texto (Char), indexado a nivel de base de datos y configurado como Único (_sql_constraints). Es la clave que evitará que una misma transacción de Metrics se procese dos veces.  
+Tipo de Contexto (context_type): Campo de selección (Selection) que restringe los valores a los 7 tipos de flujos mapeados del proyecto: CRM, STKItem, STK (Movimientos), WO (Producción), SOR (Ventas), BIL (Facturas) y WIP.  
+Contenedores de Datos: Dos campos de texto largo (Text) independientes: uno para la estructura de la operación (xml_operation) y otro para los datos puros de negocio (xml_data).  
+Campos de Control:
+Un booleano (has_error) indexado para identificar fallos rápidamente.  
+Un entero (return_code) para almacenar el código de estado (ej. 200, 500, 409).  
+Un texto largo (xml_return) para guardar el mensaje exacto de error o éxito retornado.  
+Un campo de fecha y hora (dt_processing) configurado en formato UTC.  
+ 2. Panel de Ajustes y Credenciales (res.config.settings)
+El desarrollador debe extender la pantalla de configuración nativa de Odoo para persistir cinco claves en la tabla de parámetros globales (ir.config_parameter):  
+URL del Endpoint: Dirección web del WSDL de Metrics.  
+Usuario: Credencial de autenticación del WebService.  
+Contraseña: Clave de acceso (guardada bajo encriptación nativa).  
+Entorno: Selector con las opciones excluyentes "Sandbox / Homologación" y "Producción".  
+Cursor Temporal (Delta): Campo invisible/solo lectura de fecha y hora que registra el momento exacto de la última sincronización exitosa.
+Lógica del Botón "Testear Conexión":
+Al hacer clic en este botón interactivo, se dispara una acción del servidor que lee las credenciales en pantalla, levanta una conexión SOAP instantánea (handshake) y evalúa la respuesta.  
+Si responde correctamente: Muestra una notificación emergente (notification nativa de Odoo) tipo banner verde en la parte superior.  
+Si da timeout o error HTTP: Muestra un cuadro de diálogo de advertencia (UserError) con el código de error devuelto.  
+ 3. Estrategia de Flujos Lógicos (Bucle Seguro y Paginación)
+Flujo Entrante (Importación por Lotes)
+Para evitar el desbordamiento de memoria por un procesamiento infinito, la lógica del proceso síncronizado debe seguir estrictamente este algoritmo:
+Lectura del Cursor: El sistema lee la Última Fecha de Sincronización Exitosa de los ajustes.
+Petición Acotada: Llama a la función remota enviando esa fecha y un límite estricto de 100 registros por lote.
+Filtro de Unicidad: Al recibir el paquete, lee cada registro individualmente. Busca en la tabla rofina.log si el identificador de la transacción ya existe.
+Si ya existe: Ignora el registro de inmediato para mantener la idempotencia.
+Si no existe: Envía el payload XML a la cola de trabajos asíncronos (queue_job).
+Actualización del Cursor: Si el lote de 100 se procesa por completo, toma la fecha del último registro procesado y la guarda en la configuración para la siguiente ejecución.
+Flujo Saliente (Exportación Segura)
+Sigue un ciclo cerrado ininterrumpido:
+Odoo consulta las transacciones pendientes a Metrics.
+Odoo procesa localmente el resultado.
+Odoo invoca inmediatamente la confirmación de estado hacia Metrics para sincronizar ambos sistemas antes de avanzar con el siguiente registro.
+ 4. Regla de Oro: Aislamiento de Logs (Lógica Transaccional)-- esto es sugerencia IA --ver que es lo mejor. 
+El desarrollador tiene prohibido ejecutar la lógica de negocio y la creación del log en la misma transacción de la base de datos. Se debe estructurar bajo cualquiera de estos dos comportamientos lógicos:
+Comportamiento A (Uso de Cola de Trabajos - Recomendado): La recepción del XML introduce un registro inicial en rofina.log y confirma inmediatamente el cambio en PostgreSQL (commit). Luego, delega el procesamiento del negocio a un hilo secundario mediante queue_job. Si el hilo de negocio falla catastróficamente y la base de datos realiza un rollback, este afectará exclusivamente al objeto de negocio (ej: no se creará el cliente o el producto), pero el registro en rofina.log permanecerá intacto guardando el error.
+Comportamiento B (Cursor Independiente / Savepoint): Al recibir una transacción, se crea un punto de restauración seguro (savepoint) en la base de datos o se abre un canal de conexión paralelo. Se graba la auditoría en rofina.log de forma confirmada. El bloque de código que procesa el negocio se encapsula en una captura de excepciones. Si ocurre un fallo, se ejecuta un rollback que limpia las tablas comerciales de Odoo, pero se abre una micro-transacción inmediata para cambiar el estado del rofina.log a "Error" y guardar el motivo del fallo.
+ Criterios de Aceptación para QA (Checklist de Validación)
+[ ] Los campos técnicos se guardan de forma persistente en la configuración de Odoo.  
+[ ] El botón de testeo notifica instantáneamente fallos de red o de credenciales sin bloquear la pantalla.  
+[ ] Si se intenta procesar manualmente una transacción con un ID duplicado, el sistema la descarta sin duplicar registros.  
+[ ] Prueba del Ácido: Si se fuerza un fallo crítico (como apagar un servidor intermedio) a mitad de la importación de datos, los registros comerciales quedan limpios (no se crean datos basura), pero la tabla rofina.log muestra un registro con has_error = True y el detalle técnico del fallo

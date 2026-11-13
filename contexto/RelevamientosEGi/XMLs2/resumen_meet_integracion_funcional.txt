@@ -1,0 +1,112 @@
+Resumen: Meet Integración Funcional Metrics → Odoo
+Archivo: meet integracion funcional.srt (5675 líneas)
+Fecha: ~Junio/Julio 2026
+Participantes: Vanessa, Alexander, Selene, Magalí, equipo Metrics
+
+============================================
+1. CRM (Líneas 67-550)
+============================================
+- Demo de ficha de cliente en Metrics
+- Datos: NIT/RUC, transportista, matriz/sucursal, vendedor, moneda cotización
+- Múltiples direcciones (administrativa, entrega), contactos
+- Datos contables/fiscales para factura y remito
+- Condición de pago, límite crédito, observaciones
+- Oportunidades de venta vinculadas a cotizaciones
+- Clientes prospectos (no activos) NO se envían a Odoo. Solo activos.
+- Proveedores: se crean en ambos sistemas
+
+============================================
+2. Ventas / Cotizaciones (Líneas 550-1000)
+============================================
+- Catálogo de productos con SKU, línea/sublinea de producto
+- Cotización por producto o por proyecto
+- Al aprobar cotización → se genera Pedido de Venta
+- El Pedido de Venta dispara las integraciones
+- Orden de Producción generada automáticamente desde el Pedido
+- Impuestos: incluidos en precio del producto (según tipo de producto)
+- Remito y Factura: pueden ir separados (entrega física ≠ facturación)
+- Para exportación: configuraciones específicas de impuestos
+
+============================================
+3. Costos / Valuación (Líneas 1000-2000)
+============================================
+- Método de valuación: COSTO PROMEDIO (costo promedio de stock)
+- Cotización NO usa costo promedio de stock → usa tabla paralela de costos
+- Material Requests: desde la orden de producción, basados en ingeniería
+- Solicitudes de materiales generan señal de compra si stock < necesidad
+- Sugerencia de compra automática según fecha de producción planificada
+- Materiales se valorizan por la compra del material (precio factura de compra)
+- Unidad de stock y consumo deben ser la misma que usa ingeniería
+
+============================================
+4. Materiales / Items (Líneas 2200-2400)
+============================================
+- Tipos de item: Producto Intermediario, Terminado, Servicio, Consumible, MP
+- Misma ficha de producto para todos los tipos (cambia configuración)
+- Grupos: Master Group (agrupador master) → Group → Item
+- Ejemplo: Master="Papel", Group="Sustrato", Item="Bond Blanco"
+- Sistema de Volúmenes: control individual de bobinas (cada bobina tiene código único)
+- Materiales controlados por volúmenes solo pueden moverse via sistema de volúmenes o colector
+
+============================================
+5. Unidades de Medida (Líneas 2400-2600)
+============================================
+- UOM distintas para: Compra, Stock, Consumo, Ingeniería
+- Factor de conversión entre UOM
+- Ejemplo bobinas: compra en m², stock en KG, consumo en KG
+- Ideal: unidad de stock = unidad de consumo = unidad de ingeniería
+- Para producción: la unidad de consumo debe coincidir con la de ingeniería
+
+============================================
+6. Bobina Madre/Hija (OriginItem) (Líneas 2700-2900, 3007-3091)
+============================================
+- ESCENARIO CLAVE:
+  * Item madre (ej: código 274/247): se compra, tiene el costo
+  * Item hija (ej: código 013): llega físicamente cortada, se consume en producción
+  * El proveedor vende la bobina grande (madre) pero entrega cortada (hija)
+  * Es otro código de item (la hija tiene su propio stock code)
+- Hay un campo en el item de stock que indica "material de bobina máster" (línea 2815)
+- OriginItem es el vínculo entre item hija y item madre (línea 2423)
+- Discusión: ¿Metrics envía la madre o la hija en el XML?
+  * Se concluye que se envía la MADRE, pero físicamente llega la HIJA
+  * Odoo necesita recibir la transacción de la hija para consumo
+
+============================================
+7. Consumos Reales (Líneas 3100-3300)
+============================================
+- Consumo real: se registra vía WIP/job tracking (no estimado)
+- Operador atiende solicitud de material desde la máquina
+- Materiales se descargan del stock local de la máquina
+- Materiales medibles (papel, sustrato): se cargan contra la orden de producción
+- Materiales NO medibles (tintas, pegamentos, adhesivos): se cargan contra CENTRO DE COSTO
+
+============================================
+8. Remito / Factura (Líneas 3200-3500, 4300-4500)
+============================================
+- Remito = entrega física al cliente
+- Factura = documento fiscal (puede ir separada del remito)
+- Entrega de producción: solo incluye el producto terminado (no los materiales)
+- Remito se genera desde Odoo (no desde Metrics)
+- Discusión sobre quién hace el remito: logística vs comercial
+- Packing list con datos de transporte: pallets, peso, placa camión, transportista
+
+============================================
+9. Producto Nuevo vs Repetido (Líneas 3460-3600)
+============================================
+- Flujo producto nuevo: cotización → ingeniería → creación en Metrics → integración
+- Flujo producto repetido: ya existe en catálogo, solo se genera orden de producción
+- Producto en proceso (WIP): solo visible en Metrics, no se integra a Odoo
+
+============================================
+10. Cierre de Stock / Costos (Líneas 5300-5400)
+============================================
+- Cierre de stock: necesario para detener movimientos y calcular costos
+- Odoo no maneja cierre de costos (financiero queda en Odoo)
+- WIP tracking: productos entre máquinas, no hay ajuste hasta que finaliza
+
+============================================
+11. Próximos Pasos (Líneas 5400-5675)
+============================================
+- Pendiente: coordinar con Alexander (sesiones 2 y 3 de julio)
+- Vanessa hará resumen de la reunión para el equipo
+- Varios temas de integración仍需 definir (flujo remito, consumos no medibles)

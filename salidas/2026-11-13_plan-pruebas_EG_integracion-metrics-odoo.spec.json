@@ -1,0 +1,2945 @@
+{
+ "titulo": "Casos de Prueba: Integración Metrics ↔ Odoo 19",
+ "cliente": "Establecimiento Grafico Impresores (EG)",
+ "proyecto": "Integración Metrics ↔ Odoo 19 Enterprise (H2 Maestros, H3 Ventas, H5 Compras, H6 Producción)",
+ "version": "1.0",
+ "fecha": "13/11/2026",
+ "responsable": "[COMPLETAR]",
+ "hojas": [
+  {
+   "nombre": "Integración y bitácora",
+   "descripcion": "Prerrequisitos del módulo de integración: conexión, bitácora, idempotencia, reintentos y respuesta a Metrics.",
+   "casos": [
+    {
+     "id": "TC-001",
+     "ref": "CU-INF-01",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Configurar credenciales y entorno (Configuración, sin transacción de negocio)",
+     "precondiciones": "Usuario administrador de Odoo",
+     "datos": "Fixture: No aplica. URL del WSDL, usuario, contraseña, entorno (Sandbox/Homologación o Producción), cursor delta",
+     "pasos": [
+      "Abrir ajustes de integración.",
+      "Cargar URL, usuario y contraseña.",
+      "Seleccionar entorno.",
+      "Guardar.",
+      "Verificar persistencia en ir.config_parameter y contraseña encriptada."
+     ],
+     "resultado_esperado": "Dado un administrador, cuando guarda credenciales válidas, entonces quedan persistidas y la contraseña no se expone.",
+     "evidencia_esperada": "Captura de ajustes y registro de parámetros sin contraseña.",
+     "observacion": "[Revisión: Vigente] Prerrequisito de todas las CU. Endpoint/WSDL pendiente (pendiente #1 del doc de CU). El manual rev. 93 (§11.1–11.3) confirma WebService SOAP: GetPendingTransaction, SetTransactionResult, ProcessTransaction.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-002",
+     "ref": "CU-INF-02",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Testear conexión exitosa (Handshake SOAP)",
+     "precondiciones": "Credenciales válidas y endpoint disponible",
+     "datos": "Fixture: No aplica. URL, usuario, contraseña, entorno",
+     "pasos": [
+      "Presionar “Testear conexión”.",
+      "Odoo ejecuta handshake.",
+      "Mostrar banner verde de éxito."
+     ],
+     "resultado_esperado": "Dado un endpoint disponible, cuando se prueba la conexión, entonces se muestra éxito en menos del tiempo de timeout configurado.",
+     "evidencia_esperada": "Captura del banner y log de la llamada.",
+     "observacion": "[Revisión: Vigente] Prerrequisito de todas las CU.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-003",
+     "ref": "CU-INF-03",
+     "cu": "Transversal",
+     "prioridad": "P2",
+     "escenario": "Testear conexión con error (Handshake SOAP)",
+     "precondiciones": "Credenciales inválidas o endpoint caído",
+     "datos": "Fixture: No aplica. Código HTTP, mensaje SOAP, timeout",
+     "pasos": [
+      "Presionar “Testear conexión”.",
+      "Odoo recibe error o timeout.",
+      "Mostrar diálogo de advertencia con código y mensaje."
+     ],
+     "resultado_esperado": "Dado un endpoint caído, cuando se prueba la conexión, entonces se muestra el error sin bloquear la interfaz.",
+     "evidencia_esperada": "Captura del diálogo y código devuelto.",
+     "observacion": "[Revisión: Vigente] Prerrequisito de todas las CU.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-004",
+     "ref": "CU-INF-04",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Lectura por lotes y actualización del cursor (Importación por lotes)",
+     "precondiciones": "Cursor de última sincronización configurado",
+     "datos": "Fixture: Cualquiera de 01–16. Fecha de último éxito, límite 100, fecha del último registro procesado",
+     "pasos": [
+      "Leer cursor.",
+      "Solicitar transacciones pendientes con límite",
+      "3. Encolar cada registro nuevo.",
+      "Al completar el lote, actualizar el cursor."
+     ],
+     "resultado_esperado": "Dado un lote de 100, cuando termina correctamente, entonces el cursor toma la fecha del último registro y no se reprocesa el lote.",
+     "evidencia_esperada": "Log de lotes, tabla de bitácora y valor del cursor antes/después.",
+     "observacion": "[Revisión: Ajustado] El manual define GetPendingTransaction + SetTransactionResult; no menciona cursor por fecha ni lotes de 100 (es diseño del doc técnico). Confirmar con Metrics si una transacción sigue pendiente hasta que se informa el resultado; si es así, el cursor por fecha no hace falta.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-005",
+     "ref": "CU-INF-05",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Idempotencia por TransactionID (Cualquier contexto)",
+     "precondiciones": "Transacción ya registrada en la bitácora",
+     "datos": "Fixture: 11- Consumo de Material.txt repetido. TransactionID, transactioncodeextref",
+     "pasos": [
+      "Recibir transacción.",
+      "Buscar TransactionID en la bitácora.",
+      "Si existe, ignorar.",
+      "Informar resultado sin reprocesar."
+     ],
+     "resultado_esperado": "Dada una transacción ya procesada, cuando vuelve a llegar, entonces se descarta y no se crea un segundo registro.",
+     "evidencia_esperada": "Conteo de registros antes/después y bitácora.",
+     "observacion": "[Revisión: Vigente] Base de la idempotencia que piden CU-2082 (SOR external_id), 2083 (BIL_ID), 2085 (PCK_ID), 2366 (agrupación) y 2086 (cancelación repetida).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-006",
+     "ref": "CU-INF-06",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Bitácora de integración y reproceso (Auditoría)",
+     "precondiciones": "Módulo de integración instalado",
+     "datos": "Fixture: Transacción forzada con error. transaction_id, context_type, xml_operation, xml_data, has_error, return_code, xml_return, dt_processing",
+     "pasos": [
+      "Registrar cada transacción entrante o saliente.",
+      "Guardar XML original, contexto, operación, estado y fecha UTC.",
+      "Permitir filtrar por estado y reprocesar."
+     ],
+     "resultado_esperado": "Dada una transacción fallida, cuando el usuario filtra por error, entonces la ve con su mensaje y puede reprocesarla.",
+     "evidencia_esperada": "Captura de la bitácora y del reproceso.",
+     "observacion": "[Revisión: Ajustado] El doc técnico es una copia del módulo de otro proyecto: el log se llama 'rofina.log' y context_type no incluye POR, REC ni PCK. Renombrar para EGI y ampliar los contextos.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-007",
+     "ref": "CU-INF-07",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Aislamiento de logs y prueba del ácido (Transaccionalidad)",
+     "precondiciones": "Cola de trabajos o savepoint configurado",
+     "datos": "Fixture: Cualquiera, con fallo forzado. has_error, rollback de negocio, commit de bitácora",
+     "pasos": [
+      "Registrar la transacción y confirmar.",
+      "Delegar el negocio a un job o savepoint.",
+      "Si el negocio falla, hacer rollback solo del negocio.",
+      "Marcar la bitácora con error y detalle."
+     ],
+     "resultado_esperado": "Dado un fallo crítico a mitad de la importación, cuando se revisa Odoo, entonces no hay registros comerciales parciales y la bitácora muestra has_error = True.",
+     "evidencia_esperada": "Consulta a tablas de negocio y bitácora.",
+     "observacion": "[Revisión: Vigente] Atomicidad exigida por CU-2244 CA06, CU-2245 escenario 6, CU-2361 RN-08 y CU-2366 CA-09.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-008",
+     "ref": "CU-INF-08",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Equivalencias de maestros (Validación previa)",
+     "precondiciones": "Tablas de equivalencia configuradas",
+     "datos": "Fixture: 01, 04, 07, 09. suppliercode, stockcode, unitcode, idcurrency, idcompany, stockplacecode",
+     "pasos": [
+      "Resolver cada código contra Odoo.",
+      "Si falta una equivalencia, detener la transacción.",
+      "Informar el código faltante."
+     ],
+     "resultado_esperado": "Dado un stockcode sin equivalencia, cuando se procesa la transacción, entonces queda en error con mensaje claro y no se crea el documento.",
+     "evidencia_esperada": "Mensaje de error y ausencia del registro.",
+     "observacion": "[Revisión: Ajustado] Como clientes y proveedores se crean en Odoo (Minuta 1), suppliercode / customer code deben resolverse contra partners existentes. Definir el campo de matching (ej. ref) [VERIFICAR EN SISTEMA].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-009",
+     "ref": "CU-INF-09",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Informar resultado a Metrics (SetTransactionResult)",
+     "precondiciones": "Transacción procesada",
+     "datos": "Fixture: Cualquiera. TransactionID, HasError 0/1, mensaje",
+     "pasos": [
+      "Procesar la transacción.",
+      "Informar resultado con una operación por llamada.",
+      "Registrar la respuesta."
+     ],
+     "resultado_esperado": "Dado un procesamiento exitoso, cuando Odoo informa el resultado, entonces Metrics recibe HasError = 0; si falla, recibe HasError = 1 con mensaje.",
+     "evidencia_esperada": "XML de respuesta y bitácora.",
+     "observacion": "[Revisión: Ajustado] Manual: la respuesta es el XMLReturn genérico (Return 0/1, Msg) por SetTransactionResult; el manual es inconsistente en el código de error (-1 vs 1). CU-2083 y 2085 piden devolver N° comprobante, CAE, fecha, montos y estado: el manual no define una respuesta específica → definir con Metrics.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-010",
+     "ref": "CU-INF-10",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Orden de llegada y reintentos (Concurrencia y reintentos)",
+     "precondiciones": "Cola de trabajos activa",
+     "datos": "Fixture: 08 y 09 en orden invertido. Dependencia REC/OC, fecha de transacción, contador de reintentos",
+     "pasos": [
+      "Detectar dependencia faltante.",
+      "Encolar reintento con espera.",
+      "Reintentar hasta el máximo configurado.",
+      "Si persiste, marcar error."
+     ],
+     "resultado_esperado": "Dado un STK que llega antes que su REC, cuando se reintenta, entonces espera la creación del remito y luego se procesa.",
+     "evidencia_esperada": "Log de reintentos y estado final.",
+     "observacion": "[Revisión: Vigente] Requerido por CU-2238 RN-07/RN-09, CU-2361 RN-09, CU-2244/2245 (reintentos). Falta definir máximo de reintentos y espera.",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "res.partner",
+   "descripcion": "Resolución de clientes y proveedores existentes (los crea Administración en Odoo).",
+   "casos": [
+    {
+     "id": "TC-011",
+     "ref": "N-PAR-01",
+     "cu": "ODOO_CU-2082, ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Cliente del SOR resuelto contra partner existente (SOR / INSERT)",
+     "precondiciones": "Cliente creado por Administración en Odoo",
+     "datos": "Fixture: 06. sdisorcustomerinfo.code=1",
+     "pasos": [
+      "Recibir SOR.",
+      "Resolver el cliente por su código.",
+      "Usar el partner existente."
+     ],
+     "resultado_esperado": "Dado un SOR de un cliente existente, cuando se procesa, entonces el pedido usa ese partner y no se crea ni modifica el cliente.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] Campo de matching código Metrics ↔ partner a definir [VERIFICAR EN SISTEMA].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-012",
+     "ref": "N-PAR-02",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Datos fiscales del partner como precondición de la factura (BIL / INSERT)",
+     "precondiciones": "Partner sin CUIT, responsabilidad IVA, provincia o país",
+     "datos": "Fixture: 16. CUIT, responsabilidad fiscal, provincia, país",
+     "pasos": [
+      "Recibir solicitud de facturación.",
+      "Validar datos fiscales del partner.",
+      "Calcular impuestos por posición fiscal."
+     ],
+     "resultado_esperado": "Dado un partner con datos fiscales completos, cuando se factura, entonces los impuestos se calculan por su posición fiscal; si falta un dato, entonces [COMPLETAR: comportamiento esperado].",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] CU-2083 exige los datos pero no dice qué pasa si faltan.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-013",
+     "ref": "N-PAR-03",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "Proveedor de la OC resuelto por código (POR / INSERT)",
+     "precondiciones": "Proveedor creado por Administración",
+     "datos": "Fixture: 07. suppliercode=329",
+     "pasos": [
+      "Buscar res.partner por ref.",
+      "Asignarlo a la PO."
+     ],
+     "resultado_esperado": "Dado suppliercode=329 existente, cuando se procesa la PO, entonces se asigna ese proveedor sin crear partners.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "product",
+   "descripcion": "Categoría hoja (CU-2367) y distribución analítica (CU-2368).",
+   "casos": [
+    {
+     "id": "TC-014",
+     "ref": "CU-ITM-05",
+     "cu": "ODOO_CU-2367",
+     "prioridad": "P1",
+     "escenario": "Jerarquía de categorías (STKITEM / INSERT)",
+     "precondiciones": "Categoría raíz “Metrics”",
+     "datos": "Fixture: 04. mastermaterialgroupcode=02, mastermaterialgroupdescription=Sustratos, materialgroupcode=02.01, materialgroupdescription=Papel Cartón",
+     "pasos": [
+      "Leer el valor de categoría del XML (campo a definir).",
+      "Buscar la categoría por nombre en product.category.",
+      "Validar que no tenga subcategorías (child_id vacío).",
+      "Asignar el producto a esa categoría."
+     ],
+     "resultado_esperado": "Dado un STKITEM cuyo valor coincide con una categoría hoja (ej. FLEXO / PROCESO A / CONSUMIBLE / MATERIALES FLEXO), cuando se procesa, entonces el producto queda en esa categoría y no se crea ninguna categoría nueva.",
+     "evidencia_esperada": "Árbol de categorías.",
+     "observacion": "[Revisión: Ajustado] CU-2367: el árbol de categorías está precargado en Odoo; la integración NO crea categorías, busca una categoría hoja (sin hijas). Minuta 1: categoría nueva → control manual en Odoo para asignar la cuenta contable. Campo del XML a usar: a definir (CU-2367).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-015",
+     "ref": "CU-ITM-12",
+     "cu": "ODOO_CU-2367",
+     "prioridad": "P3",
+     "escenario": "Error por UOM o categoría faltante (STKITEM / INSERT)",
+     "precondiciones": "Código no configurado",
+     "datos": "Fixture: Variante de 04 con unitcode=ZZ. unitcode, materialgroupcode, mastermaterialgroupcode",
+     "pasos": [
+      "Intentar resolver la UOM o categoría.",
+      "No encontrarla.",
+      "Registrar error.",
+      "No crear el producto."
+     ],
+     "resultado_esperado": "Dada una UOM inexistente, cuando se procesa, entonces la transacción falla y no se crea el producto.",
+     "evidencia_esperada": "Bitácora y ausencia de producto.",
+     "observacion": "[Revisión: Ajustado] CU-2367: si la categoría no existe o es un nodo padre, se bloquea la creación/actualización del STK ITEM y se registra en la bitácora.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-016",
+     "ref": "N-PRD-01",
+     "cu": "ODOO_CU-2367",
+     "prioridad": "P1",
+     "escenario": "Categoría que es nodo padre (STKITEM / INSERT o UPDATE)",
+     "precondiciones": "Árbol de categorías precargado",
+     "datos": "Fixture: Variante de 04. Valor de categoría = 'FLEXO / PROCESO A / PRODUCTO TERMINADO' (tiene hija CAJAS FLEXO)",
+     "pasos": [
+      "Buscar categoría.",
+      "Detectar que tiene subcategorías.",
+      "Bloquear y registrar."
+     ],
+     "resultado_esperado": "Dado un valor que coincide con un nodo padre, cuando se procesa, entonces se bloquea la creación/actualización del ítem y se registra el error en la bitácora.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-017",
+     "ref": "N-PRD-02",
+     "cu": "ODOO_CU-2367",
+     "prioridad": "P1",
+     "escenario": "Categoría inexistente (STKITEM / INSERT o UPDATE)",
+     "precondiciones": "Árbol precargado",
+     "datos": "Fixture: Variante de 04. Valor de categoría inexistente",
+     "pasos": [
+      "Buscar categoría.",
+      "No encontrarla.",
+      "Bloquear y registrar."
+     ],
+     "resultado_esperado": "Dado un nombre de categoría que no existe en Odoo, cuando se procesa, entonces se bloquea el ítem y se registra el error.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] Campo del XML a usar: a definir.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-018",
+     "ref": "N-PRD-03",
+     "cu": "ODOO_CU-2368",
+     "prioridad": "P1",
+     "escenario": "Cuenta analítica en la categoría y control de plan (Configuración)",
+     "precondiciones": "Árbol de categorías y planes analíticos creados",
+     "datos": "Fixture: No aplica. product.category.analytic_account_id (campo nuevo)",
+     "pasos": [
+      "Asignar una cuenta analítica a cada nivel.",
+      "Intentar asignar a dos subcategorías del árbol cuentas del mismo plan."
+     ],
+     "resultado_esperado": "Dado el árbol de categorías, cuando se configura, entonces cada nivel acepta una cuenta analítica y no se permiten dos niveles de la rama con el mismo plan analítico.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-019",
+     "ref": "N-PRD-04",
+     "cu": "ODOO_CU-2368",
+     "prioridad": "P1",
+     "escenario": "Generación del modelo de distribución analítica al crear el producto (STKITEM / INSERT o alta manual)",
+     "precondiciones": "Categoría hoja con toda la rama configurada",
+     "datos": "Fixture: 04. Rama MATERIALES FLEXO → CONSUMIBLE → PROCESO A → FLEXO",
+     "pasos": [
+      "Crear el producto.",
+      "Recorrer parent_id hasta la raíz.",
+      "Crear account.analytic.distribution.model con las cuentas de la rama."
+     ],
+     "resultado_esperado": "Dado un producto en una categoría hoja, cuando se crea, entonces existe un account.analytic.distribution.model del producto con las cuentas analíticas de toda la rama (100 % por plan).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] CU-2368 marca como estimación el 100 % por dimensión: verificar con el equipo contable.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-020",
+     "ref": "N-PRD-05",
+     "cu": "ODOO_CU-2368",
+     "prioridad": "P2",
+     "escenario": "Actualización del producto o de su categoría (STKITEM / UPDATE)",
+     "precondiciones": "Producto con modelo de distribución",
+     "datos": "Fixture: 04 con cambio de categoría. Nueva categoría hoja",
+     "pasos": [
+      "Cambiar la categoría.",
+      "Recalcular la rama.",
+      "Actualizar el modelo existente."
+     ],
+     "resultado_esperado": "Dado un cambio de categoría, cuando se guarda, entonces se actualiza el mismo modelo de distribución con la nueva rama y no se crea uno duplicado.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-021",
+     "ref": "CU-ITM-01",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P1",
+     "escenario": "Alta de producto terminado (STKITEM / INSERT)",
+     "precondiciones": "Categorías y UOM disponibles",
+     "datos": "Fixture: 03- Producto Terminado.txt. iditem=1, materialtype=6, itemtype=1, stockcode=99.0001, unitcode=UN, unitcodedemand=UN, unitcodecost=UN, mastermaterialgroupcode=99, uselot=1, controltraceability=1",
+     "pasos": [
+      "Crear product.product.",
+      "Asignar default_code=stockcode.",
+      "Mapear itemtype=1 → type=product.",
+      "Asignar UOM y categoría.",
+      "Configurar trazabilidad."
+     ],
+     "resultado_esperado": "Dado un PT con stockcode=99.0001, cuando se procesa, entonces existe un producto almacenable (type=consu, is_storable=True) con default_code=99.0001 y tracking por lote.",
+     "evidencia_esperada": "Ficha del producto y bitácora.",
+     "observacion": "[Revisión: Ajustado] Minuta 1: los productos nacen en Metrics → hace falta integrar STKITEM pero no hay CU Odoo propia (proponer). Odoo 19 ya no tiene type='product': un almacenable es type='consu' + is_storable=True; servicio = type='service'.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-022",
+     "ref": "CU-ITM-02",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P1",
+     "escenario": "Alta de materia prima (STKITEM / INSERT)",
+     "precondiciones": "Categorías de sustratos disponibles",
+     "datos": "Fixture: 04- Material.txt. iditem=5, materialtype=4, itemtype=0, stockcode=02.01.0003, unitcode=FL, unitcodedemand=FL, unitcodecost=KG, materialgroupcode=02.01, mastermaterialgroupcode=02, weightkg=1, searchkey=KLABIN",
+     "pasos": [
+      "Crear product.product.",
+      "Mapear itemtype=0 → type=product.",
+      "Asignar UOM de stock, demanda y costo.",
+      "Crear jerarquía de categorías."
+     ],
+     "resultado_esperado": "Dado unitcode=FL y unitcodecost=KG, cuando se procesa, entonces el producto conserva ambas unidades y el factor de conversión.",
+     "evidencia_esperada": "Ficha del producto y conversiones.",
+     "observacion": "[Revisión: Ajustado] Sin CU Odoo propia (proponer). Odoo 19 ya no tiene type='product': un almacenable es type='consu' + is_storable=True; servicio = type='service'. Minuta 1: la integración usa solo la unidad de costo y Odoo registra en kg.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-023",
+     "ref": "CU-ITM-03",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P2",
+     "escenario": "Alta de intermediario, servicio y consumible (STKITEM / INSERT)",
+     "precondiciones": "Categorías disponibles",
+     "datos": "Fixture: Variantes de 03 y 04 con itemtype=2, 3 y 4. itemtype",
+     "pasos": [
+      "Mapear 2 → product.",
+      "Mapear 3 → service.",
+      "Mapear 4 → consu.",
+      "Ajustar configuración de inventario."
+     ],
+     "resultado_esperado": "Dado itemtype=3, cuando se procesa, entonces el producto es de tipo servicio y no controla stock.",
+     "evidencia_esperada": "Campo type y configuración de inventario.",
+     "observacion": "[Revisión: Ajustado] Sin CU Odoo propia (proponer). Odoo 19 ya no tiene type='product': un almacenable es type='consu' + is_storable=True; servicio = type='service'.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-024",
+     "ref": "CU-ITM-06",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P1",
+     "escenario": "UOM y conversiones (STKITEM / INSERT o UPDATE)",
+     "precondiciones": "UOM base disponibles",
+     "datos": "Fixture: 03 y 04. unitcode, unitcodedemand, unitcodecost, sdistkunitconversion.unitcodeorigin, unitcodedestiny, factor",
+     "pasos": [
+      "Buscar cada UOM por nombre o símbolo.",
+      "Crear la UOM si no existe.",
+      "Guardar factores de conversión.",
+      "Validar coherencia entre compra, stock, consumo e ingeniería."
+     ],
+     "resultado_esperado": "Dado un producto con unitcodecost=KG, cuando se procesa, entonces el costo y el stock se expresan en KG y la cantidad original en FL queda informativa.",
+     "evidencia_esperada": "UOM del producto y tabla de conversiones.",
+     "observacion": "[Revisión: Ajustado] Minuta 1: Metrics hace las conversiones; la integración usa solo la unidad de costo (quantityunitcost / unitcostcode) y Odoo registra en kg.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-025",
+     "ref": "CU-ITM-07",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P1",
+     "escenario": "Trazabilidad por lote o serie (STKITEM / INSERT o UPDATE)",
+     "precondiciones": "Producto sin tracking definido",
+     "datos": "Fixture: 03 y 04. uselot, controltraceability",
+     "pasos": [
+      "Evaluar uselot.",
+      "Evaluar controltraceability.",
+      "Asignar lot, serial o none según R09."
+     ],
+     "resultado_esperado": "Dado un producto inventariable, cuando se procesa, entonces tracking=lot sin importar uselot / controltraceability.",
+     "evidencia_esperada": "Campo tracking del producto.",
+     "observacion": "[Revisión: Ajustado] Alcance WO §13: tracking por lote para todos los productos inventariables, independientemente de los flags de Metrics; no se usan números de serie.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-026",
+     "ref": "CU-ITM-09",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P1",
+     "escenario": "Vínculo de bobina madre e hija (OriginItem) (STKITEM / INSERT o UPDATE)",
+     "precondiciones": "Ítem madre existente",
+     "datos": "Fixture: Pendiente: muestra con originitem distinto de 0. stockcode, originitem, usesctrlvolume, unitcodecost",
+     "pasos": [
+      "Leer originitem.",
+      "Buscar el ítem madre.",
+      "Vincular la hija con la madre.",
+      "Heredar o prorratear costo según regla de negocio."
+     ],
+     "resultado_esperado": "Dado un ítem hija con originitem válido, cuando se procesa, entonces queda vinculado a la madre y el costo se prorratea según la regla definida.",
+     "evidencia_esperada": "Vínculo entre productos y costo resultante.",
+     "observacion": "[Revisión: Bloqueado] Falta muestra con originitem ≠ 0 (pendiente #14). Reunión 02/07: STKITEM envía madre e hija con códigos distintos.",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-027",
+     "ref": "CU-ITM-13",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P1",
+     "escenario": "Discrepancia de MaterialType entre STKItem y WO (Validación de reglas)",
+     "precondiciones": "Mapeos R08 y materialtype de WO cargados",
+     "datos": "Fixture: 03, 04, 05 y OP compartida. materialtype de STKItem: 1 Tinta, 2 Plancha, 3 Otros, 4 Papel Hoja, 5 Papel Bobina, 6 Personalizado; materialtype de WO: 0 Papel, 1 Tinta, 2 Plancha, 3 Otros",
+     "pasos": [
+      "Identificar el contexto del XML.",
+      "Aplicar la tabla de materialtype correspondiente.",
+      "No reutilizar la tabla de WO en STKItem ni viceversa."
+     ],
+     "resultado_esperado": "Dado un STKItem con materialtype=4, cuando se procesa, entonces se crea “Papel Hoja” y no “Otros”; dado un WO con materialtype=3, entonces se interpreta como “Otros”.",
+     "evidencia_esperada": "Categoría asignada y tabla de mapeo usada.",
+     "observacion": "[Revisión: Vigente] Confirmado por el manual rev. 93: STKITEM 1 tinta, 2 plancha, 3 otros, 4 papel hoja, 5 papel bobina, 6 personalizado; WO 0 papel, 1 tinta, 2 plancha, 3 otro.",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "sale.order",
+   "descripcion": "Pedido de venta SOR (CU-2082) y cancelación (CU-2086).",
+   "casos": [
+    {
+     "id": "TC-028",
+     "ref": "CU-SOR-01",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P1",
+     "escenario": "Alta de pedido de venta desde cotización aprobada (SOR / INSERT)",
+     "precondiciones": "Cliente y producto existentes",
+     "datos": "Fixture: 06- Pedido de Venta.txt. saleordernumber=5Q-1, status=2, customerorderid, quotationdt, duedt, idcurrency=1, exchangerate=1",
+     "pasos": [
+      "Crear sale.order.",
+      "Asignar cliente, moneda y fechas.",
+      "Crear líneas.",
+      "Confirmar según status."
+     ],
+     "resultado_esperado": "Dado un SOR nuevo, cuando se procesa, entonces se crea un sale.order con el SOR como external_id; dado un SOR ya existente, entonces no se crea otro pedido.",
+     "evidencia_esperada": "Pedido y bitácora.",
+     "observacion": "[Revisión: Ajustado] CU-2082 RN-01: el identificador del SOR actúa como external_id único en Odoo; no se permite duplicar. El cliente debe existir (lo crea Administración).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-029",
+     "ref": "CU-SOR-02",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P1",
+     "escenario": "Líneas con orden de producción y cotización (SOR / INSERT)",
+     "precondiciones": "MO y cotización existentes",
+     "datos": "Fixture: 06. stockcode=99.0001, quantity=100000, unitvalue=0.0254, totalvalue=2540, unitcode=UN, wonumber=OFC00001, quotenumber=5, itemmarkuprate=9.88",
+     "pasos": [
+      "Crear sale.order.line.",
+      "Asignar producto, cantidad, precio y UOM.",
+      "Guardar wonumber y quotenumber como referencias.",
+      "Validar total de línea."
+     ],
+     "resultado_esperado": "Dada una línea de 100.000 UN a 0,0254, cuando se procesa, entonces el total es 2.540 y queda vinculada a OFC00001.",
+     "evidencia_esperada": "Línea del pedido y vínculo con la MO.",
+     "observacion": "[Revisión: Vigente] Duda técnica de CU-2082: falta la tabla de equivalencias de UoM de venta Metrics ↔ Odoo.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-030",
+     "ref": "CU-SOR-03",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P2",
+     "escenario": "Condición de pago y vencimientos (SOR / INSERT o UPDATE)",
+     "precondiciones": "Términos de pago disponibles",
+     "datos": "Fixture: 06. conditioncode=Al contado, duedate=2026-07-24, value=2540",
+     "pasos": [
+      "Buscar o crear el término de pago.",
+      "Asignarlo al pedido.",
+      "Guardar vencimientos informados.",
+      "Comparar con el cálculo de Odoo."
+     ],
+     "resultado_esperado": "Dado un pedido “Al contado” con vencimiento, cuando se procesa, entonces el término y el vencimiento quedan registrados y se muestra cualquier diferencia.",
+     "evidencia_esperada": "Pedido y vencimientos.",
+     "observacion": "[Revisión: Vigente] CU-2082 no define regla de condición de pago; 'Al contado' a mapear.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-031",
+     "ref": "CU-SOR-04",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P2",
+     "escenario": "Moneda y tipo de cambio (SOR / INSERT o UPDATE)",
+     "precondiciones": "Monedas y tasas configuradas",
+     "datos": "Fixture: 06. idcurrency=1, exchangerate=1, unitvalue, totalvalue",
+     "pasos": [
+      "Resolver la moneda.",
+      "Asignar la tasa.",
+      "Guardar importes en moneda del pedido y en moneda de la empresa."
+     ],
+     "resultado_esperado": "Dado un pedido en moneda extranjera, cuando se procesa, entonces se conservan los importes originales y su equivalente en moneda de la empresa.",
+     "evidencia_esperada": "Pedido y tabla de tasas.",
+     "observacion": "[Revisión: Ajustado] CU-2083 RN-04: Metrics valora en USD; Odoo factura en ARS con el mecanismo estándar de tipo de cambio de Odoo.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-032",
+     "ref": "CU-SOR-05",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P2",
+     "escenario": "Entregas parciales y direcciones (SOR / INSERT o UPDATE)",
+     "precondiciones": "Cliente con direcciones",
+     "datos": "Fixture: 06, nodo sdisoritemdelivery. deliverydt, deliveryqty=100000, billing=1, delivery=1, status=0, address, carriercode",
+     "pasos": [
+      "Leer entregas de la línea.",
+      "Guardar fecha, cantidad y estado.",
+      "Asociar dirección de entrega.",
+      "Asociar transportista si existe."
+     ],
+     "resultado_esperado": "Dada una entrega parcial de 100.000, cuando se procesa, entonces queda registrada con su fecha y dirección sin modificar la cantidad pedida.",
+     "evidencia_esperada": "Líneas de entrega y direcciones.",
+     "observacion": "[Revisión: Vigente] Entregas parciales: control de facturación por qty_invoiced (CU-2083 RN-02).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-033",
+     "ref": "CU-SOR-06",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P2",
+     "escenario": "Estados del pedido de venta (SOR / INSERT o UPDATE)",
+     "precondiciones": "Pedido existente",
+     "datos": "Fixture: 06 y variantes de status 0–5. status",
+     "pasos": [
+      "Mapear 0/1 → draft.",
+      "Mapear 2 → sale.",
+      "Mapear 3 → sent.",
+      "Mapear 4 → done.",
+      "Mapear 5 → cancel."
+     ],
+     "resultado_esperado": "Dado status=5, cuando se procesa, entonces el pedido queda cancelado sin borrar el historial.",
+     "evidencia_esperada": "Estado del pedido y bitácora.",
+     "observacion": "[Revisión: Ajustado] El mapeo 2 → sale, 3 → sent hace retroceder el pedido. Definir la tabla de estados SOR con el manual.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-034",
+     "ref": "CU-SOR-08",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P3",
+     "escenario": "Error por cliente o producto inexistente (SOR / INSERT)",
+     "precondiciones": "Maestro faltante",
+     "datos": "Fixture: Variante de 06 con code=999 o stockcode=ZZ. sdisorcustomerinfo.code, stockcode",
+     "pasos": [
+      "Resolver cliente y producto.",
+      "Detectar faltante.",
+      "Fallar la transacción.",
+      "No crear pedido ni línea."
+     ],
+     "resultado_esperado": "Dado un cliente inexistente, cuando se procesa, entonces no se crea el pedido y la bitácora informa el código faltante.",
+     "evidencia_esperada": "Bitácora y ausencia de pedido.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-035",
+     "ref": "N-SO-01",
+     "cu": "ODOO_CU-2082",
+     "prioridad": "P2",
+     "escenario": "UoM de venta sin equivalencia (SOR / INSERT)",
+     "precondiciones": "Tabla de equivalencias de UoM",
+     "datos": "Fixture: 06 con unitcode no mapeado. unitcode",
+     "pasos": [
+      "Resolver UoM de la línea.",
+      "No encontrar equivalencia."
+     ],
+     "resultado_esperado": "Dada una UoM sin equivalencia, cuando se procesa, entonces [COMPLETAR: error / pendiente].",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Bloqueado] Falta la tabla de equivalencias Metrics ↔ Odoo.",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-036",
+     "ref": "CU-SOR-07",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P2",
+     "escenario": "Modificación y cancelación (SOR / UPDATE o CANCEL)",
+     "precondiciones": "Pedido existente",
+     "datos": "Fixture: 06 con cambios. saleordernumber, quantity, unitvalue, status",
+     "pasos": [
+      "Buscar pedido por número.",
+      "Actualizar líneas y fechas.",
+      "Cancelar si corresponde.",
+      "No duplicar líneas."
+     ],
+     "resultado_esperado": "Dado un pedido existente, cuando llega un UPDATE, entonces se actualizan sus líneas y no se crea un pedido nuevo.",
+     "evidencia_esperada": "Comparación antes/después.",
+     "observacion": "[Revisión: Ajustado] CU-2086: solo se cancela si no está facturado ni entregado (CA01–CA04). Ver casos N-CAN.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-037",
+     "ref": "N-CAN-01",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P1",
+     "escenario": "Cancelación de pedido sin factura ni entrega (Cancelación desde Metrics)",
+     "precondiciones": "Pedido sin facturas confirmadas ni entregas validadas",
+     "datos": "Fixture: 06 + cancelación. SOR",
+     "pasos": [
+      "Recibir cancelación.",
+      "Validar estados.",
+      "Cancelar el pedido."
+     ],
+     "resultado_esperado": "Dado un pedido sin factura ni entrega, cuando Metrics informa la cancelación, entonces Odoo cancela el pedido (CA01).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] Contexto/operación con que Metrics informa la cancelación: [COMPLETAR].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-038",
+     "ref": "N-CAN-02",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P1",
+     "escenario": "Cancelación de pedido facturado (Cancelación desde Metrics)",
+     "precondiciones": "Pedido con factura confirmada",
+     "datos": "Fixture: 06 + 16 + cancelación. SOR",
+     "pasos": [
+      "Recibir cancelación.",
+      "Detectar factura confirmada.",
+      "No cancelar e informar."
+     ],
+     "resultado_esperado": "Dado un pedido facturado, cuando Metrics informa la cancelación, entonces no se cancela y se informa 'NO CANCELADO – FACTURA EMITIDA' (CA02).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-039",
+     "ref": "N-CAN-03",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P1",
+     "escenario": "Cancelación de pedido entregado (Cancelación desde Metrics)",
+     "precondiciones": "Pedido con remito validado",
+     "datos": "Fixture: 06 + 14 + 15 + cancelación. SOR",
+     "pasos": [
+      "Recibir cancelación.",
+      "Detectar entrega validada.",
+      "No cancelar e informar."
+     ],
+     "resultado_esperado": "Dado un pedido con entrega validada, cuando Metrics informa la cancelación, entonces no se cancela y se informa que ya tiene entrega (CA03).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-040",
+     "ref": "N-CAN-04",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P2",
+     "escenario": "Pedido con avance parcial (Cancelación desde Metrics)",
+     "precondiciones": "Pedido parcialmente entregado o facturado",
+     "datos": "Fixture: 06 con entrega o factura parcial. SOR",
+     "pasos": [
+      "Recibir cancelación.",
+      "Detectar avance parcial.",
+      "Informar excepción."
+     ],
+     "resultado_esperado": "Dado un pedido con avance parcial, cuando se pide cancelar, entonces se considera no cancelable automáticamente y se informa como excepción (CA04).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-041",
+     "ref": "N-CAN-05",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P1",
+     "escenario": "Cancelación completa ordenada y resultado a Metrics (Cancelación desde Metrics)",
+     "precondiciones": "SOR con factura en borrador y remito no emitido",
+     "datos": "Fixture: 06 + 14 + 16 + cancelación. SOR, factura, remito",
+     "pasos": [
+      "Identificar SOR, factura y remito.",
+      "Validar estados.",
+      "Cancelar factura borrador, remito y pedido.",
+      "Informar resultado."
+     ],
+     "resultado_esperado": "Dado que todos los documentos son cancelables, cuando se procesa, entonces se cancelan en orden y se informa CANCELADO; si uno bloquea, entonces se informa documento, estado y motivo del bloqueo.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-042",
+     "ref": "N-CAN-06",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P2",
+     "escenario": "Idempotencia de la cancelación (Cancelación desde Metrics)",
+     "precondiciones": "Cancelación ya procesada",
+     "datos": "Fixture: Cancelación repetida. SOR",
+     "pasos": [
+      "Reenviar la misma cancelación.",
+      "Verificar estado actual.",
+      "No ejecutar nada nuevo."
+     ],
+     "resultado_esperado": "Dada una cancelación ya procesada, cuando llega de nuevo, entonces no se cancela dos veces, no se duplican documentos y no da error.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-043",
+     "ref": "N-CAN-07",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P2",
+     "escenario": "Trazabilidad de la cancelación (Cancelación desde Metrics)",
+     "precondiciones": "",
+     "datos": "Fixture: Cualquier cancelación. IDs Metrics/SOR/factura/remito, estados, resultado, motivo, fecha",
+     "pasos": [
+      "Procesar cancelación.",
+      "Revisar el registro."
+     ],
+     "resultado_esperado": "Dada una cancelación procesada, cuando se consulta el log, entonces figuran los identificadores, el estado de cada documento, el resultado, el motivo y la fecha/hora.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "purchase.order",
+   "descripcion": "Órdenes de compra POR (CU-2238).",
+   "casos": [
+    {
+     "id": "TC-044",
+     "ref": "CU-POR-01",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "Alta de orden de compra nacional (POR / INSERT)",
+     "precondiciones": "Proveedor y producto existentes",
+     "datos": "Fixture: 07- Orden de Compra.txt. purchaseordernumber=1, suppliercode=329, emissiondt, idcurrency=1, situation=1, status=0, stockcode=02.01.0003, quantity=3623.04, unitvalue=2900, totalvalue=10506816",
+     "pasos": [
+      "Crear purchase.order.",
+      "Asignar proveedor, moneda y fechas.",
+      "Crear líneas con producto, cantidad y precio.",
+      "Guardar número de OC como referencia única."
+     ],
+     "resultado_esperado": "Dada una OC con una línea de 3.623,04 KG a 2.900, cuando se procesa, entonces el total de línea es 10.506.816 y la OC queda vinculada al proveedor.",
+     "evidencia_esperada": "OC y bitácora.",
+     "observacion": "[Revisión: Ajustado] CU-2238: clave única x_metrics_po_key = idcompany + purchaseordernumber; purchaseordernumber → partner_ref (el Excel de mapeo decía name); suppliercode → partner por ref.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-045",
+     "ref": "CU-POR-02",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "Orden de compra en moneda extranjera (POR / INSERT o UPDATE)",
+     "precondiciones": "Moneda y tasa disponibles",
+     "datos": "Fixture: 07. idcurrency=2, exchangerate=1450, exchangeratedt, unitvalue_foreigncurrency=2, totalvalue_foreigncurrency=7246.08",
+     "pasos": [
+      "Resolver moneda extranjera.",
+      "Guardar importes en moneda extranjera.",
+      "Aplicar tasa y guardar equivalente en moneda de la empresa.",
+      "Guardar fecha de tasa."
+     ],
+     "resultado_esperado": "Dado un valor unitario de 2 USD con tasa 1.450, cuando se procesa, entonces el valor en moneda de la empresa es 2.900 por KG.",
+     "evidencia_esperada": "Línea de OC en ambas monedas.",
+     "observacion": "[Revisión: Ajustado] CU-2238 RN-12/13/14: si viene exchangerate se usa esa tasa; si no, res.currency.rate; sin tasa aplicable → pendiente.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-046",
+     "ref": "CU-POR-03",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P2",
+     "escenario": "Condición de pago y vencimientos (POR / INSERT o UPDATE)",
+     "precondiciones": "Términos de pago disponibles",
+     "datos": "Fixture: 07. conditioncode=45 dias, duedate=2026-09-14, value=12713247.36",
+     "pasos": [
+      "Buscar el término por nombre.",
+      "Crearlo si no existe.",
+      "Guardar vencimientos informados.",
+      "Comparar con el cálculo de Odoo."
+     ],
+     "resultado_esperado": "Dada una condición “45 dias”, cuando se procesa, entonces se crea o reutiliza el término y se guarda el vencimiento informado.",
+     "evidencia_esperada": "OC y vencimientos.",
+     "observacion": "[Revisión: Vigente] CU-2238: si conditioncode no existe por nombre, se crea el término de pago dinámicamente. Regla de vencimiento '45 dias' pendiente (#3).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-047",
+     "ref": "CU-POR-04",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "Actualización de OC y control de duplicados (POR / UPDATE)",
+     "precondiciones": "OC existente por purchaseordernumber",
+     "datos": "Fixture: 07 procesado dos veces con cambios. purchaseordernumber, suppliercode, quantity, unitvalue, status",
+     "pasos": [
+      "Buscar la OC por número.",
+      "Actualizar cabecera y líneas.",
+      "Mantener una sola OC.",
+      "No duplicar líneas."
+     ],
+     "resultado_esperado": "Dado un INSERT con clave ya existente, cuando se procesa, entonces se rechaza con log de duplicado; dado un UPDATE, entonces se actualizan cabecera y líneas de la misma PO.",
+     "evidencia_esperada": "Conteo de OC y comparación de líneas.",
+     "observacion": "[Revisión: Ajustado] CU-2238: un INSERT con clave existente se RECHAZA y registra log de duplicado sin sobrescribir (el caso decía actualizar). UPDATE con líneas facturadas → cola de reintento hasta que se anule la factura.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-048",
+     "ref": "CU-POR-05",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P2",
+     "escenario": "Anulación o eliminación de OC (POR / DELETE o CANCEL)",
+     "precondiciones": "OC existente",
+     "datos": "Fixture: Variante de 07 con operación DELETE. purchaseordernumber, status",
+     "pasos": [
+      "Buscar la OC.",
+      "Verificar que no tenga recepciones ni facturas.",
+      "Cancelar o eliminar según la regla.",
+      "Registrar el motivo."
+     ],
+     "resultado_esperado": "Dada una OC sin documentos vinculados, cuando se anula, entonces queda cancelada o eliminada según la política definida.",
+     "evidencia_esperada": "Estado de la OC y bitácora.",
+     "observacion": "[Revisión: Ajustado] CU-2238 RN-06: DELETE → cancelación nativa (estado cancel; la HU nombra action_rfq_cancel [VERIFICAR EN SISTEMA]). Con facturas asociadas → queda suspendida en cola de reintento.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-049",
+     "ref": "CU-POR-06",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P2",
+     "escenario": "Orden de compra no aprobada (POR / INSERT)",
+     "precondiciones": "Regla de negocio definida",
+     "datos": "Fixture: Variante de 07 con situation=0. situation (0 no aprobada, 1 aprobada, 2 rechazada, 3 en aprobación)",
+     "pasos": [
+      "Leer situation.",
+      "Si no está aprobada, no crear o crear en borrador según la política.",
+      "Registrar la decisión."
+     ],
+     "resultado_esperado": "Dada una OC no aprobada, cuando se procesa, entonces se aplica la política definida y no se crea una OC operativa.",
+     "evidencia_esperada": "Estado de la OC y bitácora.",
+     "observacion": "[Revisión: Bloqueado] CU-2238 no trata 'situation'. Falta política para OC no aprobada (pendiente #8).",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-050",
+     "ref": "CU-POR-07",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "OC de solo lectura en Odoo (POR / control de acceso)",
+     "precondiciones": "Usuario estándar y usuario bot",
+     "datos": "Fixture: 07. Permisos de purchase.order",
+     "pasos": [
+      "Crear la OC con el bot.",
+      "Ingresar con usuario estándar.",
+      "Verificar que no puede editar ni eliminar.",
+      "Verificar que el bot sí puede modificar."
+     ],
+     "resultado_esperado": "Dado un usuario funcional, cuando abre la OC, entonces puede verla pero no editarla ni eliminarla.",
+     "evidencia_esperada": "Prueba de permisos.",
+     "observacion": "[Revisión: Vigente] CU-2238 RN-15.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-051",
+     "ref": "CU-POR-08",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P3",
+     "escenario": "Error por proveedor, producto o moneda inexistente (POR / INSERT)",
+     "precondiciones": "Maestro faltante",
+     "datos": "Fixture: Variante de 07 con suppliercode=999. suppliercode, stockcode, idcurrency",
+     "pasos": [
+      "Resolver los maestros.",
+      "Detectar el faltante.",
+      "Fallar la transacción.",
+      "No crear la OC."
+     ],
+     "resultado_esperado": "Dado un proveedor inexistente, cuando se procesa, entonces la transacción queda pendiente con el motivo en el log y se procesa sola cuando el proveedor existe.",
+     "evidencia_esperada": "Bitácora y ausencia de OC.",
+     "observacion": "[Revisión: Ajustado] CU-2238 RN-08: no se descarta; queda en cola de reintento automático y se procesa cuando existe el maestro.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-052",
+     "ref": "CU-POR-09",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P2",
+     "escenario": "Impuestos y total de cabecera (POR / validación)",
+     "precondiciones": "Impuestos configurados",
+     "datos": "Fixture: 07. totalvalue=12713247.36, total de línea 10506816",
+     "pasos": [
+      "Sumar líneas sin impuestos.",
+      "Calcular impuestos.",
+      "Comparar con el total de cabecera.",
+      "Informar diferencia si supera la tolerancia."
+     ],
+     "resultado_esperado": "Dado un total de cabecera de 12.713.247,36 y una base de 10.506.816, cuando se valida, entonces la diferencia corresponde al 21% y queda documentada.",
+     "evidencia_esperada": "Reporte de conciliación de totales.",
+     "observacion": "[Revisión: Ajustado] CU-2238: totalvalue no se mapea; si el total de Odoo difiere, se publica una advertencia en el chatter sin bloquear. Impuestos desde product_id.supplier_taxes_id.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-053",
+     "ref": "N-PO-01",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P2",
+     "escenario": "Líneas con stockcode duplicado (POR / INSERT)",
+     "precondiciones": "",
+     "datos": "Fixture: 07 con línea repetida. stockcode repetido",
+     "pasos": [
+      "Recibir PO.",
+      "Detectar stockcode duplicado."
+     ],
+     "resultado_esperado": "Dado un XML con el mismo stockcode en dos líneas, cuando se procesa, entonces la transacción queda en error y la bitácora informa la ambigüedad.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-054",
+     "ref": "N-PO-02",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "UPDATE o DELETE antes del INSERT (POR / UPDATE o DELETE)",
+     "precondiciones": "PO inexistente",
+     "datos": "Fixture: 07 en orden invertido. purchaseordernumber",
+     "pasos": [
+      "Recibir UPDATE.",
+      "Detectar que no existe el INSERT.",
+      "Esperar."
+     ],
+     "resultado_esperado": "Dado un UPDATE que llega antes que su INSERT, cuando se procesa, entonces queda en espera y se aplica después del INSERT.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-055",
+     "ref": "N-PO-03",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "Secuencialidad por número de OC (POR / cualquiera)",
+     "precondiciones": "Transacción anterior pendiente del mismo purchaseordernumber",
+     "datos": "Fixture: 07 con transacción previa pendiente. purchaseordernumber",
+     "pasos": [
+      "Dejar una transacción pendiente.",
+      "Enviar otra de la misma OC."
+     ],
+     "resultado_esperado": "Dada una transacción pendiente de una OC, cuando llega otra de la misma OC, entonces no se procesa hasta que se resuelva la anterior.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-056",
+     "ref": "N-PO-04",
+     "cu": "ODOO_CU-2238",
+     "prioridad": "P1",
+     "escenario": "Acceso exclusivo del usuario Bot (POR / control de acceso)",
+     "precondiciones": "Usuario Bot",
+     "datos": "Fixture: 07. Permisos",
+     "pasos": [
+      "1. Crear, actualizar y cancelar la PO con el Bot."
+     ],
+     "resultado_esperado": "Dado el usuario Bot, cuando crea, actualiza o cancela una PO, entonces no lo bloquea la regla de solo lectura.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "stock.picking",
+   "descripcion": "Recepción de proveedor (CU-2361), solicitud de remisión (CU-2084), remito/COT (CU-2085) y cancelación de remito (CU-2086).",
+   "casos": [
+    {
+     "id": "TC-057",
+     "ref": "CU-BIL-01",
+     "cu": "ODOO_CU-2084",
+     "prioridad": "P1",
+     "escenario": "Solicitud de remisión (BIL / INSERT)",
+     "precondiciones": "Pedido y cliente existentes; stock separado",
+     "datos": "Fixture: 14- Solicitud de remision.txt. invoicereqnumber=10000, invoicenumber=0, invoicecompl=1, status=1, invoicetype=1, sdibilitemsoritemref.delivery=1, billing=0, salesordernumber=5Q-1",
+     "pasos": [
+      "Crear solicitud de remisión.",
+      "Vincular pedido y líneas.",
+      "Asociar direcciones.",
+      "Preparar emisión de remito."
+     ],
+     "resultado_esperado": "Dada una solicitud con delivery=1 y billing=0, cuando se procesa, entonces se crea la entrega en borrador bloqueado con el tipo de operación de la planta, sin numerar ni facturar.",
+     "evidencia_esperada": "Solicitud y vínculo con pedido.",
+     "observacion": "[Revisión: Ajustado] CU-2084: se crea la entrega en borrador bloqueado, sin numerar, y NO se emite el remito todavía (Minuta 1). Remito vs factura se distingue por delivery/billing (no existe 'BILL tipo R' en el manual; invoicetype=1 es venta).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-058",
+     "ref": "CU-BIL-06",
+     "cu": "ODOO_CU-2084",
+     "prioridad": "P1",
+     "escenario": "Rama “¿Es remisión?” del flujo (BIL / decisión)",
+     "precondiciones": "Documento con billing y delivery",
+     "datos": "Fixture: 14 y 16.",
+     "pasos": [
+      "Evaluar si el documento es remisión.",
+      "Si es remisión, liberar separación y emitir remito.",
+      "Si no, emitir factura."
+     ],
+     "resultado_esperado": "Dado un documento de remisión, cuando se procesa, entonces no se emite factura; dado uno de facturación, entonces no se emite remito.",
+     "evidencia_esperada": "Documentos emitidos y bitácora.",
+     "observacion": "[Revisión: Ajustado] Factura vs remito por los flags billing / delivery de sdibilitemsoritemref (manual). Caso mixto (billing=1 y delivery=1): [COMPLETAR].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-059",
+     "ref": "N-ENT-01",
+     "cu": "ODOO_CU-2084",
+     "prioridad": "P1",
+     "escenario": "Tipo de operación (talonario) por planta (BIL / INSERT (delivery=1))",
+     "precondiciones": "Un tipo de operación por planta: Offset, Flexo, Recuperadora de solventes",
+     "datos": "Fixture: 14. Planta del producto / prefijo SKU 90 Offset, 91 Flexo",
+     "pasos": [
+      "Recibir solicitud.",
+      "Determinar planta.",
+      "Asignar el tipo de operación (stock.picking.type) de esa planta."
+     ],
+     "resultado_esperado": "Dada una solicitud de un producto de Flexo, cuando se procesa, entonces la entrega usa el tipo de operación de Flexo y su talonario de remito.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] En l10n_ar_stock_ux el tipo de documento del remito se define en stock.picking.type (l10n_ar_document_type_id). Fuente de la planta (WO, producto o prefijo SKU) pendiente. Reunión 02/07: Recuperadora = remito 9, depósito externo = remito 11.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-060",
+     "ref": "N-ENT-02",
+     "cu": "ODOO_CU-2084",
+     "prioridad": "P1",
+     "escenario": "Mezcla de plantas en una misma solicitud (BIL / INSERT)",
+     "precondiciones": "",
+     "datos": "Fixture: 14 con productos de dos plantas. Líneas de Offset y Flexo",
+     "pasos": [
+      "Recibir solicitud.",
+      "Detectar plantas distintas."
+     ],
+     "resultado_esperado": "Dada una solicitud con productos de plantas distintas, cuando se procesa, entonces se rechaza con error.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-061",
+     "ref": "N-ENT-03",
+     "cu": "ODOO_CU-2084",
+     "prioridad": "P2",
+     "escenario": "SOR inexistente o inválido en la solicitud de remisión (BIL / INSERT)",
+     "precondiciones": "",
+     "datos": "Fixture: 14 con SOR inexistente. salesordernumber",
+     "pasos": [
+      "Recibir solicitud.",
+      "Validar SOR."
+     ],
+     "resultado_esperado": "Dada una solicitud con SOR inválido, cuando se procesa, entonces Odoo emite una advertencia.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-062",
+     "ref": "N-ENT-04",
+     "cu": "ODOO_CU-2084",
+     "prioridad": "P2",
+     "escenario": "Lotes en la solicitud o en el PCK (BIL / INSERT)",
+     "precondiciones": "",
+     "datos": "Fixture: 14 (lot vacío). sdibilitemsoritemstocklocal.lot",
+     "pasos": [
+      "Recibir solicitud sin lote.",
+      "Dejar pendiente para el PCK."
+     ],
+     "resultado_esperado": "Dada una solicitud sin lotes, cuando se procesa, entonces la entrega queda pendiente de lotes hasta el PCK; si trae lotes, entonces se cargan.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-063",
+     "ref": "CU-BIL-05",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Emisión de remito (BIL / INSERT)",
+     "precondiciones": "Solicitud de remisión y separación liberada",
+     "datos": "Fixture: 14. invoicereqnumber=10000, ítems, lotes, local=PADRON",
+     "pasos": [
+      "Tomar la solicitud de remisión.",
+      "Generar remito.",
+      "Descontar stock o reservar según política.",
+      "Vincular con la separación."
+     ],
+     "resultado_esperado": "Dada una solicitud de remisión liberada, cuando se emite, entonces el remito sale con los ítems y lotes separados.",
+     "evidencia_esperada": "Remito y movimiento de stock.",
+     "observacion": "[Revisión: Ajustado] La emisión la dispara el PCK (CU-2085), no la solicitud de remisión.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-064",
+     "ref": "CU-PCK-01",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Solicitud de separación de materiales (PCK / INSERT)",
+     "precondiciones": "Pedido, producto y stock disponibles",
+     "datos": "Fixture: 15- Separacion de Materiales.txt. idseparation=1, customercode=1, invoicereqnumber=10000, status=3, netweight=14000, grossweight=14000, contents=2000",
+     "pasos": [
+      "Identificar el remito borrador por la solicitud (invoicereqnumber).",
+      "Adjuntar lotes.",
+      "Desbloquear y habilitar la emisión.",
+      "Registrar el PCK_ID."
+     ],
+     "resultado_esperado": "Dado un PCK de una solicitud de remisión existente, cuando se procesa, entonces el remito borrador queda con los lotes y habilitado para emitir.",
+     "evidencia_esperada": "Separación y bitácora.",
+     "observacion": "[Revisión: Ajustado] En Odoo no se crea una 'separación': el PCK completa el remito borrador creado por la solicitud de remisión (CU-2084), adjunta lotes, desbloquea y habilita la emisión (Minuta 1). Idempotencia por PCK_ID (RN-01).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-065",
+     "ref": "CU-PCK-02",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Ítems, lotes y bultos (PCK / INSERT)",
+     "precondiciones": "Producto con lote y stock",
+     "datos": "Fixture: 15. stockcode=99.0001, quantity=100000, lot=00000018, packagequantity=2000, unitpackage=CX, stockplacecode=PADRON, stockaddress=UNICO",
+     "pasos": [
+      "Crear ítem de separación.",
+      "Asignar lote.",
+      "Crear bultos con cantidad y unidad de empaque.",
+      "Asignar ubicación."
+     ],
+     "resultado_esperado": "Dado un ítem de 100.000 UN en bultos de 2.000, cuando se procesa, entonces se crean 50 bultos y la suma coincide con la cantidad.",
+     "evidencia_esperada": "Ítems, bultos y stock reservado.",
+     "observacion": "[Revisión: Ajustado] Lotes desde sdipcktrackoutputentry. Uso de bultos (packagequantity / unitpackage) en el remito: [COMPLETAR].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-066",
+     "ref": "CU-PCK-03",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P2",
+     "escenario": "Pesos neto y bruto (PCK / validación)",
+     "precondiciones": "Peso unitario del producto",
+     "datos": "Fixture: 15. netweight=14000, grossweight=14000, unitweight=0.14, quantity=100000",
+     "pasos": [
+      "Calcular peso neto.",
+      "Comparar con netweight.",
+      "Comparar bruto con neto.",
+      "Reportar diferencia."
+     ],
+     "resultado_esperado": "Dado un peso unitario de 0,14 y 100.000 unidades, cuando se calcula, entonces el neto es 14.000 y coincide con el XML.",
+     "evidencia_esperada": "Cálculo y reporte de pesos.",
+     "observacion": "[Revisión: Ajustado] El modelo arba.cot.wizard (l10n_ar_stock_ux) no tiene campo de peso; el peso para remito/COT saldría del remito [VERIFICAR EN SISTEMA].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-067",
+     "ref": "CU-PCK-04",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Estados y liberación para remito (PCK / UPDATE)",
+     "precondiciones": "Separación existente",
+     "datos": "Fixture: 15 y flujo de remisión. status=3, ítem status=2, invoicereqnumber",
+     "pasos": [
+      "Leer estado de la separación.",
+      "Liberar para emisión de remito.",
+      "Vincular con la solicitud de remisión.",
+      "No liberar si falta stock."
+     ],
+     "resultado_esperado": "Dada una separación en estado 3, cuando se procesa, entonces queda liberada para emisión de remito.",
+     "evidencia_esperada": "Estado y vínculo con remito.",
+     "observacion": "[Revisión: Ajustado] Validar el valor de status=3 con la enumeración de estados PCK del manual.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-068",
+     "ref": "CU-PCK-05",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P3",
+     "escenario": "Error por stock o lote insuficiente (PCK / INSERT)",
+     "precondiciones": "Lote inexistente o sin saldo",
+     "datos": "Fixture: Variante de 15 con lote sin stock. lot, quantity, stockplacecode",
+     "pasos": [
+      "Validar stock del lote.",
+      "Detectar faltante.",
+      "Fallar la separación.",
+      "No reservar parcialmente."
+     ],
+     "resultado_esperado": "Dado un lote sin stock, cuando se procesa la separación, entonces falla y no se reserva nada.",
+     "evidencia_esperada": "Bitácora y ausencia de reserva.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-069",
+     "ref": "N-REM-01",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Idempotencia por PCK_ID (PCK / INSERT)",
+     "precondiciones": "Remito ya emitido para ese PCK",
+     "datos": "Fixture: 15 repetido. idseparation",
+     "pasos": [
+      "Reenviar el PCK.",
+      "Buscar comprobante asociado."
+     ],
+     "resultado_esperado": "Dado un PCK ya procesado, cuando vuelve a llegar, entonces se devuelven los datos del remito emitido sin duplicar.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-070",
+     "ref": "N-REM-02",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Permisos del usuario de depósito (COT) (Control de acceso)",
+     "precondiciones": "Usuario de depósito",
+     "datos": "Fixture: 15. arba.cot.wizard: fecha de salida, tipo de recorrido, transportista, patentes, importe",
+     "pasos": [
+      "Entrar con usuario de depósito.",
+      "Completar datos de transporte.",
+      "Intentar editar datos contables."
+     ],
+     "resultado_esperado": "Dado un usuario de depósito, cuando completa el transporte, entonces solo accede al wizard de COT y no puede modificar datos contables.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] Modelo verificado en l10n_ar_stock_ux (ADHOC, 19.0). No tiene campo de peso.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-071",
+     "ref": "N-REM-03",
+     "cu": "ODOO_CU-2085",
+     "prioridad": "P1",
+     "escenario": "Respuesta a Metrics al emitir el remito (Odoo → Metrics)",
+     "precondiciones": "Remito validado con COT",
+     "datos": "Fixture: 15. N° comprobante, fecha, montos, estado",
+     "pasos": [
+      "Emitir remito.",
+      "Enviar respuesta a Metrics."
+     ],
+     "resultado_esperado": "Dado un remito emitido con COT, cuando se completa, entonces Odoo informa N° de comprobante, fecha, montos y estado, y Metrics pasa el pedido a 'Entregado'.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] El manual solo define el XMLReturn genérico: definir el mecanismo con Metrics.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-072",
+     "ref": "N-CAN-08",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P1",
+     "escenario": "Cancelación de remito no emitido / emitido (Cancelación desde Metrics)",
+     "precondiciones": "Remito en borrador o validado",
+     "datos": "Fixture: 14 + cancelación. Estado del remito",
+     "pasos": [
+      "Recibir cancelación.",
+      "Evaluar el estado del remito."
+     ],
+     "resultado_esperado": "Dado un remito no emitido, cuando se cancela, entonces se cancela (CA07); dado un remito emitido, entonces no se cancela y se informa que requiere tratamiento (CA08).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-073",
+     "ref": "CU-REC-01",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Alta de remito vinculado a OC (REC / INSERT)",
+     "precondiciones": "OC existente y proveedor configurado",
+     "datos": "Fixture: 08- Recepcion de Material por Remito.txt. providercode=329, receiptserie=1, receiptnumber=12132, receiptdate, paycondition, receiptcurrencycode=1",
+     "pasos": [
+      "Crear recepción en borrador.",
+      "Asociar proveedor y OC.",
+      "Guardar serie, número y fecha.",
+      "Guardar condición de pago y moneda."
+     ],
+     "resultado_esperado": "Dado un remito con proveedor, serie y número, cuando se procesa, entonces se crea una recepción en borrador vinculada a la OC.",
+     "evidencia_esperada": "Recepción y vínculo con la OC.",
+     "observacion": "[Revisión: Ajustado] CU-2361: el REC crea la recepción vinculada a la OC y a la línea, pendiente de completar con el STK. Condición de pago y moneda quedan fuera de alcance (§8). OC obligatoria (RN-01).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-074",
+     "ref": "CU-REC-02",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P2",
+     "escenario": "Actualización de remito (REC / UPDATE)",
+     "precondiciones": "Remito existente",
+     "datos": "Fixture: 08 procesado con cambios. providercode, receiptserie, receiptnumber, receiptdate",
+     "pasos": [
+      "Buscar remito por proveedor + serie + número.",
+      "Actualizar datos.",
+      "No duplicar."
+     ],
+     "resultado_esperado": "Dado un remito existente, cuando llega un UPDATE, entonces se actualiza el mismo documento.",
+     "evidencia_esperada": "Comparación antes/después.",
+     "observacion": "[Revisión: Ajustado] CU-2361 RN-13: un UPDATE sobre una recepción ya validada se rechaza y no la modifica.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-075",
+     "ref": "CU-REC-03",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P2",
+     "escenario": "Cancelación de remito (REC / CANCEL)",
+     "precondiciones": "Remito existente",
+     "datos": "Fixture: Variante CANCEL de 08. receiptserie, receiptnumber, providercode",
+     "pasos": [
+      "Buscar remito.",
+      "Verificar ingresos asociados.",
+      "Cancelar la recepción.",
+      "Revertir stock si corresponde."
+     ],
+     "resultado_esperado": "Dado un remito sin consumo posterior, cuando se cancela, entonces la recepción y el stock se revierten.",
+     "evidencia_esperada": "Estado de la recepción y stock.",
+     "observacion": "[Revisión: Ajustado] CU-2361 RN-12: mercadería no consumida → revertir; ya consumida → queda pendiente de resolución (no se revierte automáticamente).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-076",
+     "ref": "CU-REC-04",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Control de remito duplicado (REC / INSERT)",
+     "precondiciones": "Remito existente",
+     "datos": "Fixture: 08 procesado dos veces. providercode, receiptserie, receiptnumber",
+     "pasos": [
+      "Buscar por la clave compuesta.",
+      "Si existe, no crear otro.",
+      "Actualizar o ignorar según operación."
+     ],
+     "resultado_esperado": "Dado un remito ya registrado, cuando vuelve a llegar, entonces no se duplica.",
+     "evidencia_esperada": "Conteo de remitos.",
+     "observacion": "[Revisión: Vigente] CU-2361 RN-03. Pendiente: confirmar con Metrics el significado de docnumber + docnumbercompl.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-077",
+     "ref": "CU-REC-05",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Orden invertido entre STK y REC (STK / INSERT con dependencia)",
+     "precondiciones": "Cola de reintentos",
+     "datos": "Fixture: 09 procesado antes que 08. docnumber=12132 en STK; receiptnumber=12132 en REC",
+     "pasos": [
+      "Detectar que el remito no existe.",
+      "Encolar reintento.",
+      "Procesar el REC cuando llegue.",
+      "Reintentar el STK."
+     ],
+     "resultado_esperado": "Dado un STK que llega antes que su REC, cuando se reintenta, entonces espera y luego se aplica sin duplicar.",
+     "evidencia_esperada": "Log de reintentos y estado final.",
+     "observacion": "[Revisión: Vigente] CU-2361 RN-09 / CA-06.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-078",
+     "ref": "CU-REC-06",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P3",
+     "escenario": "Remito con ítems (muestra pendiente) (REC / INSERT)",
+     "precondiciones": "Muestra con sdiprovideritemreceipt poblado",
+     "datos": "Fixture: 08 (ítem vacío). Ítems, OC atendidas, cantidad, valor, unidad",
+     "pasos": [
+      "Validar que el XML traiga ítems.",
+      "Vincular cada ítem a la línea de OC.",
+      "Guardar cantidades y valores."
+     ],
+     "resultado_esperado": "Dado un remito con ítems, cuando se procesa, entonces cada línea queda vinculada a su OC; mientras no exista la muestra, el caso queda bloqueado.",
+     "evidencia_esperada": "Recepción con líneas y OC.",
+     "observacion": "[Revisión: Bloqueado] La muestra 08 trae sdiprovideritemreceipt vacío: sin ítems no se puede vincular la línea de OC (RN-02).",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-079",
+     "ref": "CU-STK-01",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Ingreso de material por compra (STK / INSERT, TType 2, operationtype 0)",
+     "precondiciones": "OC y remito existentes; producto y ubicación configurados",
+     "datos": "Fixture: 09- Ingreso de Material por compra.txt. transactiontype=2, operationtype=0, stockcode=02.01.0003, quantity=60000, unitcode=FL, quantityunitcost=3623.04, unitcostcode=KG, totalvalue=10506815.98, lot=00000017",
+     "pasos": [
+      "Crear movimiento de entrada.",
+      "Asignar producto, cantidad en KG y valor.",
+      "Asignar lote y ubicación.",
+      "Validar la recepción."
+     ],
+     "resultado_esperado": "Dado un ingreso de 60.000 FL equivalentes a 3.623,04 KG, cuando se procesa, entonces el stock sube 3.623,04 KG en el lote indicado.",
+     "evidencia_esperada": "Movimiento de stock y ficha del lote.",
+     "observacion": "[Revisión: Ajustado] CU-2361 RN-04: la cantidad es la efectiva del STK; Minuta 1: Odoo registra en kg (quantityunitcost). RN-10: ubicación única. El STK valida la recepción creada por el REC.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-080",
+     "ref": "CU-STK-02",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Lote, lote de proveedor, fechas y ubicación (STK / INSERT)",
+     "precondiciones": "Producto con tracking por lote",
+     "datos": "Fixture: 09. lot=00000017, providerlot=41654654, productiondate=2026-06-15, expirationdate=2027-06-15, stockplacecode=PADRON, stockaddress=UNICO",
+     "pasos": [
+      "Crear o reutilizar el lote.",
+      "Guardar lote de proveedor.",
+      "Guardar fechas de producción y vencimiento.",
+      "Asignar ubicación."
+     ],
+     "resultado_esperado": "Dado un lote con fechas y ubicación, cuando se procesa, entonces la trazabilidad queda completa y disponible para consumo.",
+     "evidencia_esperada": "Ficha del lote y ubicación.",
+     "observacion": "[Revisión: Vigente] Pendiente de CU-2361: validar los campos estándar de lote, fecha de producción y vencimiento en Odoo 19 [VERIFICAR EN SISTEMA].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-081",
+     "ref": "CU-STK-03",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Conversión FL a KG (STK / INSERT)",
+     "precondiciones": "Factor FL→KG definido para el producto",
+     "datos": "Fixture: 09 y 11. quantity=60000, unitcode=FL, quantityunitcost=3623.04, unitcostcode=KG; consumo quantity=100, quantityunitcost=6.038",
+     "pasos": [
+      "Usar quantityunitcost como cantidad de stock.",
+      "Guardar quantity y unitcode como dato original.",
+      "Validar factor por producto."
+     ],
+     "resultado_esperado": "Dado un ingreso de 60.000 FL y 3.623,04 KG, cuando se procesa, entonces el stock queda en KG y la cantidad original en FL se conserva.",
+     "evidencia_esperada": "Movimiento y conversión aplicada.",
+     "observacion": "[Revisión: Vigente] Minuta 1: la integración usa solo la unidad de costo; Odoo en kg.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-082",
+     "ref": "CU-STK-04",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Vínculo con remito y orden de compra (STK / INSERT)",
+     "precondiciones": "Remito y OC existentes",
+     "datos": "Fixture: 09 y 08. docnumber=12132, docnumbercompl=329, stockmovementtype=2",
+     "pasos": [
+      "Buscar el remito por docnumber.",
+      "Vincular el movimiento a la recepción.",
+      "Vincular la recepción a la OC.",
+      "Guardar la referencia."
+     ],
+     "resultado_esperado": "Dado un ingreso con docnumber=12132, cuando se procesa, entonces queda vinculado al remito 12132 y a su OC.",
+     "evidencia_esperada": "Vínculo entre documentos.",
+     "observacion": "[Revisión: Ajustado] Pendiente de CU-2361: confirmar con Metrics docnumber + docnumbercompl (en la muestra 09: 12132 y 329 = código de proveedor).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-083",
+     "ref": "CU-STK-06",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P2",
+     "escenario": "Cancelación de ingreso (STK / CANCEL, TType 2)",
+     "precondiciones": "Ingreso existente",
+     "datos": "Fixture: Variante CANCEL de 09. transactioncodeextref, lot, quantityunitcost",
+     "pasos": [
+      "Buscar el movimiento original.",
+      "Verificar que no haya consumo posterior.",
+      "Revertir el stock.",
+      "Registrar la cancelación."
+     ],
+     "resultado_esperado": "Dado un ingreso sin consumo posterior, cuando se cancela, entonces el stock vuelve al valor anterior; si hay consumo, entonces falla con mensaje.",
+     "evidencia_esperada": "Movimiento de reversión y bitácora.",
+     "observacion": "[Revisión: Ajustado] CU-2361 RN-12: no consumida → revertir; consumida → pendiente de resolución. Manual §11.10: STK solo admite INSERT y CANCEL; el CANCEL viaja con el TransactionCodeExtRef y la fecha originales.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-084",
+     "ref": "CU-STK-07",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P3",
+     "escenario": "Error por lote o ubicación inválidos (STK / INSERT)",
+     "precondiciones": "Lote o ubicación no configurados",
+     "datos": "Fixture: Variante de 09 con lot inexistente o stockplacecode=ZZ. lot, stockplacecode, stockaddress",
+     "pasos": [
+      "Resolver lote y ubicación.",
+      "Detectar faltante.",
+      "Fallar la transacción.",
+      "No mover stock."
+     ],
+     "resultado_esperado": "Dada una ubicación inexistente, cuando se procesa, entonces no se crea el movimiento y se informa el código.",
+     "evidencia_esperada": "Bitácora y ausencia de movimiento.",
+     "observacion": "[Revisión: Ajustado] CU-2361 RN-10: se usa una ubicación única configurada en Odoo, sin mapear ubicaciones de Metrics. El error aplica a lote/datos faltantes (RN-08 → pendiente de reproceso).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-085",
+     "ref": "N-REC-01",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "No se permite sobre-recepción (STK / INSERT, TType 2)",
+     "precondiciones": "OC con 100 pendientes",
+     "datos": "Fixture: 09 con cantidad > pendiente. quantity informada 110",
+     "pasos": [
+      "Recibir STK.",
+      "Comparar con pendiente de la OC."
+     ],
+     "resultado_esperado": "Dada una OC con 100 pendientes, cuando STK informa 110, entonces no se valida la recepción, queda rechazada/pendiente y se registra el motivo.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-086",
+     "ref": "N-REC-02",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Recepción en varios lotes (STK / INSERT, TType 2)",
+     "precondiciones": "Recepción creada por REC",
+     "datos": "Fixture: Varios 09 del mismo remito. lot distintos",
+     "pasos": [
+      "Recibir STK por lote.",
+      "Registrar cada lote y cantidad."
+     ],
+     "resultado_esperado": "Dado un producto recibido en varios lotes, cuando llegan los STK, entonces se registra cada lote con su cantidad y la suma no supera el pendiente de la OC.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-087",
+     "ref": "N-REC-03",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P2",
+     "escenario": "La recepción no modifica el precio de la OC (REC + STK)",
+     "precondiciones": "OC con precio",
+     "datos": "Fixture: 08 + 09. totalvalue del STK",
+     "pasos": [
+      "Procesar la recepción.",
+      "Comparar precio de la OC antes/después."
+     ],
+     "resultado_esperado": "Dado un remito válido, cuando se procesa, entonces el precio de la OC no cambia y el valor de Metrics queda como referencia.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-088",
+     "ref": "N-REC-04",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P1",
+     "escenario": "Recepción de solo lectura (Control de acceso)",
+     "precondiciones": "Usuario común",
+     "datos": "Fixture: 08 + 09.",
+     "pasos": [
+      "Abrir la recepción con usuario común.",
+      "Intentar editar o validar."
+     ],
+     "resultado_esperado": "Dada una recepción generada por la integración, cuando un usuario común la abre, entonces no puede modificarla ni validarla.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-089",
+     "ref": "N-REC-05",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P2",
+     "escenario": "Ubicación única de recepción (STK / INSERT, TType 2)",
+     "precondiciones": "Ubicación única configurada",
+     "datos": "Fixture: 09. stockplacecode=PADRON (no se mapea)",
+     "pasos": [
+      "Procesar el ingreso.",
+      "Revisar la ubicación destino."
+     ],
+     "resultado_esperado": "Dada una recepción válida, cuando se valida, entonces la mercadería entra en la ubicación única configurada.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-090",
+     "ref": "N-REC-06",
+     "cu": "ODOO_CU-2361",
+     "prioridad": "P2",
+     "escenario": "Fecha efectiva de recepción (REC / STK)",
+     "precondiciones": "",
+     "datos": "Fixture: 08 + 09. receiptdate vs receiptprocessing",
+     "pasos": [
+      "Procesar la recepción.",
+      "Revisar la fecha."
+     ],
+     "resultado_esperado": "Dada una recepción, cuando se valida, entonces la fecha efectiva es [COMPLETAR: receiptdate o receiptprocessing].",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Bloqueado] Pendiente de definición en CU-2361 §7.",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-091",
+     "ref": "CU-STK-08",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P3",
+     "escenario": "Residuo de redondeo FL a KG (STK / conciliación)",
+     "precondiciones": "Factor FL→KG definido",
+     "datos": "Fixture: 09 y 11 en tandas de 100 FL. 60.000 FL → 3.623,04 KG; 600 consumos de 100 FL → 6,038 KG cada uno",
+     "pasos": [
+      "Sumar los consumos redondeados.",
+      "Comparar con el ingreso.",
+      "Reportar la diferencia.",
+      "Aplicar la política de residuo definida."
+     ],
+     "resultado_esperado": "Dados 600 consumos de 6,038 KG, cuando se concilia, entonces la diferencia contra 3.623,04 KG queda reportada y se aplica la política acordada.",
+     "evidencia_esperada": "Reporte de conciliación.",
+     "observacion": "[Revisión: Bloqueado] Política de residuo de kilos pendiente (#10).",
+     "estado": "Bloqueado"
+    }
+   ]
+  },
+  {
+   "nombre": "mrp.production",
+   "descripcion": "WO (CU-2237), consumo (CU-2244), producto terminado (CU-2245) y entregas parciales (CU-2255).",
+   "casos": [
+    {
+     "id": "TC-092",
+     "ref": "CU-WO-01",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "Alta de orden de manufactura (WO / INSERT)",
+     "precondiciones": "PT y materias primas existentes; usuario Bot de integración",
+     "datos": "Fixture: 05- OP WO.txt. wonumber=OFC00001, wodescription, status=3, insertdt, sdilwofinisheditem.stockcode=99.0001, quantity=100000, unitcode=UN, deliverydt",
+     "pasos": [
+      "Leer wonumber.",
+      "Crear mrp.production para el PT.",
+      "Guardar x_metrics_wo_number=wonumber.",
+      "Cargar componentes.",
+      "Confirmar aunque no haya stock."
+     ],
+     "resultado_esperado": "Dada una WO con status=0 y un PT, cuando se procesa, entonces se crea una mrp.production confirmada con x_metrics_wo_number=OFC00001, producto y cantidad correctos.",
+     "evidencia_esperada": "Ficha de la MO y bitácora.",
+     "observacion": "[Revisión: Ajustado] CU-2237 / alcance WO: una mrp.production por PT con los componentes recibidos (no se crea BOM). La WO se identifica por x_metrics_wo_number (no por origin). Nota CU-2237: solo interesa status=0; el fixture 05 trae status=3 → pedir fixture con status=0.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-093",
+     "ref": "CU-WO-02",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "Cabecera, estados y fechas (WO / INSERT o UPDATE)",
+     "precondiciones": "MO existente",
+     "datos": "Fixture: 05 y variantes de status 0–6. idcompany, wonumber, wodescription, quotenumber, status, insertdt, projectcode, projecttitle",
+     "pasos": [
+      "Mapear status a mrp.production.state según R13.",
+      "Guardar cotización, proyecto y fechas.",
+      "Validar que el estado no retroceda sin regla."
+     ],
+     "resultado_esperado": "Dado status=0, cuando se procesa, entonces se crea/actualiza la WO; dado status≠0, entonces [COMPLETAR: ignorar y registrar / otra regla].",
+     "evidencia_esperada": "Estado de la MO y bitácora.",
+     "observacion": "[Revisión: Ajustado] Manual y nota CU-2237: status 0 abierta, 1 finalizada, 2 cancelada, 3 bloqueada, 4 evaluación de carga (no existen 5 y 6). Solo interesa 0. El caso mapeaba 3 → cerrado, lo que choca con el cierre por button_mark_done (CU-2245).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-094",
+     "ref": "CU-WO-03",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "Materias primas a la BOM (WO / INSERT o UPDATE)",
+     "precondiciones": "MP existentes por stockcode",
+     "datos": "Fixture: 05- OP WO.txt y OP compartida. sdiworawmaterial.materialtype, stockcode, materialname, unitcode, quantity, unitcode2, quantity2, idativ",
+     "pasos": [
+      "Leer cada MP.",
+      "Resolver stockcode.",
+      "Crear o actualizar mrp.bom.line.",
+      "Asignar cantidad y UOM.",
+      "Guardar idativ como referencia."
+     ],
+     "resultado_esperado": "Dada una MP con stockcode válido, cuando se procesa, entonces existe una línea de BOM con producto, cantidad y UOM; si el stockcode viene vacío, entonces se resuelve por nombre o falla con mensaje.",
+     "evidencia_esperada": "BOM de la MO y bitácora.",
+     "observacion": "[Revisión: Ajustado] Los componentes van como movimientos de materia prima de cada mrp.production (move_raw_ids), no como mrp.bom.line. El XML de OP compartida trae TODAS las materias primas con stockcode vacío: así no se puede prorratear ni cruzar el consumo → pedir muestra con stockcode.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-095",
+     "ref": "CU-WO-04",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "Componentes a la BOM y validación de semántica (WO / INSERT o UPDATE)",
+     "precondiciones": "BOM de la MO",
+     "datos": "Fixture: 05 y OP compartida. sdiwocomponent.name, stockcode, quantity, sdilwoinputcomponent",
+     "pasos": [
+      "Leer cada componente.",
+      "Resolver stockcode.",
+      "Agregar a mrp.bom.line si es insumo.",
+      "Ignorar o marcar si repite el PT."
+     ],
+     "resultado_esperado": "Dado un componente con stockcode distinto al PT, cuando se procesa, entonces se agrega a la BOM; dado un componente igual al PT, entonces se detecta y no se crea una BOM circular.",
+     "evidencia_esperada": "BOM resultante y advertencia registrada.",
+     "observacion": "[Revisión: Bloqueado] Semántica de sdiwocomponent pendiente (pendiente #13): en las muestras repite el stockcode del PT con quantity=0.",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-096",
+     "ref": "CU-WO-07",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "OP simple con un producto terminado (WO / INSERT)",
+     "precondiciones": "Un PT, operaciones y BOM",
+     "datos": "Fixture: 05- OP WO.txt. wonumber=OFC00001, sdilwofinisheditem.lcount=1, sdilwooperation.lcount=6",
+     "pasos": [
+      "Crear la MO.",
+      "Cargar BOM.",
+      "Generar work orders.",
+      "Confirmar la MO según status."
+     ],
+     "resultado_esperado": "Dada una WO con un PT, cuando se procesa, entonces se crea una sola mrp.production con sus componentes y x_metrics_wo_number.",
+     "evidencia_esperada": "MO, BOM y work orders.",
+     "observacion": "[Revisión: Ajustado] Una mrp.production sin BOM ni work orders; se confirma aunque no haya stock (CU-2237 CA04).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-097",
+     "ref": "CU-WO-08",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "OP compartida con múltiples productos terminados (WO / INSERT)",
+     "precondiciones": "Dos PT existentes; MP compartidas",
+     "datos": "Fixture: XML CON OP COMPARTIDA PROD. DIFERENTES.txt. wonumber=OFC00008, sdilwofinisheditem.lcount=2 (99.0002 y 99.0029), sdilworawmaterial.lcount=12, sdilwooperation.lcount=10, sdilwooutsourcing.lcount=2",
+     "pasos": [
+      "Crear una MO por cada PT.",
+      "Usar el mismo wonumber como origen.",
+      "Distribuir MP y costos por porcentaje.",
+      "Generar work orders en cada MO.",
+      "Vincular las MO entre sí por wonumber."
+     ],
+     "resultado_esperado": "Dada una WO con dos PT, cuando se procesa, entonces se crean dos mrp.production con el mismo x_metrics_wo_number y la suma de MP asignadas iguala el total informado por Metrics.",
+     "evidencia_esperada": "MO creadas, BOM de cada una y reporte de distribución.",
+     "observacion": "[Revisión: Ajustado] CU-2237 CA01/CA02. Ojo: el fixture trae las MP sin stockcode (ver CU-WO-03).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-098",
+     "ref": "CU-WO-09",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "Cálculo del porcentaje por cantidad planificada (WO / cálculo)",
+     "precondiciones": "Cantidades de cada PT",
+     "datos": "Fixture: OP compartida. quantity de sdiwofinisheditem",
+     "pasos": [
+      "Sumar las cantidades de todos los PT.",
+      "Calcular % PT_i = quantity_i / suma.",
+      "Aplicar el porcentaje a MP y costos compartidos.",
+      "Guardar el porcentaje usado."
+     ],
+     "resultado_esperado": "Dados dos PT de 1.000.000 cada uno, cuando se calcula, entonces cada uno recibe 50%; dados 750.000 y 250.000, entonces reciben 75% y 25%.",
+     "evidencia_esperada": "Reporte de porcentajes y cantidades.",
+     "observacion": "[Revisión: Vigente] Fórmula del alcance WO §4: MP asignada = MP total × cantidad PT / cantidad total. CU-2237 permite un campo custom con el % usado. Ejemplo del Excel 'Ejemplo wo calculos': 12/52 = 23,08 % y 40/52 = 76,92 %.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-099",
+     "ref": "CU-WO-10",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P2",
+     "escenario": "Redondeo y residuo del porcentaje (WO / cálculo)",
+     "precondiciones": "Distribución porcentual calculada",
+     "datos": "Fixture: OP compartida con cantidades no divisibles. Porcentaje, decimales configurados, cantidad total de MP",
+     "pasos": [
+      "Calcular porcentajes con decimales configurados.",
+      "Ajustar el último PT para absorber el residuo.",
+      "Verificar que la suma de asignaciones iguale el total."
+     ],
+     "resultado_esperado": "Dada una distribución con residuo, cuando se ajusta, entonces la suma de las MO iguala el total de la OP dentro de la tolerancia.",
+     "evidencia_esperada": "Reporte de asignación y diferencias.",
+     "observacion": "[Revisión: Ajustado] Regla definida (resuelve pendiente #18): redondeo a la precisión de la UoM del componente y residuo al último registro procesado (alcance §4, CU-2237 CA03).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-100",
+     "ref": "CU-WO-12",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P2",
+     "escenario": "Reserva y disponibilidad de componentes (WO / confirmación)",
+     "precondiciones": "Stock de componentes",
+     "datos": "Fixture: 05 y OP compartida. Componentes de la BOM, ubicación, cantidad",
+     "pasos": [
+      "Confirmar la MO.",
+      "Reservar componentes disponibles.",
+      "Informar faltantes.",
+      "Permitir producir con faltante según política."
+     ],
+     "resultado_esperado": "Dada una MP sin stock, cuando se confirma la mrp.production, entonces queda confirmada sin bloqueo y no se descuenta stock.",
+     "evidencia_esperada": "Reservas y reporte de faltantes.",
+     "observacion": "[Revisión: Ajustado] CU-2237 CA04: la WO se guarda y confirma aunque no haya stock. CU-2244 CA05: confirmar no marca la MP como consumida; queda la duda de la reserva ('DUDA VER MACA').",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-101",
+     "ref": "CU-WO-19",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P3",
+     "escenario": "Errores de estructura de la OP (WO / INSERT)",
+     "precondiciones": "Datos incompletos o inconsistentes",
+     "datos": "Fixture: Variantes de 05 y OP compartida. PT sin BOM, componente inexistente, operación sin centro, stockcode vacío, cantidades inconsistentes",
+     "pasos": [
+      "Validar PT, BOM, componentes, operaciones y cantidades.",
+      "Detener ante el primer error crítico.",
+      "Informar el campo y el valor.",
+      "No crear la MO."
+     ],
+     "resultado_esperado": "Dado un PT sin BOM, cuando se procesa, entonces la MO no se crea y la bitácora informa el faltante.",
+     "evidencia_esperada": "Bitácora y ausencia de MO.",
+     "observacion": "[Revisión: Vigente] Error → no se crea mrp.production parcial y queda registrado.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-102",
+     "ref": "N-MO-01",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P1",
+     "escenario": "Restricción de usuarios sobre la WO (Control de acceso)",
+     "precondiciones": "Usuario funcional y usuario Bot",
+     "datos": "Fixture: 05.",
+     "pasos": [
+      "1. Intentar crear, modificar o confirmar una mrp.production con usuario funcional."
+     ],
+     "resultado_esperado": "Dado un usuario que no es el Bot, cuando intenta crear, modificar o confirmar una WO de Metrics, entonces se le restringe y solo puede consultar y reportar.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-103",
+     "ref": "N-MO-02",
+     "cu": "ODOO_CU-2237",
+     "prioridad": "P2",
+     "escenario": "x_metrics_wo_number visible en la lista (Consulta)",
+     "precondiciones": "WO procesadas",
+     "datos": "Fixture: 05. x_metrics_wo_number",
+     "pasos": [
+      "1. Abrir la lista de órdenes de producción."
+     ],
+     "resultado_esperado": "Dadas varias producciones de una WO, cuando se consulta la lista, entonces se ve el wonumber de Metrics en cada una.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-104",
+     "ref": "CU-STK-10",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P1",
+     "escenario": "Vínculo del consumo con la orden de producción (STK / INSERT)",
+     "precondiciones": "MO existente",
+     "datos": "Fixture: 11. wonumber=OFC00001, docnumber=1, docnumbercompl=OFC00001",
+     "pasos": [
+      "Leer wonumber.",
+      "Buscar la MO.",
+      "Asociar el movimiento a la MO y a la operación.",
+      "Guardar referencias."
+     ],
+     "resultado_esperado": "Dado un consumo con wonumber=OFC00001, cuando se procesa, entonces queda vinculado a esa MO y no a otra.",
+     "evidencia_esperada": "Movimiento y MO.",
+     "observacion": "[Revisión: Vigente] Identificación por x_metrics_wo_number.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-105",
+     "ref": "CU-STK-11",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P1",
+     "escenario": "Descuento por lote y saldo insuficiente (STK / INSERT)",
+     "precondiciones": "Lote con stock",
+     "datos": "Fixture: 11 con saldo insuficiente. lot=00000017, quantityunitcost, saldo del lote",
+     "pasos": [
+      "Verificar saldo del lote.",
+      "Descontar si alcanza.",
+      "Si no alcanza, fallar o consumir parcial según política."
+     ],
+     "resultado_esperado": "Dado un consumo mayor al saldo, cuando se procesa, entonces no se aplica nada, no queda saldo negativo y la transacción queda pendiente de reintento.",
+     "evidencia_esperada": "Saldo del lote y bitácora.",
+     "observacion": "[Revisión: Ajustado] CU-2244 CA02: sin stock suficiente el consumo no se aplica parcialmente y queda PENDIENTE de reintento (no falla).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-106",
+     "ref": "CU-STK-14",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P2",
+     "escenario": "Valorización del consumo (STK / costos)",
+     "precondiciones": "Costo promedio configurado",
+     "datos": "Fixture: 11. totalvalue=17593.53, quantityunitcost=6.038",
+     "pasos": [
+      "Leer el valor informado por Metrics.",
+      "Comparar con el costo de Odoo.",
+      "Aplicar la regla de valorización definida.",
+      "Registrar la diferencia."
+     ],
+     "resultado_esperado": "Dado un consumo con valor de Metrics, cuando se valoriza, entonces se aplica la regla definida y la diferencia queda documentada.",
+     "evidencia_esperada": "Asiento o reporte de costo.",
+     "observacion": "[Revisión: Ajustado] Minuta 2: valuación PEPS/FIFO en pesos en Odoo; el valor informado por Metrics no es la base. Pendiente #11.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-107",
+     "ref": "CU-WO-13",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P1",
+     "escenario": "Consumo real por STK TType 0 (STK / INSERT, TType 0, operationtype 1)",
+     "precondiciones": "MO existente con wonumber=OFC00001 y componente 02.01.0003",
+     "datos": "Fixture: 11- Consumo de Material.txt. stockcode=02.01.0003, quantity=100, unitcode=FL, quantityunitcost=6.038, unitcostcode=KG, lot=00000017, wonumber=OFC00001",
+     "pasos": [
+      "Identificar la MO por wonumber.",
+      "Identificar el componente.",
+      "Descontar del lote indicado.",
+      "Registrar el consumo en la MO.",
+      "No duplicar si ya fue aplicado."
+     ],
+     "resultado_esperado": "Dado un consumo de 100 FL (6,038 kg) con wonumber=OFC00001, cuando hay stock, entonces se registra el consumo del lote 00000017 una sola vez; si no hay stock, entonces no se aplica nada y queda pendiente de reintento.",
+     "evidencia_esperada": "Movimiento de stock y consumo de la MO.",
+     "observacion": "[Revisión: Ajustado] Mismo caso que CU-STK-09 (unificar). CU-2244: si el stockcode está en varias producciones del mismo wonumber, repartir con la proporción de la Etapa 1 (CA04); sin stock → no aplicar parcialmente y queda pendiente de reintento (CA02).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-108",
+     "ref": "N-CON-01",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P2",
+     "escenario": "Factura de materia prima no contabilizada (STK / INSERT, TType 0)",
+     "precondiciones": "MP con valuación dependiente del lote; factura no posted",
+     "datos": "Fixture: 11.",
+     "pasos": [
+      "Recibir consumo.",
+      "Detectar factura no posted."
+     ],
+     "resultado_esperado": "Dada una MP cuya factura no está posted, cuando llega el consumo, entonces no se procesa y queda pendiente de reintento.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Bloqueado] CU-2244 marca esta regla 'EN REVISIÓN con EG' (se puede dejar pendiente).",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-109",
+     "ref": "N-CON-02",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P1",
+     "escenario": "Reparto del consumo de MP compartida (STK / INSERT, TType 0)",
+     "precondiciones": "Dos mrp.production del mismo wonumber con el mismo stockcode",
+     "datos": "Fixture: WO con 2 PT + 11. PT1=12, PT2=40 (23,08 % / 76,92 %); consumo 10",
+     "pasos": [
+      "Recibir consumo.",
+      "Repartir con la proporción de la Etapa 1."
+     ],
+     "resultado_esperado": "Dado un consumo de 10 de una MP compartida, cuando se procesa, entonces se imputa 2,31 a PT1 y 7,69 a PT2 (misma proporción de la Etapa 1).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-110",
+     "ref": "N-CON-03",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P1",
+     "escenario": "Confirmar la WO no consume la MP (WO confirmada)",
+     "precondiciones": "mrp.production confirmada sin consumos recibidos",
+     "datos": "Fixture: 05.",
+     "pasos": [
+      "Confirmar la WO.",
+      "Revisar consumos."
+     ],
+     "resultado_esperado": "Dada una mrp.production confirmada, cuando todavía no llegó el XML de consumo, entonces Odoo no marca la MP como consumida.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] CU-2244 deja una duda abierta sobre si la confirmación reserva stock ('DUDA VER MACA'). Nota de la CU: quantity del stock.move es computado; ver si sirve o hace falta otro campo.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-111",
+     "ref": "N-CON-04",
+     "cu": "ODOO_CU-2244",
+     "prioridad": "P1",
+     "escenario": "Atomicidad del consumo (STK / INSERT, TType 0)",
+     "precondiciones": "Error de stock o facturación",
+     "datos": "Fixture: 11 con error forzado.",
+     "pasos": [
+      "Forzar error.",
+      "Revisar el consumo."
+     ],
+     "resultado_esperado": "Dado un error de stock o facturación, cuando se procesa, entonces ninguna parte del consumo queda aplicada y la transacción queda disponible para reintento.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-112",
+     "ref": "CU-STK-19",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P1",
+     "escenario": "Unidades UN y PZ en entrega de producción (STK / validación de UOM)",
+     "precondiciones": "UOM del PT configurada",
+     "datos": "Fixture: 13 y muestras históricas con PZ. unitcode=UN, quantity=50000; muestras previas con PZ",
+     "pasos": [
+      "Resolver la UOM informada.",
+      "Convertir a la UOM del producto.",
+      "Validar que no se altere la cantidad.",
+      "Reportar diferencias."
+     ],
+     "resultado_esperado": "Dada una entrega en PZ, cuando se convierte a UN, entonces la cantidad es equivalente y la diferencia queda documentada.",
+     "evidencia_esperada": "Movimiento y factor aplicado.",
+     "observacion": "[Revisión: Vigente] La muestra 13 usa UN; las muestras históricas (WO UD36440) usan PZ. Falta tabla de UoM.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-113",
+     "ref": "CU-STK-21",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P2",
+     "escenario": "Lote y vencimiento del producto terminado (STK / INSERT)",
+     "precondiciones": "PT con tracking",
+     "datos": "Fixture: 13. lot=00000018, productiondate=2026-07-23, expirationdate=1899-12-30",
+     "pasos": [
+      "Crear o reutilizar lote del PT.",
+      "Guardar fecha de producción.",
+      "Interpretar vencimiento vacío o 1899 como sin vencimiento."
+     ],
+     "resultado_esperado": "Dado un PT con lote, cuando se procesa, entonces el lote queda asociado y el vencimiento vacío no genera error.",
+     "evidencia_esperada": "Ficha del lote.",
+     "observacion": "[Revisión: Vigente] 1899-12-30 = sin vencimiento.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-114",
+     "ref": "CU-WO-15",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P1",
+     "escenario": "Entrega de producción y cierre de MO (STK / INSERT, TType 1)",
+     "precondiciones": "MO existente y PT con lote",
+     "datos": "Fixture: 13- Entrega de produccion.txt. stockcode=99.0001, quantity=50000, unitcode=UN, wonumber=OFC00001, lot=00000018, quantityunitcost=50000, unitcostcode=UN",
+     "pasos": [
+      "Identificar la MO.",
+      "Registrar la producción del PT.",
+      "Asignar lote.",
+      "Cerrar o actualizar la MO.",
+      "Evitar doble descuento con la finalización de la MO."
+     ],
+     "resultado_esperado": "Dada una entrega por el total planificado y sin bloqueos, cuando se procesa, entonces se registra la cantidad y el lote, se ejecuta button_mark_done y la producción queda en done.",
+     "evidencia_esperada": "Movimiento de PT y estado de la MO.",
+     "observacion": "[Revisión: Ajustado] Mismo caso que CU-STK-18 (unificar). CU-2245: identificar por wonumber + stockcode del PT, validar que no haya consumos en proceso ni OC pendientes de MP lotificada, registrar qty_producing y lote, button_mark_done → done. En Odoo 19 el campo es lot_producing_ids (la HU dice lot_producing_id). Una entrega de 50.000 sobre 100.000 es parcial → ver CU-2255.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-115",
+     "ref": "CU-WO-18",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P2",
+     "escenario": "Costeo promedio y valorización (WO / costos)",
+     "precondiciones": "Costos de componentes y método promedio",
+     "datos": "Fixture: 05 y OP compartida. Costo de MP, costo de operaciones, tercerización, costo del PT",
+     "pasos": [
+      "Calcular el costo de la MO con costo promedio.",
+      "Incluir operaciones y tercerización.",
+      "Distribuir por porcentaje en OP compartida.",
+      "Comparar con el valor de Metrics."
+     ],
+     "resultado_esperado": "Dada una mrp.production cerrada, cuando se valora, entonces el costo del PT = consumos reales de MP directa valuados por FIFO en pesos.",
+     "evidencia_esperada": "Reporte de costos de la MO.",
+     "observacion": "[Revisión: Ajustado] Minuta 2: PT a costo real con MP directa y valuación PEPS/FIFO (el caso dice costo promedio). Operaciones y tercerización no se incluyen hoy. Indirectos por Centros de Distribución: pendiente (alcance §12).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-116",
+     "ref": "N-PT-01",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P1",
+     "escenario": "Consumos en proceso bloquean el cierre (STK / INSERT, TType 1)",
+     "precondiciones": "Consumo de la misma WONUMBER pendiente",
+     "datos": "Fixture: 13 con consumo pendiente.",
+     "pasos": [
+      "Dejar un consumo pendiente.",
+      "Enviar la entrega de PT."
+     ],
+     "resultado_esperado": "Dados consumos en proceso de la WONUMBER, cuando llega el PT, entonces no se registra, no se cierra la WO, se informa el motivo y queda pendiente de reintento.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-117",
+     "ref": "N-PT-02",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P1",
+     "escenario": "OC pendiente de MP lotificada bloquea el cierre (STK / INSERT, TType 1)",
+     "precondiciones": "MP con lote y OC pendiente del mismo ítem y lote",
+     "datos": "Fixture: 13 + OC pendiente.",
+     "pasos": [
+      "Dejar OC pendiente.",
+      "Enviar la entrega de PT."
+     ],
+     "resultado_esperado": "Dada una OC pendiente para MP lotificada, cuando llega el PT, entonces no se registra ni se cierra, se informa la OC y queda pendiente.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-118",
+     "ref": "N-PT-03",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P2",
+     "escenario": "MP sin lote no valida OC pendientes (STK / INSERT, TType 1)",
+     "precondiciones": "MP no lotificada",
+     "datos": "Fixture: 13 con MP sin lote.",
+     "pasos": [
+      "1. Enviar la entrega de PT."
+     ],
+     "resultado_esperado": "Dada una MP sin lote, cuando llega el PT, entonces no se hace la validación de OC pendientes y sigue con las demás.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] Choca con alcance §13 (todo inventariable por lote): confirmar si existen MP sin lote.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-119",
+     "ref": "N-PT-04",
+     "cu": "ODOO_CU-2245",
+     "prioridad": "P1",
+     "escenario": "Lote del PT inexistente se crea (STK / INSERT, TType 1)",
+     "precondiciones": "Lote 00000018 inexistente",
+     "datos": "Fixture: 13. lot",
+     "pasos": [
+      "1. Procesar la entrega."
+     ],
+     "resultado_esperado": "Dado un lote de PT que no existe, cuando se procesa, entonces se crea y se asigna a la producción (lot_producing_ids).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-120",
+     "ref": "CU-STK-20",
+     "cu": "ODOO_CU-2255",
+     "prioridad": "P2",
+     "escenario": "Entrega parcial frente a cantidad planificada (STK / validación)",
+     "precondiciones": "MO con cantidad planificada",
+     "datos": "Fixture: 13 y 05. Planificado 100000; entregado 50000",
+     "pasos": [
+      "Comparar entregado con planificado.",
+      "Permitir entregas parciales.",
+      "Actualizar el saldo pendiente.",
+      "Alertar si la diferencia supera la tolerancia."
+     ],
+     "resultado_esperado": "Dada una entrega de 50.000 sobre 100.000 y validaciones OK, cuando se procesa, entonces se registran 50.000 con su lote, esa porción queda en done y se genera un backorder por 50.000 con el mismo x_metrics_wo_number.",
+     "evidencia_esperada": "MO y reporte de avance.",
+     "observacion": "[Revisión: Ajustado] El caso decía 'no se cierra'; CU-2255 define backorder. En Odoo 19 el backorder sale de button_mark_done con contexto mo_ids_to_backorder → _split_productions (no existe action_backorder). El backorder se crea con copy_data: x_metrics_wo_number se propaga si el campo no tiene copy=False [VERIFICAR EN SISTEMA].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-121",
+     "ref": "N-BO-01",
+     "cu": "ODOO_CU-2255",
+     "prioridad": "P1",
+     "escenario": "Segunda entrega completa la cantidad (STK / INSERT, TType 1)",
+     "precondiciones": "Backorder abierto de una entrega previa",
+     "datos": "Fixture: 13 × 2. wonumber + stockcode",
+     "pasos": [
+      "1. Enviar la segunda entrega por el saldo."
+     ],
+     "resultado_esperado": "Dado un backorder abierto, cuando llega la entrega que completa lo planificado, entonces queda en done y no se genera otro backorder.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-122",
+     "ref": "N-BO-02",
+     "cu": "ODOO_CU-2255",
+     "prioridad": "P1",
+     "escenario": "Entrega parcial con consumos en proceso (STK / INSERT, TType 1)",
+     "precondiciones": "Consumos pendientes de la WONUMBER",
+     "datos": "Fixture: 13 parcial.",
+     "pasos": [
+      "1. Enviar entrega parcial."
+     ],
+     "resultado_esperado": "Dada una entrega parcial con consumos en proceso, cuando se procesa, entonces no se registra, se informa el motivo y queda pendiente.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-123",
+     "ref": "N-BO-03",
+     "cu": "ODOO_CU-2255",
+     "prioridad": "P1",
+     "escenario": "Descalce entre consumo registrado y proporción esperada (STK / INSERT, TType 1)",
+     "precondiciones": "Consumos menores a la proporción de la entrega parcial",
+     "datos": "Fixture: Excel 'Ejemplo wo calculos'. Entrega 1: PT1 10/12, PT2 35/40",
+     "pasos": [
+      "1. Enviar entrega parcial con consumo insuficiente."
+     ],
+     "resultado_esperado": "Dado un consumo menor al que Odoo espera para la cantidad parcial, cuando se procesa, entonces queda en reintentos esperando consumos.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] En Odoo 19 la advertencia sale de _get_consumption_issues según el campo 'consumption' de la BoM (flexible/warning/strict) y no aplica si la producción no tiene BoM. El Excel de ejemplo termina con 'QUEDAN MAL LOS CONSUMIDOS': regla de consumos posteriores sin cerrar.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-124",
+     "ref": "N-BO-04",
+     "cu": "ODOO_CU-2255",
+     "prioridad": "P1",
+     "escenario": "El backorder conserva x_metrics_wo_number (STK / INSERT, TType 1)",
+     "precondiciones": "Entrega parcial procesada",
+     "datos": "Fixture: 13 parcial. x_metrics_wo_number",
+     "pasos": [
+      "Generar backorder.",
+      "Revisar el campo en la nueva orden."
+     ],
+     "resultado_esperado": "Dado un backorder generado, cuando se consulta, entonces tiene el mismo x_metrics_wo_number que la orden original.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] El backorder se crea con copy_data(_get_backorder_mo_vals()): el campo custom se copia si no tiene copy=False [VERIFICAR EN SISTEMA].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-125",
+     "ref": "CU-WO-20",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P2",
+     "escenario": "Consumibles no medibles por centro de costo (WO / costos)",
+     "precondiciones": "Centro de costo configurado",
+     "datos": "Fixture: Variante de 05 con tintas y pegamentos. materialtype=1 (tintas), consumibles no medibles",
+     "pasos": [
+      "Detectar consumible no medible.",
+      "No incluirlo como componente de la MO.",
+      "Cargar el consumo contra el centro de costo.",
+      "Mantenerlo fuera del costo directo de la OP."
+     ],
+     "resultado_esperado": "Dada una tinta no medible, cuando se procesa, entonces no se crea línea de BOM y el costo va al centro de costo.",
+     "evidencia_esperada": "Asiento o reporte de centro de costo y BOM sin la tinta.",
+     "observacion": "[Revisión: Ajustado] Minuta 2: tintas, pegamentos y adhesivos no medibles por OP van al centro de costo de la máquina. Alcance §12: esquema de Centros de Distribución pendiente de definición.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-126",
+     "ref": "CU-WO-21",
+     "cu": "Sin CU Odoo",
+     "prioridad": "P2",
+     "escenario": "BOM multinivel y producto intermedio (WO / INSERT)",
+     "precondiciones": "Producto intermedio con BOM propia",
+     "datos": "Fixture: Pendiente: muestra con BOM multinivel. PT, producto intermedio, MP, idativ",
+     "pasos": [
+      "Detectar producto intermedio.",
+      "Crear o actualizar su BOM.",
+      "Vincular la BOM del PT con la del intermedio.",
+      "Validar explosión de materiales."
+     ],
+     "resultado_esperado": "Dado un PT con producto intermedio, cuando se procesa, entonces la explosión de materiales incluye ambos niveles sin ciclos.",
+     "evidencia_esperada": "Árbol de BOM y reporte de explosión.",
+     "observacion": "[Revisión: Bloqueado] Falta muestra de BOM multinivel (pendiente #15).",
+     "estado": "Bloqueado"
+    }
+   ]
+  },
+  {
+   "nombre": "stock.move",
+   "descripcion": "Conversión de ítems (CU-2366) y reglas de movimientos STK.",
+   "casos": [
+    {
+     "id": "TC-127",
+     "ref": "CU-STK-23",
+     "cu": "ODOO_CU-2366",
+     "prioridad": "P2",
+     "escenario": "Transferencia de un ítem a varios (STK / INSERT, TType 5)",
+     "precondiciones": "Producto origen con stock y productos destino existentes",
+     "datos": "Fixture: XML DE TRANSCION DE UNO ITEM PARA VARIOS.txt. Origen 99.0014 con dos salidas de 10 y 15; destinos 99.0004 y 99.0005 con entradas de 10 y 15; lotes 00000024, 00000029, 00000030",
+     "pasos": [
+      "Procesar las salidas del origen.",
+      "Procesar las entradas en los destinos.",
+      "Vincular cada par por referencias.",
+      "Validar que las cantidades cuadren."
+     ],
+     "resultado_esperado": "Dada una transferencia de 10 y 15 unidades, cuando se procesa, entonces el origen baja 25 y los destinos suben 10 y 15.",
+     "evidencia_esperada": "Movimientos y stock por producto.",
+     "observacion": "[Revisión: Ajustado] CU-2366: la agrupación sdistktransactiongroup con transactiontype=5 se procesa como una única conversión: origen operationtype=1, destinos operationtype=0.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-128",
+     "ref": "CU-STK-24",
+     "cu": "ODOO_CU-2366",
+     "prioridad": "P2",
+     "escenario": "Vínculos entre movimientos de transferencia (STK / validación)",
+     "precondiciones": "Movimientos de transferencia cargados",
+     "datos": "Fixture: Transferencia uno a varios. relatedtransactioncodeextref, transactionoriginextref, transactioncodeextref",
+     "pasos": [
+      "Leer las referencias.",
+      "Emparejar salida y entrada.",
+      "Validar que cada entrada tenga su salida.",
+      "Reportar huérfanos."
+     ],
+     "resultado_esperado": "Dado un par salida-entrada con relatedtransactioncodeextref, cuando se concilia, entonces ambas quedan vinculadas y no hay movimientos huérfanos.",
+     "evidencia_esperada": "Reporte de pares y huérfanos.",
+     "observacion": "[Revisión: Ajustado] CU-2366 RN-02/RN-03: idempotencia por transactionoriginextref y trazabilidad por relatedtransactioncodeextref. Manual: esas referencias son numéricas (Double).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-129",
+     "ref": "N-CNV-01",
+     "cu": "ODOO_CU-2366",
+     "prioridad": "P1",
+     "escenario": "Ítem origen o destino inactivo/inexistente (STK / INSERT, TType 5)",
+     "precondiciones": "Producto destino archivado",
+     "datos": "Fixture: Transferencia con destino inactivo. stockcode",
+     "pasos": [
+      "Recibir agrupación.",
+      "Validar active=True en todos."
+     ],
+     "resultado_esperado": "Dado un producto origen o destino inactivo o inexistente, cuando se procesa, entonces la agrupación queda 'Pendiente por ítem inactivo/inexistente' sin aplicar nada.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-130",
+     "ref": "N-CNV-02",
+     "cu": "ODOO_CU-2366",
+     "prioridad": "P1",
+     "escenario": "Prorrateo del costo origen a destinos (STK / INSERT, TType 5)",
+     "precondiciones": "Origen con costo",
+     "datos": "Fixture: Transferencia uno a varios. Destinos 10 y 15",
+     "pasos": [
+      "Procesar conversión.",
+      "Revisar valuación de destinos."
+     ],
+     "resultado_esperado": "Dada una conversión con dos destinos, cuando se procesa, entonces el costo de la salida del origen se reparte por cantidades (10/25 y 15/25) y el total destino iguala el total origen.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] En el XML de ejemplo totalvalue=0: pedir muestra con valor.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-131",
+     "ref": "N-CNV-03",
+     "cu": "ODOO_CU-2366",
+     "prioridad": "P2",
+     "escenario": "Lotes de los productos destino (STK / INSERT, TType 5)",
+     "precondiciones": "Lotes 00000029 y 00000030 inexistentes",
+     "datos": "Fixture: Transferencia uno a varios. lot",
+     "pasos": [
+      "1. Procesar la conversión."
+     ],
+     "resultado_esperado": "Dado un lot informado para un destino, cuando se procesa, entonces se crea y se usa en el movimiento de entrada.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-132",
+     "ref": "CU-STK-31",
+     "cu": "Transversal",
+     "prioridad": "P1",
+     "escenario": "Discrepancia de stockmovementtype y operationtype (STK / validación de reglas)",
+     "precondiciones": "R12 cargada",
+     "datos": "Fixture: 09, 10, 11, 12 y 13. 09: stockmovementtype=2 con operationtype=0; 11: stockmovementtype=0 con operationtype=1; 10: stockmovementtype=1",
+     "pasos": [
+      "Comparar los valores de las muestras con R12.",
+      "Documentar la discrepancia.",
+      "Definir la tabla real con Metrics.",
+      "Bloquear la implementación hasta confirmarla."
+     ],
+     "resultado_esperado": "Dado el mapeo del manual §11.10, cuando se procesan 09, 10, 11, 12 y 13, entonces cada movimiento se interpreta según la tabla del manual.",
+     "evidencia_esperada": "Tabla de equivalencias firmada.",
+     "observacion": "[Revisión: Ajustado] Manual §11.10: StockMovementType 0 físico, 1 financiero, 2 físico/financiero; OperationType 0 entrada, 1 salida. Las muestras COINCIDEN con el manual (09 = 2, 10 = 1, 11 = 0): lo que está mal es la regla R12 del script. Se puede cerrar el pendiente #12 con el manual.",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "account.move",
+   "descripcion": "Facturación de venta (CU-2083), ajuste de valor por factura de proveedor (CU-2364) y cancelación de factura (CU-2086).",
+   "casos": [
+    {
+     "id": "TC-133",
+     "ref": "CU-BIL-02",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Solicitud de facturación (BIL / INSERT)",
+     "precondiciones": "Pedido y cliente existentes",
+     "datos": "Fixture: 16- Solicitud de Facturacion.txt. invoicereqnumber=10001, invoicenumber=0, invoicecompl=1, status=1, invoicetype=1, billing=1, delivery=0, totalvalue=2540",
+     "pasos": [
+      "Crear solicitud de facturación.",
+      "Vincular pedido y líneas.",
+      "Asociar condición de pago.",
+      "Preparar emisión de factura."
+     ],
+     "resultado_esperado": "Dada una solicitud con billing=1 y delivery=0, cuando se procesa, entonces se prepara la factura sin generar remito.",
+     "evidencia_esperada": "Solicitud y vínculo con pedido.",
+     "observacion": "[Revisión: Ajustado] CU-2083 RN-01: SOR inválido → advertencia. RN-03: idempotencia por BIL_ID (¿invoicereqnumber? [VERIFICAR]).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-134",
+     "ref": "CU-BIL-03",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Vínculo con pedido, línea y orden de producción (BIL / validación)",
+     "precondiciones": "Pedido, línea y MO existentes",
+     "datos": "Fixture: 14 y 16. salesordernumber=5Q-1, wonumber=OFC00001, quotenumber=5, itemid=1, stockcode=99.0001",
+     "pasos": [
+      "Resolver el pedido por número.",
+      "Resolver la línea por ítem.",
+      "Vincular con la MO.",
+      "Guardar la referencia."
+     ],
+     "resultado_esperado": "Dado un ítem con salesordernumber, wonumber y quotenumber, cuando se procesa, entonces queda vinculado a los tres documentos.",
+     "evidencia_esperada": "Vínculos entre documentos.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-135",
+     "ref": "CU-BIL-04",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P2",
+     "escenario": "Direcciones de facturación, cobro y entrega (BIL / INSERT)",
+     "precondiciones": "Cliente con direcciones",
+     "datos": "Fixture: 14 y 16. isbilling, ischarging, isdelivery, addressname, district, zipcode",
+     "pasos": [
+      "Leer cada dirección.",
+      "Asignar tipo.",
+      "Crear contactos si no existen.",
+      "Asociar al documento."
+     ],
+     "resultado_esperado": "Dada una dirección con isbilling=1, cuando se procesa, entonces la factura usa esa dirección y el remito usa la de entrega.",
+     "evidencia_esperada": "Documento y direcciones asociadas.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-136",
+     "ref": "CU-BIL-07",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Numeración de factura argentina (BIL / validación)",
+     "precondiciones": "Diario y punto de venta configurados",
+     "datos": "Fixture: 14 y 16. invoicecompl=1, invoicenumber=0, formato 0001-00000000",
+     "pasos": [
+      "Tomar punto de venta de invoicecompl.",
+      "Tomar número de invoicenumber.",
+      "Completar con ceros.",
+      "Asignar l10n_latam_document_number."
+     ],
+     "resultado_esperado": "Dado invoicecompl=1 e invoicenumber=0, cuando se procesa, entonces se interpreta como solicitud previa y no como factura emitida.",
+     "evidencia_esperada": "Número asignado o estado de solicitud.",
+     "observacion": "[Revisión: Ajustado] La numeración la asigna Odoo al publicar (facturación electrónica l10n_ar_edi). En la solicitud invoicenumber=0. Qué representa invoicecompl=1 [VERIFICAR].",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-137",
+     "ref": "CU-BIL-08",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Tipo de comprobante y CFOP (BIL / INSERT)",
+     "precondiciones": "Posición fiscal del cliente configurada",
+     "datos": "Fixture: 14 y 16. invoicetype=1, cfop (vacío en las muestras)",
+     "pasos": [
+      "Mapear invoicetype=1 → out_invoice.",
+      "Determinar CFOP por operación y posición fiscal.",
+      "Asignar a la línea."
+     ],
+     "resultado_esperado": "Dado un cliente Responsable Inscripto, cuando se factura, entonces el comprobante es del tipo que corresponde según la localización (ej. Factura A) [VERIFICAR EN SISTEMA].",
+     "evidencia_esperada": "Factura y CFOP asignado.",
+     "observacion": "[Revisión: Ajustado] CFOP es un concepto de Brasil. En Argentina el tipo de comprobante (A/B/E…) surge de la responsabilidad IVA del partner y del diario (documentos LATAM).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-138",
+     "ref": "CU-BIL-09",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P2",
+     "escenario": "Impuestos de la factura (BIL / cálculo)",
+     "precondiciones": "Impuestos configurados",
+     "datos": "Fixture: 16 (impuestos vacíos). sdilbilitemtaxinfo, totalvalue=2540, unitvalue=0.0254",
+     "pasos": [
+      "Leer impuestos del XML.",
+      "Si están vacíos, aplicar impuestos por producto o configuración.",
+      "Calcular base e impuesto.",
+      "Comparar con el total."
+     ],
+     "resultado_esperado": "Dado un ítem sin impuestos en el XML, cuando se procesa, entonces se aplican los impuestos configurados y el total cuadra.",
+     "evidencia_esperada": "Factura y reporte de impuestos.",
+     "observacion": "[Revisión: Ajustado] CU-2083 RN-05: impuestos automáticos por posición fiscal del partner (requiere CUIT, responsabilidad, provincia y país cargados).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-139",
+     "ref": "CU-BIL-11",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P2",
+     "escenario": "Condición de pago y vencimientos (BIL / INSERT)",
+     "precondiciones": "Términos de pago disponibles",
+     "datos": "Fixture: 14 y 16. conditioncode=Al contado, duedate=2026-07-24, value=2540",
+     "pasos": [
+      "Buscar o crear el término.",
+      "Asignarlo al comprobante.",
+      "Guardar vencimientos.",
+      "Comparar con Odoo."
+     ],
+     "resultado_esperado": "Dado “Al contado” con vencimiento, cuando se procesa, entonces el término y el vencimiento quedan registrados.",
+     "evidencia_esperada": "Comprobante y vencimientos.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-140",
+     "ref": "CU-BIL-12",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P2",
+     "escenario": "Moneda de la factura (BIL / INSERT)",
+     "precondiciones": "Moneda configurada",
+     "datos": "Fixture: 14 y 16. idcurrency=1, unitvalue, totalvalue",
+     "pasos": [
+      "Resolver la moneda.",
+      "Asignar importes en moneda del comprobante.",
+      "Convertir a moneda de la empresa."
+     ],
+     "resultado_esperado": "Dada una factura en moneda extranjera, cuando se procesa, entonces se conservan los importes originales y su equivalente.",
+     "evidencia_esperada": "Factura y tasa aplicada.",
+     "observacion": "[Revisión: Ajustado] CU-2083 RN-04: se factura en ARS con la tasa estándar de Odoo, y esa tasa se usa también para los impuestos.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-141",
+     "ref": "CU-BIL-13",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P3",
+     "escenario": "Error por cliente, producto o pedido inexistente (BIL / INSERT)",
+     "precondiciones": "Maestro faltante",
+     "datos": "Fixture: Variante de 16 con code=999 o stockcode=ZZ. sdibilcustomerinfo.code, stockcode, salesordernumber",
+     "pasos": [
+      "Resolver cliente, producto y pedido.",
+      "Detectar faltante.",
+      "Fallar la transacción.",
+      "No crear el comprobante."
+     ],
+     "resultado_esperado": "Dado un cliente inexistente, cuando se procesa, entonces no se crea el comprobante y la bitácora informa el código.",
+     "evidencia_esperada": "Bitácora y ausencia de comprobante.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-142",
+     "ref": "N-FAC-01",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Control de cantidades facturadas (qty_invoiced) (BIL / INSERT (billing=1))",
+     "precondiciones": "SOR con entregas parciales",
+     "datos": "Fixture: 16 × 2. qty_invoiced",
+     "pasos": [
+      "Facturar parcial.",
+      "Enviar otra solicitud que supera la cantidad del SOR."
+     ],
+     "resultado_esperado": "Dado un SOR, cuando el acumulado a facturar supera la cantidad original, entonces Odoo no lo permite.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-143",
+     "ref": "N-FAC-02",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Idempotencia por BIL_ID (BIL / INSERT)",
+     "precondiciones": "Comprobante ya emitido para ese BIL_ID",
+     "datos": "Fixture: 16 repetido. BIL_ID",
+     "pasos": [
+      "1. Reenviar la solicitud."
+     ],
+     "resultado_esperado": "Dado un BIL_ID ya facturado, cuando vuelve a llegar, entonces Odoo responde con los datos del comprobante existente sin duplicar.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-144",
+     "ref": "N-FAC-03",
+     "cu": "ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Respuesta a Metrics con CAE (Odoo → Metrics)",
+     "precondiciones": "Factura posted con CAE",
+     "datos": "Fixture: 16. N°, CAE, fecha, montos, estado",
+     "pasos": [
+      "Publicar la factura.",
+      "Enviar respuesta asíncrona."
+     ],
+     "resultado_esperado": "Dada una factura posted con CAE, cuando se completa, entonces Odoo envía N°, CAE, fecha, montos y estado y Metrics pasa el pedido a 'Facturado'.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] Mecanismo de respuesta a definir con Metrics (el manual solo define el XMLReturn genérico).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-145",
+     "ref": "N-CAN-09",
+     "cu": "ODOO_CU-2086",
+     "prioridad": "P1",
+     "escenario": "Cancelación con factura en borrador / emitida (Cancelación desde Metrics)",
+     "precondiciones": "Factura en borrador o confirmada",
+     "datos": "Fixture: 16 + cancelación. Estado de la factura",
+     "pasos": [
+      "Recibir cancelación.",
+      "Evaluar estado de la factura."
+     ],
+     "resultado_esperado": "Dada una factura en borrador, cuando se cancela, entonces se elimina/cancela (CA05); dada una factura confirmada, entonces no se toca y se informa la excepción (CA06).",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo] La nota de crédito no está contemplada (HU aparte).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-146",
+     "ref": "CU-STK-05",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P1",
+     "escenario": "Valor de ingreso como base del ajuste (STK / INSERT)",
+     "precondiciones": "Ingreso validado",
+     "datos": "Fixture: 09 y 10. totalvalue=10506815.98 (ingreso), totalvalue=50000 (ajuste)",
+     "pasos": [
+      "Guardar el valor del ingreso.",
+      "Usarlo como base para el ajuste por factura.",
+      "Registrar la referencia de la recepción."
+     ],
+     "resultado_esperado": "Dado un ingreso de 10.506.815,98, cuando se calcula el ajuste, entonces se usa ese valor como base.",
+     "evidencia_esperada": "Valor del movimiento y cálculo del ajuste.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-147",
+     "ref": "CU-STK-25",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P1",
+     "escenario": "Cálculo del ajuste de valor por factura (STK / salida Odoo → Metrics)",
+     "precondiciones": "Factura de proveedor y ingreso validados",
+     "datos": "Fixture: 10- Ajuste de valor de stock por factura.txt. Factura sin impuestos, totalvalue del ingreso, ajustes ya enviados",
+     "pasos": [
+      "Tomar la factura sin impuestos.",
+      "Restar el valor del ingreso.",
+      "Restar ajustes ya enviados.",
+      "Obtener el ajuste."
+     ],
+     "resultado_esperado": "Dada una factura de 10.556.815,98 y un ingreso de 10.506.815,98, cuando se calcula, entonces el ajuste es 50.000.",
+     "evidencia_esperada": "Cálculo y documentación de respaldo.",
+     "observacion": "[Revisión: Ajustado] CU-2364 define el envío del XML (formato archivo 10) al confirmar la factura de proveedor, pero no la fórmula (factura sin impuestos − ingreso − ajustes ya enviados): confirmar.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-148",
+     "ref": "CU-STK-26",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P1",
+     "escenario": "Envío del ajuste a Metrics (STK / INSERT desde Odoo, TType 9)",
+     "precondiciones": "Ajuste calculado",
+     "datos": "Fixture: 10. transactiontype=9, stockmovementtype=1, operationtype=0, quantity=0, lot=UNICO, stockaddress=UNICO, totalvalue=50000, transactioncodeextref único",
+     "pasos": [
+      "Generar transactioncodeextref numérico y único.",
+      "Enviar por ProcessTransaction.",
+      "Registrar la respuesta.",
+      "Guardar el código para cancelar."
+     ],
+     "resultado_esperado": "Dado un ajuste de 50.000, cuando se envía, entonces Metrics recibe el movimiento con transactiontype=9 y Odoo guarda el transactioncodeextref.",
+     "evidencia_esperada": "XML enviado y respuesta.",
+     "observacion": "[Revisión: Vigente] CU-2364 CA-01/CA-02: se envía al confirmar la factura (resuelve pendiente #20). Manual: TransactionCodeExtRef numérico y único.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-149",
+     "ref": "CU-STK-27",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P2",
+     "escenario": "Tolerancia del ajuste (STK / validación)",
+     "precondiciones": "Tolerancia configurada",
+     "datos": "Fixture: 07 y 10. Diferencia por redondeo de 0,02",
+     "pasos": [
+      "Calcular la diferencia.",
+      "Comparar con la tolerancia.",
+      "Si está dentro, no enviar.",
+      "Si supera, enviar."
+     ],
+     "resultado_esperado": "Dada una diferencia de 0,02 y una tolerancia mayor, cuando se evalúa, entonces no se envía ajuste.",
+     "evidencia_esperada": "Reporte de diferencias y bandeja de ajustes.",
+     "observacion": "[Revisión: Bloqueado] CU-2364 no define tolerancia (pendiente #9).",
+     "estado": "Bloqueado"
+    },
+    {
+     "id": "TC-150",
+     "ref": "CU-STK-28",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P2",
+     "escenario": "Ajuste en moneda extranjera (STK / cálculo)",
+     "precondiciones": "Tipo de cambio definido",
+     "datos": "Fixture: 07 y factura en moneda extranjera. Moneda de factura, tasa, fecha, valor en moneda de la empresa",
+     "pasos": [
+      "Convertir la factura a moneda de la empresa.",
+      "Calcular el ajuste.",
+      "Guardar la tasa y la fecha usadas."
+     ],
+     "resultado_esperado": "Dada una factura en USD, cuando se calcula el ajuste, entonces se usa la tasa definida y la fecha queda registrada.",
+     "evidencia_esperada": "Cálculo y tasa aplicada.",
+     "observacion": "[Revisión: Ajustado] Minuta 2: inventario en ARS al tipo de cambio de la OC, ajustado al valor de la factura.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-151",
+     "ref": "CU-STK-30",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P1",
+     "escenario": "Reintento del ajuste sin duplicar (STK / reintento)",
+     "precondiciones": "Ajuste pendiente",
+     "datos": "Fixture: 10 con fallo de red. transactioncodeextref, estado del envío",
+     "pasos": [
+      "Fallar el envío.",
+      "Registrar el error.",
+      "Reintentar con el mismo código.",
+      "Confirmar que no se duplica."
+     ],
+     "resultado_esperado": "Dado un envío fallido, cuando se reintenta, entonces se reutiliza el código y no se crea un segundo ajuste.",
+     "evidencia_esperada": "Bitácora y movimientos en Metrics.",
+     "observacion": "[Revisión: Vigente] CU-2364 CA-05: el error queda registrado para seguimiento y reproceso.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-152",
+     "ref": "N-AJV-01",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P1",
+     "escenario": "Reenvío por modificación que afecta el XML (Odoo → Metrics, STK TType 9)",
+     "precondiciones": "Factura ya informada",
+     "datos": "Fixture: 10. Dato incluido en el XML",
+     "pasos": [
+      "Modificar un dato incluido en el XML.",
+      "Verificar el reenvío."
+     ],
+     "resultado_esperado": "Dada una factura ya informada, cuando se modifica un dato del XML, entonces Odoo genera y reenvía el XML actualizado.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-153",
+     "ref": "N-AJV-02",
+     "cu": "ODOO_CU-2364",
+     "prioridad": "P2",
+     "escenario": "Sin reenvío si la modificación no afecta el XML (Odoo → Metrics)",
+     "precondiciones": "Factura ya informada",
+     "datos": "Fixture: 10. Dato no incluido en el XML",
+     "pasos": [
+      "1. Modificar un dato que no está en el XML."
+     ],
+     "resultado_esperado": "Dada una factura ya informada, cuando se modifica un dato que no viaja en el XML, entonces no se envía nada.",
+     "evidencia_esperada": "Bitácora y documento en Odoo",
+     "observacion": "[Revisión: Nuevo]",
+     "estado": "Pendiente"
+    }
+   ]
+  },
+  {
+   "nombre": "E2E",
+   "descripcion": "Flujos completos de punta a punta.",
+   "casos": [
+    {
+     "id": "TC-154",
+     "ref": "CU-E2E-03",
+     "cu": "ODOO_CU-2238, ODOO_CU-2361, ODOO_CU-2364",
+     "prioridad": "P1",
+     "escenario": "Flujo completo de compra (E2E)",
+     "precondiciones": "Proveedor, producto y moneda",
+     "datos": "Fixture: 07, 08, 09, 10 y factura de proveedor. OC 1, remito 12132, ingreso 3.623,04 KG, ajuste 50.000",
+     "pasos": [
+      "Crear OC.",
+      "Recibir remito.",
+      "Ingresar material.",
+      "Registrar factura de proveedor.",
+      "Calcular y enviar ajuste.",
+      "Verificar stock y valor."
+     ],
+     "resultado_esperado": "Dada una compra completa, cuando se ejecuta, entonces el stock, la factura y el ajuste quedan conciliados.",
+     "evidencia_esperada": "OC, recepción, ingreso, factura y ajuste.",
+     "observacion": "[Revisión: Vigente]",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-155",
+     "ref": "CU-E2E-01",
+     "cu": "ODOO_CU-2237, ODOO_CU-2238, ODOO_CU-2361, ODOO_CU-2244, ODOO_CU-2245, ODOO_CU-2082, ODOO_CU-2084, ODOO_CU-2085, ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Flujo de producto nuevo (E2E)",
+     "precondiciones": "Base limpia y configuración completa",
+     "datos": "Fixture: 01, 03, 05, 06, 07, 08, 09, 11, 13, 15 y 14 o 16. Cliente 327, PT 99.0001, WO OFC00001, pedido 5Q-1",
+     "pasos": [
+      "Crear cliente y proveedor.",
+      "Crear material y PT.",
+      "Crear pedido y OP.",
+      "Generar necesidad y OC.",
+      "Recibir remito e ingreso.",
+      "Consumir material.",
+      "Entregar producción.",
+      "Separar materiales.",
+      "Emitir remito o factura."
+     ],
+     "resultado_esperado": "Dado un producto nuevo, cuando se ejecuta el circuito completo, entonces cada documento queda vinculado y el stock y la facturación cierran.",
+     "evidencia_esperada": "Paquete de documentos y reporte de trazabilidad.",
+     "observacion": "[Revisión: Ajustado] Sin alta de cliente/proveedor por integración (Administración en Odoo). STKITEM sin CU Odoo propia.",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-156",
+     "ref": "CU-E2E-02",
+     "cu": "ODOO_CU-2237, ODOO_CU-2244, ODOO_CU-2245, ODOO_CU-2082, ODOO_CU-2084, ODOO_CU-2085, ODOO_CU-2083",
+     "prioridad": "P1",
+     "escenario": "Flujo de producto repetido (E2E)",
+     "precondiciones": "Cliente, producto y BOM existentes",
+     "datos": "Fixture: 06, 05, 11, 13, 15 y 14 o 16. Pedido 5Q-1, WO OFC00001, PT 99.0001",
+     "pasos": [
+      "Crear pedido.",
+      "Generar OP.",
+      "Solicitar y consumir material.",
+      "Entregar producción.",
+      "Separar.",
+      "Emitir remito o factura."
+     ],
+     "resultado_esperado": "Dado un producto ya existente, cuando se ejecuta el circuito, entonces no se recrean maestros y el pedido se produce y factura.",
+     "evidencia_esperada": "Documentos y trazabilidad.",
+     "observacion": "[Revisión: Ajustado] Producto repetido: no se integran maestros (reunión 02/07).",
+     "estado": "Pendiente"
+    },
+    {
+     "id": "TC-157",
+     "ref": "CU-E2E-04",
+     "cu": "ODOO_CU-2237, ODOO_CU-2244, ODOO_CU-2245",
+     "prioridad": "P2",
+     "escenario": "Trazabilidad WO → WIP → STK (E2E)",
+     "precondiciones": "OP, etiquetas WIP y movimientos",
+     "datos": "Fixture: 05, WIP, 11 y 13. idativ, ProcessID, IdPalletLabel, lote, wonumber",
+     "pasos": [
+      "Crear OP con operaciones.",
+      "Cargar WIP.",
+      "Conciliar consumo WIP y STK.",
+      "Registrar entrega de PT.",
+      "Reportar trazabilidad completa."
+     ],
+     "resultado_esperado": "Dada una WO con consumos y entrega, cuando se consulta, entonces se reconstruye qué se consumió y qué se produjo por x_metrics_wo_number.",
+     "evidencia_esperada": "Reporte de trazabilidad completo.",
+     "observacion": "[Revisión: Ajustado] Sin WIP (fuera de alcance): trazabilidad WO → consumo STK TType 0 → PT TType 1.",
+     "estado": "Pendiente"
+    }
+   ]
+  }
+ ],
+ "notas": [
+  "Casos tomados de la revisión '2026-11-13_revision-casos-uso_EG_integracion-metrics-odoo.xlsx' (revisiones Vigente, Ajustado, Nuevo y Bloqueado). Los casos 'Fuera de alcance (a confirmar)' y 'Sin CU Odoo' quedan en ese archivo y no se incluyen acá.",
+  "Duplicados unificados: CU-STK-09 se prueba con CU-WO-13 y CU-STK-18 con CU-WO-15.",
+  "Marcar la columna Estado con la lista desplegable; el avance de esta hoja se actualiza solo."
+ ]
+}

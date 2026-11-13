@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<METRICS>
+    <sdiwoworkorder loguser = "METRICS">
+        <sdiwoworkorderinfo
+            idcompany = "1"
+            wonumber = "UD36440"
+            wodescription = "Machine Test"
+            quotenumber = "165860"
+            status = "0"
+            insertdt = "2026-03-24T00:00:00-05:00"
+            projectcode = "PADRAO"
+            projecttitle = "PROYECTO PADRÓN"
+            userinfo1 = ""
+            userinfo2 = ""
+            userinfo3 = ""
+            userinfo4 = ""
+            userinfo5 = ""/>
+        <sdiwocustomerinfo
+            code = "1886"
+            extref = ""
+            name = "PAPELES COMERCIALES, S.A."/>
+        <sdilwofinisheditem lcount = "2">
+            <sdiwofinisheditem
+                stockcode = "PT.FOL.FEI.4665"
+                productname = "501. Flyer / Encarte / Insertos-Flyer/Encarte/Insertos"
+                unitcode = "UN"
+                quantity = "25000"
+                deliverydt = "2026-04-30T15:56:19-05:00"
+                isfsc = "0"/>
+            <sdiwofinisheditem
+                stockcode = "PT.FOL.FEI.4666"
+                productname = "Machine Test-Prod 2"
+                unitcode = "UN"
+                quantity = "2000000"
+                deliverydt = "2026-04-30T15:56:19-05:00"
+                isfsc = "0"/>
+        </sdilwofinisheditem>
+        <sdilworawmaterial lcount = "7">
+            <sdiworawmaterial
+                materialtype = "0"
+                stockcode = "PF.2094"
+                materialname = "BOND BLANCO FSC 90X64CMS 90GRS"
+                unitcode = "KG"
+                quantity = "59.61600000000001"
+                processgroupcode = ""
+                idativ = "37788339"
+                unitcode2 = "FL"
+                quantity2 = "1150"/>
+            <sdiworawmaterial
+                materialtype = "1"
+                stockcode = "PF.1961"
+                materialname = "Negro - Offset Plana - "
+                unitcode = "KG"
+                quantity = "3.456"
+                processgroupcode = ""
+                idativ = "37788341"
+                unitcode2 = ""
+                quantity2 = "0"/>
+            <sdiworawmaterial
+                materialtype = "0"
+                stockcode = "PF.1130"
+                materialname = "Bond Blanco K95, FSC 72x102cm 90grs"
+                unitcode = "KG"
+                quantity = "4131"
+                processgroupcode = ""
+                idativ = "37788341"
+                unitcode2 = "FL"
+                quantity2 = "62500"/>
+            <sdiworawmaterial
+                materialtype = "1"
+                stockcode = "ME.CJA.0556"
+                materialname = "0928C016AA     VPI  INK MAGENTA  - B2"
+                unitcode = "KG"
+                quantity = "3.456"
+                processgroupcode = ""
+                idativ = "37788341"
+                unitcode2 = ""
+                quantity2 = "0"/>
+            <sdiworawmaterial
+                materialtype = "1"
+                stockcode = "ME.CJA.0553"
+                materialname = "HP ELECT FOR B2 HIGH SOL INK CYAN Q4212B"
+                unitcode = "KG"
+                quantity = "3.456"
+                processgroupcode = ""
+                idativ = "37788341"
+                unitcode2 = ""
+                quantity2 = "0"/>
+            <sdiworawmaterial
+                materialtype = "1"
+                stockcode = "ME.CJA.0590"
+                materialname = "Cyan - Offset Plana - "
+                unitcode = "KG"
+                quantity = "3.456"
+                processgroupcode = ""
+                idativ = "37788341"
+                unitcode2 = ""
+                quantity2 = "0"/>
+            <sdiworawmaterial
+                materialtype = "2"
+                stockcode = "PL.0011"
+                materialname = "Placa 99.6 x 119.6 cm"
+                unitcode = "UN"
+                quantity = "4"
+                processgroupcode = ""
+                idativ = "37788343"
+                unitcode2 = ""
+                quantity2 = "0"/>
+        </sdilworawmaterial>
+        <sdilwooperation lcount = "6">
+            <sdiwooperation
+                processgroupcode = "Prod 1  2p"
+                processgroupseq = "0"
+                idativ = "37788338"
+                allocgrpcode = ""
+                activitycode = ""
+                sequence = "101"
+                quantity = "1150"
+                unitcode = "CICLO"
+                setuptime = "0"
+                totaltime = "0"
+                resourcecode = ""
+                resourcename = ""
+                setupwaste = "0"
+                productionwaste = "0"
+                productiontime = "0"/>
+            <sdiwooperation
+                processgroupcode = "Prod 1  2p"
+                processgroupseq = "0"
+                idativ = "37788339"
+                allocgrpcode = "M12 KBA 6C"
+                activitycode = "IMP. OFFSET PRENSA PLANA"
+                sequence = "202"
+                quantity = "1000"
+                unitcode = "PASS"
+                setuptime = "0.6333333333333333"
+                totaltime = "0.11494252873563218"
+                resourcecode = "M07_HDB_10C"
+                resourcename = "M07 HDB 10C"
+                setupwaste = "0"
+                productionwaste = "0"
+                productiontime = "0.11494252873563218"/>
+            <sdiwooperation
+                processgroupcode = "Prod 1  2p"
+                processgroupseq = "0"
+                idativ = "37788340"
+                allocgrpcode = ""
+                activitycode = ""
+                sequence = "303"
+                quantity = "1000"
+                unitcode = "CICLO"
+                setuptime = "0"
+                totaltime = "0"
+                resourcecode = ""
+                resourcename = ""
+                setupwaste = "0"
+                productionwaste = "0"
+                productiontime = "0"/>
+            <sdiwooperation
+                processgroupcode = "Prod 2  2p"
+                processgroupseq = "0"
+                idativ = "37788341"
+                allocgrpcode = "M05 KBA 4C"
+                activitycode = "IMP. OFFSET PRENSA PLANA"
+                sequence = "101"
+                quantity = "62500"
+                unitcode = "PASS"
+                setuptime = "0.26666666666666666"
+                totaltime = "6.25"
+                resourcecode = "M01_KBA_4C"
+                resourcename = "M01 KBA 4C"
+                setupwaste = "0"
+                productionwaste = "0"
+                productiontime = "6.25"/>
+            <sdiwooperation
+                processgroupcode = "Prod 2  2p"
+                processgroupseq = "0"
+                idativ = "37788342"
+                allocgrpcode = ""
+                activitycode = ""
+                sequence = "202"
+                quantity = "62500"
+                unitcode = "CICLO"
+                setuptime = "0"
+                totaltime = "0"
+                resourcecode = ""
+                resourcename = ""
+                setupwaste = "0"
+                productionwaste = "0"
+                productiontime = "0"/>
+            <sdiwooperation
+                processgroupcode = "Placa - Prod 2  2p"
+                processgroupseq = "2"
+                idativ = "37788343"
+                allocgrpcode = "GE_CTPs"
+                activitycode = "GRABADO DE PLACAS"
+                sequence = "301"
+                quantity = "4"
+                unitcode = "CICLO"
+                setuptime = "0"
+                totaltime = "0.13333333333333333"
+                resourcecode = "CTP_01"
+                resourcename = "CTP_01"
+                setupwaste = "0"
+                productionwaste = "0"
+                productiontime = "0.13333333333333333"/>
+        </sdilwooperation>
+        <sdilwooutsourcing lcount = "0"/>
+        <sdilwocomponent lcount = "2">
+            <sdiwocomponent
+                name = "000004023"
+                quantity = "0"
+                stockcode = "PT.FOL.FEI.4665">
+                <sdilwoinputcomponent lcount = "0"/>
+            </sdiwocomponent>
+            <sdiwocomponent
+                name = "000006044"
+                quantity = "0"
+                stockcode = "PT.FOL.FEI.4666">
+                <sdilwoinputcomponent lcount = "0"/>
+            </sdiwocomponent>
+        </sdilwocomponent>
+    </sdiwoworkorder>
+</METRICS>

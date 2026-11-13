@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<METRICS>
+    <sdistktransactiongroup>
+        <sdilstktransaction lcount = "1">
+            <sdistktransaction
+                transactiontype = "0"
+                operationtype = "1"
+                transactiondt = "2026-07-08T00:00:00-05:00"
+                stockcode = "PF.2094"
+                unitcode = "FL"
+                quantity = "500"
+                totalvalue = "0"
+                wonumber = "UD36440"
+                stockplacecode = "APT_GE"
+                idcompany = "1"
+                lot = "UNICO"
+                expirationdate = "0001-01-01T00:00:00-05:00"
+                productiondate = "0001-01-01T00:00:00-05:00"
+                providerlot = ""
+                unitlot = ""
+                docnumber = "91861"
+                docnumbercompl = "UD36440"
+                stockaddress = "UNICO"
+                stockmovementtype = "2"
+                costcentercode = ""
+                costcentername = ""
+                transactioncode = "968761611607990"
+                quantityunitcost = "500"
+                unitcostcode = "FL"
+                transactioncodeextref = "968761611607990"
+                userfield1 = ""
+                userfield2 = ""
+                userfield3 = ""
+                userfield4 = ""
+                userfield5 = ""
+                loguser = "METRICS"
+                grossweight = "0"
+                relatedtransactioncodeextref = "0"
+                transactionoriginextref = "968248411307515"/>
+        </sdilstktransaction>
+    </sdistktransactiongroup>
+</METRICS>
